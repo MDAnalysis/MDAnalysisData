@@ -152,4 +152,4 @@ def _fetch_remote(remote, dirname=None):
                       "differing from expected ({}), "
                       "file may be corrupted.".format(file_path, checksum,
                                                       remote.checksum))
-return file_path
+    return file_path

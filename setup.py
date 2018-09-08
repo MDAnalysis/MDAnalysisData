@@ -53,7 +53,7 @@ if __name__ == '__main__':
     ]
 
     setup(name='MDAnalysisData',
-          version=RELEASE,
+          version="0.0.1dev",
           description='MDAnalysis example data',
           long_description=LONG_DESCRIPTION,
           long_description_content_type='text/markdown',
