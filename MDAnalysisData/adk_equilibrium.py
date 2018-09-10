@@ -44,7 +44,10 @@ from .base import Bunch
 ARCHIVE = RemoteFileMetadata(
     filename='adk_equilibrium.zip',
     url='https://ndownloader.figshare.com/articles/5108170/versions/1',
-    checksum=('03c0cb53ec743680a3feecfedd7acbd38e66d6a87e09de33a83271bb9e6c3e95',)  # sha256
+    # The checksum of the zip file changes with every download from the above url. That's
+    # very annoying. Maybe I have to list files explicitly.
+    #     shasum -b -a 256 adk_equilibrium.zip
+    checksum='83e7ac790655b56ccac1e88d8e6babe0b19740b840cb31793ec17f94b9e17e4b',  # sha256
 )
 
 logger = logging.getLogger(__name__)
@@ -98,7 +101,8 @@ def fetch_adk_equilibrium(data_home=None, download_if_missing=True):
         remove(archive_path)
 
     module_path = dirname(__file__)
-    with codecs.open(join(module_path, 'descr', 'adk_equilibrium.rst')) as dfile:
+    with codecs.open(join(module_path, 'descr', 'adk_equilibrium.rst'),
+                     encoding="uft-8") as dfile:
         descr = dfile.read()
 
     return Bunch(topology=topology,
