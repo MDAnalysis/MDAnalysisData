@@ -1,7 +1,23 @@
-"""
-Base IO code for all datasets.
+"""Base IO code for all datasets.
 
 Based on :mod:`sklearn.datasets.base` (used under BSD 3-clause license).
+
+
+Developer notes
+---------------
+
+Downloading a zip archive from figshare with code like the following
+will *not work* because the checksum on the zip files changes between
+downloads and the checksum check in :func:`_fetch_remote` will fail:
+
+     logger.info('Downloading "AdK equilibrium" dataset from {} to {}'.format(
+         ARCHIVE.url, data_location))
+
+     archive_path = _fetch_remote(ARCHIVE, dirname=data_location)
+
+     with zipfile.ZipFile(archive_path, mode="r") as z:
+         z.extractall(path=data_location)
+     remove(archive_path)
 
 """
 
@@ -65,6 +81,13 @@ class Bunch(dict):
         pass
 
 
+#: Each remote resource is described by a :class:`RemoteFileMetadata`,
+#: which is a :class:`namedtuple` with fields
+#: - *filename*: name of the file in the local file system
+#: - *url*: full URL for downloading
+#: - *checksum*: SHA256 (can be generated with :func:`MDAnalysisData.base._sha256`;
+#:   often it is just as convenient to run the downloader during testing and note the
+#:   required SHA256 then)
 RemoteFileMetadata = namedtuple('RemoteFileMetadata',
                                 ['filename', 'url', 'checksum'])
 

@@ -40,15 +40,24 @@ from .base import _fetch_remote
 from .base import RemoteFileMetadata
 from .base import Bunch
 
-# The original data can be found at the figshare URL
-ARCHIVE = RemoteFileMetadata(
-    filename='adk_equilibrium.zip',
-    url='https://ndownloader.figshare.com/articles/5108170/versions/1',
-    # The checksum of the zip file changes with every download from the above url. That's
-    # very annoying. Maybe I have to list files explicitly.
-    #     shasum -b -a 256 adk_equilibrium.zip
-    checksum='83e7ac790655b56ccac1e88d8e6babe0b19740b840cb31793ec17f94b9e17e4b',  # sha256
-)
+# The original data can be found at the figshare URL.
+# The checksum of the zip file changes with every download so we
+# cannot check its checksum but we could check the individual files.
+# Here we only have two files so we download them separately. The keys
+# are also going to be the keys in the Bunch that is returned.
+ARCHIVE = {
+    'topology': RemoteFileMetadata(
+        filename='adk4AKE.psf',
+        url='https://ndownloader.figshare.com/files/8672230',
+        #checksum='e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855',  # sha256
+        checksum='1aa947d58fb41b6805dc1e7be4dbe65c6a8f4690f0bd7fc2ae03e7bd437085f4',
+    ),
+    'trajectory':  RemoteFileMetadata(
+        filename='1ake_007-nowater-core-dt240ps.dcd',
+        url='https://ndownloader.figshare.com/files/8672074',
+        checksum='598fcbcfcc425f6eafbe9997238320fcacc6a4613ecce061e1521732bab734bf',  # sha256
+    ),
+}
 
 logger = logging.getLogger(__name__)
 
@@ -60,7 +69,7 @@ def fetch_adk_equilibrium(data_home=None, download_if_missing=True):
     ----------
     data_home : optional, default: None
         Specify another download and cache folder for the datasets. By default
-        all scikit-learn data is stored in '~/mdanalysis_data' subfolders.
+        all MDAnalysisData data is stored in '~/mdanalysis_data' subfolders.
         This dataset is stored in ``<data_home>/adk_equilibrium``.
     download_if_missing : optional, default=True
         If ``False``, raise a :exc:`IOError` if the data is not locally available
@@ -80,31 +89,24 @@ def fetch_adk_equilibrium(data_home=None, download_if_missing=True):
     """
     name = "adk_equilibrium"
     data_location = join(get_data_home(data_home=data_home),
-                             name)
+                         name)
     if not exists(data_location):
         makedirs(data_location)
 
-    topology = join(data_location, 'adk4AKE.psf')
-    trajectory = join(data_location, '1ake_007-nowater-core-dt240ps.dcd')
+    records = Bunch()
+    for file_type, meta in ARCHIVE.items():
+        local_path = join(data_location, meta.filename)
+        records[file_type] = local_path
 
-    if not exists(topology) and not exists(trajectory):
-        if not download_if_missing:
-            raise IOError("Data not found and `download_if_missing` is False")
-
-        logger.info('Downloading "AdK equilibrium" dataset from {} to {}'.format(
-            ARCHIVE.url, data_location))
-
-        archive_path = _fetch_remote(ARCHIVE, dirname=data_location)
-
-        with zipfile.ZipFile(archive_path, mode="r") as z:
-            z.extractall(path=data_location)
-        remove(archive_path)
+        if not exists(local_path):
+            if not download_if_missing:
+                raise IOError("Data {0}={1} not found and `download_if_missing` is "
+                              "False".format(file_type, local_path))
+            archive_path = _fetch_remote(meta, dirname=data_location)
 
     module_path = dirname(__file__)
     with codecs.open(join(module_path, 'descr', 'adk_equilibrium.rst'),
-                     encoding="uft-8") as dfile:
-        descr = dfile.read()
+                     encoding="utf-8") as dfile:
+        records.DESCR = dfile.read()
 
-    return Bunch(topology=topology,
-                 trajectory=trajectory,
-                 DESCR=descr)
+    return records

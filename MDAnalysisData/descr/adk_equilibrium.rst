@@ -1,3 +1,4 @@
+.. -*- coding: utf-8 -*-
 .. _`adk-equilibrium-dataset`:
 
 ====================================
@@ -6,7 +7,7 @@
 
 MD trajectory of apo adenylate kinase with CHARMM27 force field and
 simulated with explicit water and ions in NPT at 300 K and 1
-bar. Saved every 240 ps for a total of 1.004 µs. Produced on PSC
+bar. Saved every 240 ps for a total of 1.004 Âµs. Produced on PSC
 Anton. The trajectory only contains the protein and all solvent
 stripped. Superimposed on the CORE domain of AdK by RMSD fitting.
 
