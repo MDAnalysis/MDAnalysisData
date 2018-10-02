@@ -21,6 +21,10 @@ downloads and the checksum check in :func:`_fetch_remote` will fail:
 
 """
 
+# Code taken from sklearn/utils/ and sklearn/datasets under the 'New BSD license'
+# https://github.com/scikit-learn/scikit-learn/blob/master/COPYING and adapted
+
+
 from __future__ import print_function
 
 from six.moves.urllib.request import urlretrieve
@@ -49,9 +53,6 @@ class Bunch(dict):
     >>> b.c = 6
     >>> b['c']
     6
-
-    Code taken from sklearn/utils/__init__.py version 0.19.1 under the 'New BSD license'
-    https://github.com/scikit-learn/scikit-learn/blob/master/COPYING
     """
 
     def __init__(self, **kwargs):
@@ -93,13 +94,13 @@ RemoteFileMetadata = namedtuple('RemoteFileMetadata',
 
 
 def get_data_home(data_home=None):
-    """Return the path of the scikit-learn data dir.
+    """Return the path of the MDAnalysisData data dir.
 
     This folder is used by some large dataset loaders to avoid
     downloading the data several times.  By default the data dir is
-    set to a folder named 'MDAnalysis_data' in the user home directory.
+    set to a folder named 'MDAnalysis_data' in the user's home directory.
 
-    Alternatively, it can be set by the 'MDANALYSIS_DATA' environment
+    Alternatively, it can be set by the :envvar:`MDANALYSIS_DATA` environment
     variable or programmatically by giving an explicit folder path. The '~'
     symbol is expanded to the user home folder.
 
@@ -108,7 +109,7 @@ def get_data_home(data_home=None):
     Parameters
     ----------
     data_home : str | None
-        The path to scikit-learn data dir.
+        The path to MDAnalysisData data dir.
 
     """
     if data_home is None:
@@ -126,7 +127,7 @@ def clear_data_home(data_home=None):
     Parameters
     ----------
     data_home : str | None
-        The path to scikit-learn data dir.
+        The path to MDAnalysisData data dir.
     """
     data_home = get_data_home(data_home)
     shutil.rmtree(data_home)
