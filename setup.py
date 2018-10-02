@@ -74,6 +74,7 @@ if __name__ == '__main__':
           classifiers=CLASSIFIERS,
           packages=find_packages(),
           package_dir={'MDAnalysisData': 'MDAnalysisData'},
+          package_data={'MDAnalysisData': ['descr/*.rst']},
           install_requires=[],
           zip_safe=True,
     )
