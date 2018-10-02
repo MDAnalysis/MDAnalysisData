@@ -20,7 +20,7 @@ Import the datasets and access your data set of choice:
 ```python
 from MDAnalysisData import datasets
 
-adk = datasets.fetch_adk()
+adk = datasets.fetch_adk_equilibrium()
 ```
 
 
@@ -69,7 +69,7 @@ This package is modelled after
 uses code from `sklearn.datasets` (under the [BSD 3-clause
 license](https://github.com/scikit-learn/scikit-learn/blob/master/COPYING)).
 
-No data is included; please see the `DESCR` attribute for each data
+No data are included; please see the `DESCR` attribute for each data
 set for authorship, citation, and license information for the data.
 
 
