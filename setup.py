@@ -24,6 +24,7 @@ trajectories that can be used for workshops and extended tests.
 """
 from __future__ import print_function
 from setuptools import setup, find_packages
+import versioneer
 
 import codecs
 
@@ -53,7 +54,8 @@ if __name__ == '__main__':
     ]
 
     setup(name='MDAnalysisData',
-          version="0.0.1dev",
+          version=versioneer.get_version(),
+          cmdclass=versioneer.get_cmdclass(),
           description='MDAnalysis example data',
           long_description=LONG_DESCRIPTION,
           long_description_content_type='text/markdown',
