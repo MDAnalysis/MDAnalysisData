@@ -1,4 +1,6 @@
 # MDAnalysisData
+[![DOI](https://zenodo.org/badge/147885122.svg)](https://zenodo.org/badge/latestdoi/147885122)
+
 Access to data for workshops and extended tests of MDAnalysis.
 
 Data sets are stored at external stable URLs (e.g., on
