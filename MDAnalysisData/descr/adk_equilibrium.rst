@@ -15,19 +15,22 @@ The topology is contained in the PSF file (CHARMM format). The
 trajectory is contained in the DCD file (CHARMM/NAMD format).
 
 
-+---------------------+------+
-| number of frames    | 4187 |
-+---------------------+------+
-| number of particles | 3341 |
-+---------------------+------+
+Notes
+-----
 
+Data set characteristics:
 
-.. topic:: References
+ :number of frames:  4187
+ :number of particles: 3341
+ :creator: Sean Seyler
+ :URL:  `10.6084/m9.figshare.5108170.v1 <https://doi.org/10.6084/m9.figshare.5108170.v1>`_
+ :license: `CC-BY 4.0 <https://creativecommons.org/licenses/by/4.0/legalcode>`_
+ :reference: [Seyler2017]_
+    
 
-	   Seyler, Sean; Beckstein, Oliver (2017): Molecular dynamics
+.. [Seyler2017]  Seyler, Sean; Beckstein, Oliver (2017): Molecular dynamics
 	   trajectory for benchmarking
 	   MDAnalysis. figshare. Fileset. doi:
 	   `10.6084/m9.figshare.5108170.v1
 	   <https://doi.org/10.6084/m9.figshare.5108170.v1>`_
 
-	   
