@@ -41,6 +41,8 @@ from .base import _fetch_remote
 from .base import RemoteFileMetadata
 from .base import Bunch
 
+NAME = "adk_equilibrium"
+DESCRIPTION = "adk_equilibrium.rst"
 # The original data can be found at the figshare URL.
 # The SHA256 checksum of the zip file changes with every download so we
 # cannot check its checksum. Instead we download individual files.
@@ -87,7 +89,7 @@ def fetch_adk_equilibrium(data_home=None, download_if_missing=True):
 
     See :ref:`adk-equilibrium-dataset` for description.
     """
-    name = "adk_equilibrium"
+    name = NAME
     data_location = join(get_data_home(data_home=data_home),
                          name)
     if not exists(data_location):
@@ -107,7 +109,7 @@ def fetch_adk_equilibrium(data_home=None, download_if_missing=True):
             archive_path = _fetch_remote(meta, dirname=data_location)
 
     module_path = dirname(__file__)
-    with codecs.open(join(module_path, 'descr', 'adk_equilibrium.rst'),
+    with codecs.open(join(module_path, 'descr', DESCRIPTION),
                      encoding="utf-8") as dfile:
         records.DESCR = dfile.read()
 
