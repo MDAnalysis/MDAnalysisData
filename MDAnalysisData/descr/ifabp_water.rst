@@ -1,5 +1,5 @@
 .. -*- coding: utf-8 -*-
-.. _`adk-equilibrium-dataset`:
+.. _`ifabp-water-dataset`:
 
 ===========================
  I-FABP trajectory dataset
@@ -14,14 +14,16 @@ protein.
 
 There are 500 frames in the trajectory.
 
-It is used as a test case for the hop package
-https://github.com/Becksteinlab/hop.
+It is used as a test case for the
+[hop](https://github.com/Becksteinlab/hop) package.
+
 
 Notes
 -----
 
 Data set characteristics:
 
+ :size: 74 MB
  :number of frames:  500
  :number of particles: 12445
  :creator: Oliver Beckstein

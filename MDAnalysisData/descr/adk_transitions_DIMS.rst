@@ -24,6 +24,7 @@ Notes
 
 Data set characteristics:
 
+ :size: 757 MB
  :number of frames:  varies
  :number of trajectories:  200		     
  :number of atoms: 3341

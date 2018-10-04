@@ -1,5 +1,5 @@
 .. -*- coding: utf-8 -*-
-.. _`adk-transitions-DIMS-dataset`:
+.. _`adk-transitions-FRODA-dataset`:
 
 ========================================
  AdK FRODA transitions ensemble dataset
@@ -23,6 +23,7 @@ Notes
 
 Data set characteristics:
 
+ :size: 539 MB
  :number of frames:  varies
  :number of trajectories:  200		     
  :number of atoms: 1656
