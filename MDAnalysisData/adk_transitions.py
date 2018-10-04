@@ -100,7 +100,7 @@ def fetch_adk_transitions_DIMS(data_home=None, download_if_missing=True):
     ----------
     data_home : optional, default: None
         Specify another download and cache folder for the datasets. By default
-        all MDAnalysisData data is stored in '~/mdanalysis_data' subfolders.
+        all MDAnalysisData data is stored in '~/MDAnalysis_data' subfolders.
         This dataset is stored in ``<data_home>/adk_transitions_DIMS``.
     download_if_missing : optional, default=True
         If ``False``, raise a :exc:`IOError` if the data is not locally available
@@ -131,8 +131,8 @@ def fetch_adk_transitions_FRODA(data_home=None, download_if_missing=True):
     ----------
     data_home : optional, default: None
         Specify another download and cache folder for the datasets. By default
-        all MDAnalysisData data is stored in '~/mdanalysis_data' subfolders.
-        This dataset is stored in ``<data_home>/adk_adk_transitions_FRODA``.
+        all MDAnalysisData data is stored in '~/MDAnalysis_data' subfolders.
+        This dataset is stored in ``<data_home>/adk_transitions_FRODA``.
     download_if_missing : optional, default=True
         If ``False``, raise a :exc:`IOError` if the data is not locally available
         instead of trying to download the data from the source site.
@@ -166,7 +166,7 @@ def _fetch_adk_transitions(metadata, data_home=None, download_if_missing=True):
         a tar.gz file with directories topologies and trajectories
     data_home : optional, default: None
         Specify another download and cache folder for the datasets. By default
-        all MDAnalysisData data is stored in '~/mdanalysis_data' subfolders.
+        all MDAnalysisData data is stored in '~/MDAnalysis_data' subfolders.
     download_if_missing : optional, default=True
         If ``False``, raise a :exc:`IOError` if the data is not locally available
         instead of trying to download the data from the source site.

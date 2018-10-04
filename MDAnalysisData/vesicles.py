@@ -48,8 +48,8 @@ def fetch_vesicle_lib(data_home=None, download_if_missing=True):
     ----------
     data_home : optional, default: None
         Specify another download and cache folder for the datasets. By default
-        all MDAnalysisData data is stored in '~/mdanalysis_data' subfolders.
-        This dataset is stored in ``<data_home>/vesicle_lib``.
+        all MDAnalysisData data is stored in '~/MDAnalysis_data' subfolders.
+        This dataset is stored in ``<data_home>/vesicle_library``.
     download_if_missing : optional, default=True
         If ``False``, raise a :exc:`IOError` if the data is not locally available
         instead of trying to download the data from the source site.

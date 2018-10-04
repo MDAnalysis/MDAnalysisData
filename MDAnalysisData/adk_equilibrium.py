@@ -71,7 +71,7 @@ def fetch_adk_equilibrium(data_home=None, download_if_missing=True):
     ----------
     data_home : optional, default: None
         Specify another download and cache folder for the datasets. By default
-        all MDAnalysisData data is stored in '~/mdanalysis_data' subfolders.
+        all MDAnalysisData data is stored in '~/MDAnalysis_data' subfolders.
         This dataset is stored in ``<data_home>/adk_equilibrium``.
     download_if_missing : optional, default=True
         If ``False``, raise a :exc:`IOError` if the data is not locally available
