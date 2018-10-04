@@ -7,7 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Changed
 - streamlined the typical `fetch_NAME()` function by using module
-  level variables
+  level variables  
+- added *size* information (unpacked data in MB) to the canonical descriptions
   
 ### Added
 - new `fetch_ifabp_water()` to get the IFABP+water data set from
@@ -18,6 +19,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   ensembles from
   https://figshare.com/articles/Simulated_trajectory_ensembles_for_the_closed-to-open_transition_of_adenylate_kinase_from_DIMS_MD_and_FRODA/7165306
   (see issue #5)
+- new `fetch_vesicle_lib()` function to get the structures from
+  https://figshare.com/articles/Large_System_Vesicle_Benchmark_Library/3406708
+  (see issue #5)
+  
 
 ## [0.1.1] - 2018-10-02
 ### Fixed
