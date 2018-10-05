@@ -1,45 +1,8 @@
 # -*- coding: utf-8 -*-
 
-"""Ensembles of AdK transitions
+"""Ensembles of AdK transitions.
 
-The original dataset is available from doi
-`10.6084/m9.figshare.7165306
-<https://doi.org/10.6084/m9.figshare.7165306>`_
-
-The macromolecular conformational transition between the closed
-conformation of apo-adenylate kinase from E. coli (EcAdK) to the open
-conformation was sampled with two methods: (1) dynamic importance
-sampling molecular dynamics (DIMS MD), and (2) Framework Rigidity
-Optimized Dynamics Algorithm (FRODA). Each ensemble of independently
-generated paths contains 200 trajectories in the CHARMM DCD format.
-
-
-Data are from: [Seyler2015]_ (see there for more details).
-
-
-Each tar file contains a directory trajectories containing the DCD
-files and a directory topologies with files that include information
-about the atoms (CHARMM PSF format or PDB format).
-
-
-DIMS.tar.gz: DIMS AdK (implicit solvent) with dynamic importance
-sampling MD from closed (1AKE) to open (4AKE). CHARMM 22 force
-field. Topology file: adk4ake.psf
-
-
-FRODA.tar.gz: FRODA AdK with geometric targeting on a rigid
-decomposition (FRODA server); closed (1AKE) to open (4AKE). Topology
-file: 1ake.pdb
-
-
-References
-----------
-
-.. [Seyler2015] Seyler SL, Kumar A, Thorpe MF, Beckstein O (2015) Path
-   Similarity Analysis: A Method for Quantifying Macromolecular
-   Pathways. PLoS Comput Biol 11(10):
-   e1004568. https://doi.org/10.1371/journal.pcbi.1004568
-
+https://figshare.com/articles/Simulated_trajectory_ensembles_for_the_closed-to-open_transition_of_adenylate_kinase_from_DIMS_MD_and_FRODA/7165306
 """
 
 

@@ -1,34 +1,9 @@
 # -*- coding: utf-8 -*-
 
-"""AdK equilibrium trajectory without water
+"""AdK equilibrium trajectory without water.
 
-The original dataset is available from doi
-`10.6084/m9.figshare.5108170.v1
-<https://doi.org/10.6084/m9.figshare.5108170.v1>`_
-
-   https://figshare.com/articles/Molecular_dynamics_trajectory_for_benchmarking_MDAnalysis/5108170
-
-MD trajectory of apo adenylate kinase with CHARMM27 force field and
-simulated with explicit water and ions in NPT at 300 K and 1
-bar. Saved every 240 ps for a total of 1.004 µs. Produced on PSC
-Anton. The trajectory only contains the protein and all solvent
-stripped. Superimposed on the CORE domain of AdK by RMSD fitting.
-
-The topology is contained in the PSF file (CHARMM format). The
-trajectory is contained in the DCD file (CHARMM/NAMD format).
-
-
-References
-----------
-
-Seyler, Sean; Beckstein, Oliver (2017): Molecular dynamics trajectory for benchmarking MDAnalysis. figshare. Fileset. `10.6084/m9.figshare.5108170.v1
-<https://doi.org/10.6084/m9.figshare.5108170.v1>`_
+https://figshare.com/articles/Molecular_dynamics_trajectory_for_benchmarking_MDAnalysis/5108170/1
 """
-
-# TODO: generate docs from DESCR or link
-
-# Authors: Oliver Beckstein, Sean L. Seyler
-# License: CC-BY 4.0
 
 from os.path import dirname, exists, join
 from os import makedirs, remove

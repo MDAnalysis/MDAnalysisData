@@ -1,31 +1,8 @@
 # -*- coding: utf-8 -*-
 
-"""MD simulation of I-FABP with water
+"""MD simulation of I-FABP with water.
 
-The original dataset is available from doi
-`10.6084/m9.figshare.7058030.v1
-<https://doi.org/10.6084/m9.figshare.7058030.v1>`_
-
-   https://figshare.com/articles/Molecular_dynamics_trajectory_of_I-FABP_for_testing_and_benchmarking_solvent_dynamics_analysis/7058030
-
-The trajectory is a short MD run of I-FABP (intestinal fatty acid binding protein) in water.
-
-It was simulated in CHARMM for 500 ps with a 2 fs timestep. Frames
-were saved every 1 ps and the trajectory was RMSD-fitted to the
-protein.
-
-There are 500 frames in the trajectory.
-
-It is used as a test case for the hop package https://github.com/Becksteinlab/hop.
-
-References
-----------
-
-Beckstein, Oliver (2018): Molecular dynamics trajectory of I-FABP for
-testing and benchmarking solvent dynamics
-analysis. figshare. Fileset. DOI: `10.6084/m9.figshare.7058030.v1
-<https://doi.org/10.6084/m9.figshare.7058030.v1>`_
-
+https://figshare.com/articles/Molecular_dynamics_trajectory_of_I-FABP_for_testing_and_benchmarking_solvent_dynamics_analysis/7058030
 """
 
 from os.path import dirname, exists, join

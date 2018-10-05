@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""Large vesicles
+"""Large vesicles library (coarse grained).
 
 https://figshare.com/articles/Large_System_Vesicle_Benchmark_Library/3406708
 """

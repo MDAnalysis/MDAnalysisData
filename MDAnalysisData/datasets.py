@@ -1,3 +1,6 @@
+"""Access to all datasets via ``fetch_*()`` functions.
+
+"""
 # import load_* and fetch_* functions from modules
 
 from __future__ import absolute_import

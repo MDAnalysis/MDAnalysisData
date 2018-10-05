@@ -1,9 +1,9 @@
 .. -*- coding: utf-8 -*-
 
 
-==========
- Vesicles
-==========
+===================
+ Vesicles datasets
+===================
 
 .. module:: MDAnalysisData.vesicles
 

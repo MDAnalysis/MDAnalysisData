@@ -1,4 +1,4 @@
-"""Base IO code for all datasets.
+"""Base I/O code for all datasets.
 
 Based on :mod:`sklearn.datasets.base` (used under BSD 3-clause license).
 
