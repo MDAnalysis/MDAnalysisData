@@ -5,7 +5,7 @@
  MDAnalysisData: MD data for testing, learning, and benchmarking
 =================================================================
 
-|doi|
+|zenodo| |PRwelcome|
 
 :Release: |release|
 :Date: |today|
@@ -22,24 +22,29 @@ interface to download, cache, and access these externally hosted data
 sets.
 
 The files can be easily used with MDAnalysis_ but the package is
-standalone, however, and can be used for any purpose, for instance, to
-provide examples for workshops and classes.
+standalone and can be used for any purpose, for instance, to
+provide examples for workshops and classes, and, of course, to try out
+other tools for analyzing simulations.
 
 Datasets are released under an `open license`_ that conforms to the `Open
 Definition 2.1`_ that allows free use, re-use, redistribution, modification,
 separation, for any purpose and without a charge. All  code
 can be found in the public GitHub repository `mdanalysis/MDAnalysisData`_.
 
-This library is **under active development**. We use `semantic
+This library is *under active development*. We use `semantic
 versioning`_ to indicate clearly what kind of changes you may expect
 between releases. Please raise any issues or questions in the
 `Issue Tracker`_. `Contributions of data sets`_ and code in the form
 of pull requests are very welcome.
 
-.. |doi| image:: https://zenodo.org/badge/147885122.svg
+.. |zenodo| image:: https://zenodo.org/badge/147885122.svg
     :alt: Zenodo DOI
     :scale: 100%
     :target: https://zenodo.org/badge/latestdoi/147885122
+
+.. |PRwelcome| image:: https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square
+   :alt: PRs welcome
+   :target: http://makeapullrequest.com
 
 .. _`MDAnalysis`: https://www.mdanalysis.org
 .. _`mdanalysis/MDAnalysisData`: https://github.com/MDAnalysis/MDAnalysisData

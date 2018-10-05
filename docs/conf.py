@@ -116,7 +116,7 @@ html_theme_options = {
     'logo' : "logos/MDAnalysisData-logo.png",
     'logo_name': True,
     'logo_text_align': "left",
-    'description': "Datasets for MDAnalysis",
+    'description': "Biomolecular simulation datasets",
     'github_user': "MDAnalysis",
     'github_repo': "MDAnalysisData",
     'github_button': False,
