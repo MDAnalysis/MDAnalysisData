@@ -4,8 +4,9 @@
  Installing
 ============
 
-The package is pure Python you easily install the `MDAnalysisData
-package`_ from the Python Package Index (PyPi) with :program:`pip`:
+The package is pure Python and one can directly install the
+`MDAnalysisData package`_ from the Python Package Index (PyPi) with
+:program:`pip`:
 	   
 .. code-block:: bash
 
@@ -13,8 +14,8 @@ package`_ from the Python Package Index (PyPi) with :program:`pip`:
 
 .. note:: The package itself is small and initially does not install
           any datasets. However, the :ref:`data directory
-          <managing-data>` where datasets are cached can grow to many
-          gigabytes.
+          <managing-data>`, where datasets are cached, can grow to
+          many gigabytes.
 
 .. _`MDAnalysisData package`:
    https://pypi.org/project/MDAnalysisData/

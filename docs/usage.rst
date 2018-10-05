@@ -28,24 +28,24 @@ As an example, we can access the :ref:`AdK equilibrium dataset
 :func:`~MDAnalysisData.adk_equilibrium.fetch_adk_equilibrium`
 function::
 
-    >>> from MDAnalysis import datasets
+    >>> from MDAnalysisData import datasets
     >>> adk = datasets.fetch_adk_equilibrium()
 
 This will download the dataset from figshare (doi:
 `10.6084/m9.figshare.5108170.v1
 <https://doi.org/10.6084/m9.figshare.5108170.v1>`_) and unpack it into
-a cache directory. This means that only the first time, executing
+a cache directory. This means that only the first time executing
 :func:`~MDAnalysisData.adk_equilibrium.fetch_adk_equilibrium` will be
-slow; at later times, the cached files will be used. The the resulting
+slow; at later times, the cached files will be used. The resulting
 :class:`~MDAnalysisData.base.Bunch` object can be introspected for
 what this dataset includes.  In particular, it features a
 :attr:`~MDAnalysisData.base.Bunch.DESCR` attribute with a
 human-readable description of the dataset::
 
     >>> print(adk.DESCR)
-    ====================================
-     AdK equilibrium trajectory dataset
-    ====================================
+    
+    AdK equilibrium trajectory dataset
+    ==================================
 
     MD trajectory of apo adenylate kinase with CHARMM27 force field and
     simulated with explicit water and ions in NPT at 300 K and 1
@@ -55,7 +55,6 @@ human-readable description of the dataset::
 
     The topology is contained in the PSF file (CHARMM format). The
     trajectory is contained in the DCD file (CHARMM/NAMD format).
-
 
     Notes
     -----
