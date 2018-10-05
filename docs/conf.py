@@ -122,7 +122,8 @@ html_theme_options = {
     'github_button': False,
     'github_banner': True,
     'extra_nav_links': {
-        "MDAnalysis": "https://www.mdanalysis.org",
+        "MDAnalysis": "https://www.mdanalysis.org/",
+        "alchemtest": "https://alchemtest.readthedocs.io/",
     },
     'show_related': True,
     'fixed_sidebar': False,
