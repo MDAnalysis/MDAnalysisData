@@ -13,6 +13,7 @@ trajectories during which the close-to-open transiton of the enzyme
 adenylate kinase [Seyler2014]_ is sampled using different
 computational methods [Seyler2015]_.
 
+   
 .. currentmodule:: MDAnalysisData.adk_transitions
 
 .. autosummary::
@@ -20,6 +21,16 @@ computational methods [Seyler2015]_.
    fetch_adk_transitions_DIMS
    fetch_adk_transitions_FRODA   
 
+.. SeeAlso:: This set of trajectories was used in the `SPIDAL
+   Tutorial: MDAnalysis with Midas/radical.pilot`_ where the ensemble
+   of 400 DIMS+FRODA trajectories is analyzed with the *Path
+   Similarity Analysis* method [Seyler2015]_. Computations on such a
+   large(ish) dataset are sped up by parallelization at the task level
+   with `RADICAL-Pilot`_.
+
+.. _`SPIDAL Tutorial: MDAnalysis with Midas/radical.pilot`:
+   https://www.mdanalysis.org/SPIDAL-MDAnalysis-Midas-tutorial/
+.. _`RADICAL-Pilot`: https://radical-cybertools.github.io/
 
 
 

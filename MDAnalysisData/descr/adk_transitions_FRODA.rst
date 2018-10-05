@@ -13,7 +13,7 @@ Framework Rigidity Optimized Dynamics Algorithm (FRODA)
 [Farrell2010]_. Each ensemble of independently generated paths
 contains 200 trajectories in the CHARMM DCD format.
 
-This data set contains the *FRODA* ensemble.
+This data set contains the **FRODA** ensemble.
 
 FRODA AdK with geometric targeting on a rigid decomposition (FRODA
 server); closed (1AKE) to open (4AKE). Topology file: 1ake.pdb
