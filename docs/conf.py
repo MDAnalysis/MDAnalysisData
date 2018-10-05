@@ -113,7 +113,7 @@ color = {'orange': '#FF9200',
          'black': '#000000',}
 
 html_theme_options = {
-    'logo' : "logos/mdanalysis-logo-200x150.png",
+    'logo' : "logos/MDAnalysisData-logo.png",
     'logo_name': True,
     'logo_text_align': "left",
     'description': "Datasets for MDAnalysis",
