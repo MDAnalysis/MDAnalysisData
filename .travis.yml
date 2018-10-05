@@ -1,0 +1,38 @@
+language: python
+cache: pip
+sudo: false
+
+python:
+  - "3.6"
+
+branches:
+  only:
+    - master
+
+env:
+  global:
+    - secure:
+    
+install:
+  - if [[ $TRAVIS_PYTHON_VERSION == "3.6" ]]; then pip install --upgrade sphinx sphinx-sitemap; fi
+  - pip install -e .
+
+script:
+  - true
+
+after_success:
+  # only need to build docs on 3.6 version
+  # touch .nojekyll else github-pages messes up theme
+  - if [[ $TRAVIS_PYTHON_VERSION == "3.6" ]]; then python setup.py build_sphinx && touch ./build/sphinx/html/.nojekyll; fi
+
+deploy:
+  # stuff related to deploying to gh-pages
+  # GUTHUB_TOKEN is set in Travis-CI settings (@orbeckst)
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  on:
+    branch: master
+    python: "3.6"
+  local_dir: build/sphinx/html
+  project_name: MDAnalysisData

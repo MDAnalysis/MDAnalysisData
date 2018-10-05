@@ -1,4 +1,6 @@
 # MDAnalysisData
+
+[![docs](https://img.shields.io/badge/docs-latest-brightgreen.svg)](https://www.mdanalysis.org/MDAnalysisData/)
 [![DOI](https://zenodo.org/badge/147885122.svg)](https://zenodo.org/badge/latestdoi/147885122)
 
 Access to data for workshops and extended tests of MDAnalysis.

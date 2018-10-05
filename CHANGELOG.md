@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - documentation (#4)
+- automatic deployment of docs to
+  https://www.mdanalysis.org/MDAnalysisData/ via Travis-CI (#4)
 
 
 ## [0.2.0] - 2018-10-04
