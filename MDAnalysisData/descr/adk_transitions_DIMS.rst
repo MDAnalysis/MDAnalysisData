@@ -25,8 +25,8 @@ Notes
 Data set characteristics:
 
  :size: 757 MB
+ :number of trajectories:  200	
  :number of frames:  varies
- :number of trajectories:  200		     
  :number of atoms: 3341
  :creator: Sean L. Seyler
  :URL:  `https://doi.org/10.6084/m9.figshare.7165306.v2 <https://doi.org/10.6084/m9.figshare.7165306.v2>`_

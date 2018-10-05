@@ -33,7 +33,7 @@ METADATA = {
             'structures': ["vesicles/1_75M/system.gro",
                            "vesicles/3_5M/system.gro",
                            "vesicles/10M/system.gro"],
-            'labels': ["1.75M", "3.5M", "10M"],
+            'labels': ["1_75M", "3_5M", "10M"],
             'N_structures': 3,
         },
     },

@@ -21,6 +21,7 @@ Notes
 Data set characteristics:
 
  :size: 161 MB
+ :number of trajectories: 1
  :number of frames:  4187
  :number of particles: 3341
  :creator: Sean Seyler

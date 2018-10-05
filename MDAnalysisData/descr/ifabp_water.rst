@@ -24,6 +24,7 @@ Notes
 Data set characteristics:
 
  :size: 74 MB
+ :number of trajectories: 1
  :number of frames:  500
  :number of particles: 12445
  :creator: Oliver Beckstein

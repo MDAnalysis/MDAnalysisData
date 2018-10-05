@@ -13,7 +13,8 @@ with the scripts in the `vesicle_library
 files are in GRO format and contain a static system. For further
 details about the data set see [Kenney2015]_.
 
-The files are placed into the Public Domain (made available under the CC0 license).
+The files are placed into the Public Domain (made available under the
+CC0 license).
 
 ========= ============
 system     # particles
@@ -29,9 +30,9 @@ Notes
 Data set characteristics:
 
  :size: 807 MB
+ :number of structures: 3
  :number of frames:  1
- :number of structures:  3
- :number of atoms: varies
+ :number of particles: varies
  :creator: Ian Kenney
  :URL:  `10.6084/m9.figshare.3406708.v1 <https://doi.org/10.6084/m9.figshare.3406708.v1>`_
  :license: `CC0 <https://creativecommons.org/publicdomain/zero/1.0/legalcode>`_

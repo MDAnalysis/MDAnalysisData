@@ -6,7 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Fixes
+- all dataset descriptions now contain *number of trajectories*
+  information 
 
+### Changes
+- changed the labels in the vesicles dataset to match documentation
 
 ## [0.2.1] - 2018-10-05
 ### Added
