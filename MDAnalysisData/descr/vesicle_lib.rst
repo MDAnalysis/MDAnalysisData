@@ -1,17 +1,17 @@
 .. -*- coding: utf-8 -*-
-.. _`adk-transitions-FRODA-dataset`:
 
-========================================
- Large System Vesicle Benchmark Library
-========================================
+.. _`vesicle-library-dataset`:
+
+Large System Vesicle Benchmark Library
+======================================
 
 Large benchmark systems for MDAnalysis (and other codes)
 
 Coarse-grained (DryMartini force field) vesicle systems were generated
-with the scripts in the
-[vesicle_library](https://github.com/Becksteinlab/vesicle_library) by
-Ian Kenney. All files are in GRO format and contain a static
-system. For further details about the data set see [Kenney2015]_.
+with the scripts in the `vesicle_library
+<https://github.com/Becksteinlab/vesicle_library>`_ by Ian Kenney. All
+files are in GRO format and contain a static system. For further
+details about the data set see [Kenney2015]_.
 
 The files are placed into the Public Domain (made available under the CC0 license).
 

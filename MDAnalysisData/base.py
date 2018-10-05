@@ -83,12 +83,14 @@ class Bunch(dict):
 
 
 #: Each remote resource is described by a :class:`RemoteFileMetadata`,
-#: which is a :class:`namedtuple` with fields
+#: which is a :func:`~collections.namedtuple` with fields
+#:
 #: - *filename*: name of the file in the local file system
 #: - *url*: full URL for downloading
 #: - *checksum*: SHA256 (can be generated with :func:`MDAnalysisData.base._sha256`;
 #:   often it is just as convenient to run the downloader during testing and note the
 #:   required SHA256 then)
+#:
 RemoteFileMetadata = namedtuple('RemoteFileMetadata',
                                 ['filename', 'url', 'checksum'])
 

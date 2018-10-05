@@ -118,6 +118,7 @@ def fetch_adk_transitions_DIMS(data_home=None, download_if_missing=True):
     dataset.DESCR : string
         Description of the ensemble
 
+
     See :ref:`adk-transitions-DIMS-dataset` for description.
     """
     return _fetch_adk_transitions(METADATA['DIMS'],
@@ -148,6 +149,7 @@ def fetch_adk_transitions_FRODA(data_home=None, download_if_missing=True):
         number of trajectories in the ensemble
     dataset.DESCR : string
         Description of the ensemble
+
 
     See :ref:`adk-transitions-FRODA-dataset` for description.
     """

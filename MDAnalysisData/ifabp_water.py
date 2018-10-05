@@ -94,6 +94,7 @@ def fetch_ifabp_water(data_home=None, download_if_missing=True):
     dataset.DESCR : string
         Description of the trajectory.
 
+
     See :ref:`ifabp-water-dataset` for description.
     """
     name = NAME

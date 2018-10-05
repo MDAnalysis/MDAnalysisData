@@ -1,9 +1,9 @@
 .. -*- coding: utf-8 -*-
+
 .. _`ifabp-water-dataset`:
 
-===========================
- I-FABP trajectory dataset
-===========================
+I-FABP in water dataset
+=======================
 
 The trajectory is a short MD run of I-FABP (intestinal fatty acid
 binding protein) in water.
@@ -14,8 +14,8 @@ protein.
 
 There are 500 frames in the trajectory.
 
-It is used as a test case for the
-[hop](https://github.com/Becksteinlab/hop) package.
+It is used as a test case for the `hop
+<https://github.com/Becksteinlab/hop>`_ package.
 
 
 Notes

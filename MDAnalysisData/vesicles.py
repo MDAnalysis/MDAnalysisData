@@ -68,6 +68,7 @@ def fetch_vesicle_lib(data_home=None, download_if_missing=True):
     dataset.DESCR : string
         Description of the ensemble
 
+
     See :ref:`vesicle-library-dataset` for description.
     """
     metadata = METADATA['vesicle_lib']

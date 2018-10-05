@@ -1,16 +1,17 @@
 .. -*- coding: utf-8 -*-
 .. _`adk-transitions-FRODA-dataset`:
 
-========================================
- AdK FRODA transitions ensemble dataset
-========================================
+
+AdK FRODA transitions ensemble dataset
+======================================
 
 The macromolecular conformational transition between the closed
 conformation of apo-adenylate kinase from E. coli (EcAdK) to the open
 conformation was sampled with two methods: (1) dynamic importance
-sampling molecular dynamics (DIMS MD), and (2) Framework Rigidity
-Optimized Dynamics Algorithm (FRODA). Each ensemble of independently
-generated paths contains 200 trajectories in the CHARMM DCD format.
+sampling molecular dynamics (DIMS MD) [Perilla2009]_, and (2)
+Framework Rigidity Optimized Dynamics Algorithm (FRODA)
+[Farrell2010]_. Each ensemble of independently generated paths
+contains 200 trajectories in the CHARMM DCD format.
 
 This data set contains the *FRODA* ensemble.
 
@@ -33,8 +34,8 @@ Data set characteristics:
  :reference: [Seyler2015]_
     
 
-.. [Seyler2015]  Seyler SL, Kumar A, Thorpe MF, Beckstein O (2015)
-		 Path Similarity Analysis: A Method for Quantifying
-		 Macromolecular Pathways. PLoS Comput Biol 11(10):
-		 e1004568. https://doi.org/10.1371/journal.pcbi.1004568
+[Seyler2015] Seyler SL, Kumar A, Thorpe MF, Beckstein O (2015) Path
+	     Similarity Analysis: A Method for Quantifying
+	     Macromolecular Pathways. PLoS Comput Biol 11(10):
+	     e1004568. https://doi.org/10.1371/journal.pcbi.1004568
 

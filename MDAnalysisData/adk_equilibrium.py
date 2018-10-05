@@ -87,6 +87,7 @@ def fetch_adk_equilibrium(data_home=None, download_if_missing=True):
     dataset.DESCR : string
         Description of the trajectory.
 
+
     See :ref:`adk-equilibrium-dataset` for description.
     """
     name = NAME

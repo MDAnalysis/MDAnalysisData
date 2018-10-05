@@ -45,7 +45,7 @@ Data are locally stored in the **data directory** `~/MDAnalysis_data`
 (i.e., in the user's home directory). This location can be changed by
 setting the environment variable `MDANALYSIS_DATA`, for instance
 ```bash
-MDANALYSIS_DATA=/tmp/MDAnalysis_data
+export MDANALYSIS_DATA=/tmp/MDAnalysis_data
 ```
 
 The location of the data directory can be obtained with
@@ -55,7 +55,7 @@ MDAnalysisData.base.get_data_home()
 
 If the data directory is removed then data are downloaded again. Data
 file integrity is checked with a SHA256 checksum when the file is
-downloaded (but not at later).
+downloaded.
 
 The data directory can we wiped with the function
 ```python

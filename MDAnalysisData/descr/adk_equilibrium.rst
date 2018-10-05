@@ -1,9 +1,9 @@
 .. -*- coding: utf-8 -*-
+
 .. _`adk-equilibrium-dataset`:
 
-====================================
- AdK equilibrium trajectory dataset
-====================================
+AdK equilibrium trajectory dataset
+==================================
 
 MD trajectory of apo adenylate kinase with CHARMM27 force field and
 simulated with explicit water and ions in NPT at 300 K and 1
