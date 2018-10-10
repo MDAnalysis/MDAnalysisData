@@ -31,9 +31,11 @@ from six.moves.urllib.request import urlretrieve
 
 import shutil
 from collections import namedtuple
-from os import environ, listdir, makedirs
+from os import environ, listdir, makedirs, remove
 from os.path import dirname, exists, expanduser, isdir, join, splitext
 import hashlib
+import codecs
+
 
 
 
@@ -93,6 +95,59 @@ class Bunch(dict):
 #:
 RemoteFileMetadata = namedtuple('RemoteFileMetadata',
                                 ['filename', 'url', 'checksum'])
+
+DATASET_NAMES = {}
+
+class _DatasetRegister(type):
+    def __new__(meta, name, bases, class_dict):
+        cls = type.__new__(meta, name, bases, class_dict)
+        if not cls.NAME is None:
+            DATASET_NAMES[cls.NAME] = cls
+        return cls
+
+
+class Dataset(Bunch, metaclass=_DatasetRegister):
+    NAME = None
+    DESCRIPTION = None
+    ARCHIVE = None
+
+    def __init__(self, data_home=None, download_if_missing=True):
+        data_location = join(get_data_home(data_home=data_home),
+                             self.NAME)
+
+        if not exists(data_location):
+            makedirs(data_location)
+
+        contents = {}
+        for file_type, meta in self.ARCHIVE.items():
+            local_path = join(data_location, meta.filename)
+            contents[file_type] = local_path
+
+            if not exists(local_path):
+                if not download_if_missing:
+                    raise IOError("Data {0}={1} not found and `download_if_missing` is "
+                                  "False".format(file_type, local_path))
+                logger.info("Downloading {0}: {1} -> {2}...".format(
+                    file_type, meta.url, local_path))
+                archive_path = _fetch_remote(meta, dirname=data_location)
+
+        module_path = dirname(__file__)
+        with codecs.open(join(module_path, 'descr', self.DESCRIPTION),
+                         encoding="utf-8") as dfile:
+            contents['DESCR'] = dfile.read()
+
+
+        # finally, init the Bunch object
+        super().__init__(**contents)
+
+
+def fetch(dataset, data_home=None, download_if_missing=True):
+    """Grab a named dataset"""
+    try:
+        return DATASET_NAMES[dataset](data_home=data_home,
+                                      download_if_missing=True)
+    except KeyError:
+        raise KeyError("unknown dataset: {}".format(dataset))
 
 
 def get_data_home(data_home=None):
