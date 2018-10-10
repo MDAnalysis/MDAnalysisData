@@ -9,10 +9,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - fixed description of 'AdK equilibrium' dataset
 
 
+### Added
+- new `fetch_nhaa_equilibrium()` to get the NhaA trajectory from
+  https://figshare.com/articles/Molecular_dynamics_trajectory_of_membrane_protein_NhaA/7185203/2
+  (see issue #7)
+ 
+
 ## [0.2.2] - 2018-10-05
 ### Fixes
 - all dataset descriptions now contain *number of trajectories*
-  information 
+  information
 
 ### Changes
 - changed the labels in the vesicles dataset to match documentation
@@ -29,7 +35,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - streamlined the typical `fetch_NAME()` function by using module
   level variables  
 - added *size* information (unpacked data in MB) to the canonical descriptions
-  
+
 ### Added
 - new `fetch_ifabp_water()` to get the IFABP+water data set from
   https://figshare.com/articles/Molecular_dynamics_trajectory_of_I-FABP_for_testing_and_benchmarking_solvent_dynamics_analysis/7058030
@@ -42,7 +48,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - new `fetch_vesicle_lib()` function to get the structures from
   https://figshare.com/articles/Large_System_Vesicle_Benchmark_Library/3406708
   (see issue #5)
-  
+
 
 ## [0.1.1] - 2018-10-02
 ### Fixed
