@@ -140,6 +140,9 @@ class Dataset(Bunch, metaclass=_DatasetRegister):
         # finally, init the Bunch object
         super().__init__(**contents)
 
+    def __repr__(self):
+        print(self.DESCR)
+
 
 def fetch(dataset, data_home=None, download_if_missing=True):
     """Grab a named dataset"""
