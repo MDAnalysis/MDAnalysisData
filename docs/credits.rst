@@ -14,7 +14,7 @@ No data are included in this package; please see the `DESCR` attribute
 for each data set for authorship, citation, and license information
 for the data.
 
-**MDAnalysisData** is made available under the `BSD 3-clause license
- <https://github.com/MDAnalysis/MDAnalysisData/blob/master/LICENSE>`_.
+**MDAnalysisData** is made available under the `New BSD 3-clause
+license <https://github.com/MDAnalysis/MDAnalysisData/blob/master/LICENSE>`_.
 
 .. _alchemtest: https://alchemtest.readthedocs.io   
