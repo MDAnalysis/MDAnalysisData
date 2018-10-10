@@ -28,7 +28,7 @@ Data set characteristics:
  :number of trajectories: 1
  :number of frames:  5000
  :number of particles: 60702
- :creator: Shujie Fan
+ :creator: Ian Kenney, Shujie Fan
  :URL:  `10.6084/m9.figshare.7185203.v2 <https://doi.org/10.6084/m9.figshare.7185203.v2>`_
  :license: `CC-BY 4.0 <https://creativecommons.org/licenses/by/4.0/legalcode>`_
  :reference: [Kenney2018]_
