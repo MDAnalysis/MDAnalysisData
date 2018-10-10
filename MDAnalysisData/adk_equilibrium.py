@@ -13,7 +13,18 @@ from .base import RemoteFileMetadata, Dataset
 logger = logging.getLogger(__name__)
 
 
-class ADK_Equilibrium(Dataset):
+class AdK_Equilibrium(Dataset):
+    """AdK 1us equilibrium trajectory (without water)
+
+    Attributes
+    ----------
+    topology : filename
+         Filename of the topology file
+    trajectory : filename
+         Filename of the trajectory file
+    DESCR : string
+         Description of the trajectory.
+    """
     NAME = "adk_equilibrium"
     DESCRIPTION = "adk_equilibrium.rst"
 
