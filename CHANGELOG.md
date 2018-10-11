@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Fixes
 - fixed description of 'AdK equilibrium' dataset
-
+- fixed loading descriptions from zipped eggs (#12)
 
 ### Added
 - new `fetch_nhaa_equilibrium()` to get the NhaA trajectory from

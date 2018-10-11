@@ -12,7 +12,7 @@ import codecs
 import logging
 
 from .base import get_data_home
-from .base import _fetch_remote
+from .base import _fetch_remote, _read_description
 from .base import RemoteFileMetadata
 from .base import Bunch
 
@@ -84,9 +84,6 @@ def fetch_nhaa_equilibrium(data_home=None, download_if_missing=True):
                 file_type, meta.url, local_path))
             archive_path = _fetch_remote(meta, dirname=data_location)
 
-    module_path = dirname(__file__)
-    with codecs.open(join(module_path, 'descr', DESCRIPTION),
-                     encoding="utf-8") as dfile:
-        records.DESCR = dfile.read()
+    records.DESCR = _read_description(DESCRIPTION)
 
     return records

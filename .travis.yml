@@ -8,10 +8,6 @@ python:
 branches:
   only:
     - master
-
-env:
-  global:
-    - secure:
     
 install:
   - if [[ $TRAVIS_PYTHON_VERSION == "3.6" ]]; then pip install --upgrade sphinx sphinx-sitemap; fi
@@ -27,7 +23,7 @@ after_success:
 
 deploy:
   # stuff related to deploying to gh-pages
-  # GUTHUB_TOKEN is set in Travis-CI settings (@orbeckst)
+  # GITHUB_TOKEN is set in Travis-CI settings (@orbeckst)
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN

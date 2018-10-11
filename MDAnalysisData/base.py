@@ -34,7 +34,7 @@ from collections import namedtuple
 from os import environ, listdir, makedirs
 from os.path import dirname, exists, expanduser, isdir, join, splitext
 import hashlib
-
+from pkg_resources import resource_string
 
 
 class Bunch(dict):
@@ -179,3 +179,26 @@ def _fetch_remote(remote, dirname=None):
                       "file may be corrupted.".format(file_path, checksum,
                                                       remote.checksum))
     return file_path
+
+
+def _read_description(filename, description_dir='descr'):
+    """Read the description from restructured text file `descr`.
+
+    Arguments
+    ---------
+    filename : str
+        name of the description file under the ``descr`` directory
+
+    Note
+    ----
+    All description files are supposed to be stored in the directory
+    ``description_dir`="descr"` that lives in the same directory as
+    the :mod:`MDAnalysisData.base` module file. All descriptions are
+    assumed to be in restructured text format and in UTF-8 encoding.
+    """
+    # The descr directory should be in the same directory as this file base.py.
+    # `resource_string` returns bytes, which we need to decode to UTF-8
+    DESCR = resource_string(__name__,
+                            '{}/{}'.format(description_dir, filename)
+                           ).decode("utf-8")
+    return DESCR
