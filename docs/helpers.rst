@@ -17,7 +17,7 @@ For users
 .. autoclass:: Bunch
    :members:
 
-.. data:: DEFAULT_DATADIR
+.. autodata:: DEFAULT_DATADIR
 	  
 .. autofunction:: get_data_home
 

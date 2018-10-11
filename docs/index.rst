@@ -87,4 +87,5 @@ of pull requests are very welcome.
    adk_equilibrium
    adk_transitions
    ifabp_water
+   nhaa_equilibrium
    vesicles

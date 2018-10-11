@@ -37,8 +37,10 @@ import hashlib
 from pkg_resources import resource_string
 
 #: Default value for the cache directory. It can be changed by setting
-#: The environment variable :envvar:`MDANALYSIS_DATA`. The current
+#: the environment variable :envvar:`MDANALYSIS_DATA`. The current
 #: value should be queried with :func:`get_data_home`.
+#:
+#: .. SeeAlso:: :ref:`managing-data`.
 DEFAULT_DATADIR = join('~', 'MDAnalysis_data')
 
 class Bunch(dict):
@@ -186,7 +188,7 @@ def _fetch_remote(remote, dirname=None):
 
 
 def _read_description(filename, description_dir='descr'):
-    """Read the description from restructured text file `descr`.
+    """Read the description from restructured text file.
 
     Arguments
     ---------
@@ -196,9 +198,10 @@ def _read_description(filename, description_dir='descr'):
     Note
     ----
     All description files are supposed to be stored in the directory
-    ``description_dir`="descr"` that lives in the same directory as
+    `description_dir` ``="descr"`` that lives in the same directory as
     the :mod:`MDAnalysisData.base` module file. All descriptions are
     assumed to be in restructured text format and in UTF-8 encoding.
+
     """
     # The descr directory should be in the same directory as this file base.py.
     # `resource_string` returns bytes, which we need to decode to UTF-8

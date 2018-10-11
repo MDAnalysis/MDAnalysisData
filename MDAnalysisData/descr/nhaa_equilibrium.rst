@@ -3,7 +3,7 @@
 .. _`nhaa-equilibrium-dataset`:
 
 NhaA equilibrium trajectory dataset
-==================================
+===================================
 
 Molecular dynamics (MD) trajectory of the NhaA membrane protein in a
 POPE:POPG 4:1 model membrane. The equilibrium simulation was performed
