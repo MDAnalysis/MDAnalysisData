@@ -4,8 +4,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.3.0] - 2018-10-11
+## [Unreleased]
+### Fixes
 
+### Changes
+
+
+## [0.3.0] - 2018-10-11
 ### Fixes
 - fixed description of 'AdK equilibrium' dataset
 - fixed loading descriptions from zipped eggs (#12)

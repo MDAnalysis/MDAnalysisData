@@ -57,7 +57,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'MDAnalysisData'
-author = u'Oliver Beckstein'
+author = u'Oliver Beckstein, Shujie Fan'
 copyright = u'2018, ' + author
 
 
