@@ -13,7 +13,7 @@ from .base import RemoteFileMetadata, Dataset, fetch
 logger = logging.getLogger(__name__)
 
 
-class AdK_Equilibrium(Dataset):
+def fetch_adk_equilibrium(data_home=None, download_if_missing=True):
     """AdK 1us equilibrium trajectory (without water)
 
     Attributes
@@ -25,6 +25,11 @@ class AdK_Equilibrium(Dataset):
     DESCR : string
          Description of the trajectory.
     """
+    return fetch(AdK_Equilibrium.NAME, data_home=data_home,
+                 download_if_missing=download_if_missing)
+
+class AdK_Equilibrium(Dataset):
+    __doc__ = fetch_adk_equilibrium.__doc__
     NAME = "adk_equilibrium"
     DESCRIPTION = "adk_equilibrium.rst"
 
@@ -46,7 +51,3 @@ class AdK_Equilibrium(Dataset):
         ),
     }
 
-
-def fetch_adk_equilibrium(data_home=None, download_if_missing=True):
-    return fetch(AdK_Equilibrium.NAME, data_home=data_home,
-                 download_if_missing=download_if_missing)
