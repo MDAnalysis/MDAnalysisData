@@ -1,2 +1,3 @@
 include versioneer.py
 include MDAnalysisData/_version.py
+include README.md AUTHORS LICENSE CHANGELOG.md
