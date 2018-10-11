@@ -14,10 +14,7 @@ No data are included in this package; please see the `DESCR` attribute
 for each data set for authorship, citation, and license information
 for the data.
 
-**MDAnalysisData** is made available under the `GNU General Public
-License v3.0`_ (or any later version).
-
-.. _`GNU General Public License v3.0`:
-   https://www.gnu.org/licenses/gpl-3.0.en.html
+**MDAnalysisData** is made available under the `New BSD 3-clause
+license <https://github.com/MDAnalysis/MDAnalysisData/blob/master/LICENSE>`_.
 
 .. _alchemtest: https://alchemtest.readthedocs.io   

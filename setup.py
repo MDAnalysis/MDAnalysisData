@@ -6,22 +6,15 @@
 # Copyright (c) 2018 The MDAnalysis Development Team and contributors
 # (see the file AUTHORS for the full list of names)
 #
-# Released under the GNU Public Licence, v3 or any higher version
+# Released under the BSD 3-clause license (see LICENSE)
 #
-# Please cite your use of MDAnalysis in published work:
 #
-# R. J. Gowers, M. Linke, J. Barnoud, T. J. E. Reddy, M. N. Melo, S. L. Seyler,
-# D. L. Dotson, J. Domanski, S. Buchoux, I. M. Kenney, and O. Beckstein.
-# MDAnalysis: A Python package for the rapid analysis of molecular dynamics
-# simulations. In S. Benthall and S. Rostrup editors, Proceedings of the 15th
-# Python in Science Conference, pages 102-109, Austin, TX, 2016. SciPy.
-#
-"""
 
+"""
 The MDAnalysisData package unifies access to test and example
 trajectories that can be used for workshops and extended tests.
-
 """
+
 from __future__ import print_function
 from setuptools import setup, find_packages
 import versioneer
@@ -36,7 +29,7 @@ if __name__ == '__main__':
         'Development Status :: 4 - Beta',
         'Environment :: Console',
         'Intended Audience :: Science/Research',
-        'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
+        'License :: OSI Approved :: BSD License',
         'Operating System :: POSIX',
         'Operating System :: MacOS :: MacOS X',
         'Programming Language :: Python',
@@ -46,6 +39,7 @@ if __name__ == '__main__':
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
         'Programming Language :: C',
         'Topic :: Scientific/Engineering',
         'Topic :: Scientific/Engineering :: Bio-Informatics',
