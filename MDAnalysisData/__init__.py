@@ -8,7 +8,7 @@ from __future__ import absolute_import
 __all__ = ['datasets']
 
 from . import datasets
-
+from .base import fetch, DATASET_NAMES
 
 
 
