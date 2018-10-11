@@ -4,7 +4,8 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [0.3.0] - 2018-10-11
+
 ### Fixes
 - fixed description of 'AdK equilibrium' dataset
 - fixed loading descriptions from zipped eggs (#12)
@@ -13,7 +14,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - new `fetch_nhaa_equilibrium()` to get the NhaA trajectory from
   https://figshare.com/articles/Molecular_dynamics_trajectory_of_membrane_protein_NhaA/7185203/2
   (see issue #7)
- 
+- new internal function `base._read_description()` to simplify reading of the
+  descr.rst files into datasets
+- continuous integration/tests: MDAnalysisData should be compatible with Python
+  2.7 and Python 3.4+. It is currently tested on 2.7 and 3.6.
+
+### Changes
+- Default location of the data_home is now stored as `base.DEFAULT_DATADIR`.
+  
 
 ## [0.2.2] - 2018-10-05
 ### Fixes
