@@ -17,6 +17,7 @@ import pytest
 from MDAnalysisData import base
 from MDAnalysisData import datasets
 from MDAnalysisData import adk_equilibrium
+from MDAnalysisData import ifabp_water
 
 
 # For filetype=topology, the data are downloaded and cached.
@@ -25,12 +26,25 @@ from MDAnalysisData import adk_equilibrium
 
 @pytest.mark.parametrize('filetype', ('topology', 'trajectory'))
 def test_adk_equilibrium(filetype):
-    adk = datasets.fetch_adk_equilibrium()
+    data = datasets.fetch_adk_equilibrium()
 
     metadata = adk_equilibrium.ARCHIVE
 
-    assert len(adk.DESCR) == 1252
-    assert adk.DESCR.startswith(".. -*- coding: utf-8 -*-\n\n.. _`adk-equilibrium-dataset`:")
+    assert len(data.DESCR) == 1252
+    assert data.DESCR.startswith(".. -*- coding: utf-8 -*-\n\n.. _`adk-equilibrium-dataset`:")
 
-    assert os.path.basename(adk[filetype]) == metadata[filetype].filename
-    assert os.path.exists(adk[filetype])
+    assert os.path.basename(data[filetype]) == metadata[filetype].filename
+    assert os.path.exists(data[filetype])
+
+@pytest.mark.parametrize('filetype', ('topology', 'trajectory'))
+def test_ifabp_water(filetype):
+    data = datasets.fetch_ifabp_water()
+
+    metadata = ifabp_water.ARCHIVE
+
+    assert len(data.DESCR) == 1098
+    assert data.DESCR.startswith(".. -*- coding: utf-8 -*-\n\n.. _`ifabp-water-dataset`:")
+
+    assert os.path.basename(data[filetype]) == metadata[filetype].filename
+    assert os.path.exists(data[filetype])
+
