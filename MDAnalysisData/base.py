@@ -141,7 +141,7 @@ class Dataset(Bunch, metaclass=_DatasetRegister):
         super().__init__(**contents)
 
     def __repr__(self):
-        print(self.DESCR)
+        return self.__doc__
 
 
 def fetch(dataset, data_home=None, download_if_missing=True):

@@ -7,7 +7,7 @@ https://figshare.com/articles/Molecular_dynamics_trajectory_for_benchmarking_MDA
 
 import logging
 
-from .base import RemoteFileMetadata, Dataset
+from .base import RemoteFileMetadata, Dataset, fetch
 
 
 logger = logging.getLogger(__name__)
@@ -45,3 +45,8 @@ class AdK_Equilibrium(Dataset):
             checksum='598fcbcfcc425f6eafbe9997238320fcacc6a4613ecce061e1521732bab734bf',
         ),
     }
+
+
+def fetch_adk_equilibrium(data_home=None, download_if_missing=True):
+    return fetch(AdK_Equilibrium.NAME, data_home=data_home,
+                 download_if_missing=download_if_missing)
