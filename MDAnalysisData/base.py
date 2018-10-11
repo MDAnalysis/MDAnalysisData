@@ -36,6 +36,10 @@ from os.path import dirname, exists, expanduser, isdir, join, splitext
 import hashlib
 from pkg_resources import resource_string
 
+#: Default value for the cache directory. It can be changed by setting
+#: The environment variable :envvar:`MDANALYSIS_DATA`. The current
+#: value should be queried with :func:`get_data_home`.
+DEFAULT_DATADIR = join('~', 'MDAnalysis_data')
 
 class Bunch(dict):
     """Container object for datasets
@@ -116,7 +120,7 @@ def get_data_home(data_home=None):
     """
     if data_home is None:
         data_home = environ.get('MDANALYSIS_DATA',
-                                join('~', 'MDAnalysis_data'))
+                                DEFAULT_DATADIR)
     data_home = expanduser(data_home)
     if not exists(data_home):
         makedirs(data_home)

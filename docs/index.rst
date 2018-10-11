@@ -5,7 +5,7 @@
  MDAnalysisData: MD data for testing, learning, and benchmarking
 =================================================================
 
-|zenodo| |PRwelcome|
+|zenodo| |PRwelcome| |build| |cov|
 
 :Release: |release|
 :Date: |today|
@@ -45,6 +45,14 @@ of pull requests are very welcome.
 .. |PRwelcome| image:: https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square
    :alt: PRs welcome
    :target: http://makeapullrequest.com
+
+.. |cov| image:: https://codecov.io/gh/MDAnalysis/MDAnalysisData/branch/master/graph/badge.svg
+   :alt: test coverage		 
+   :target: https://codecov.io/gh/MDAnalysis/MDAnalysisData
+
+.. |build| image:: https://travis-ci.com/MDAnalysis/MDAnalysisData.svg?branch=master
+   :alt: tests		   
+   :target: https://travis-ci.com/MDAnalysis/MDAnalysisData	    
 
 .. _`MDAnalysis`: https://www.mdanalysis.org
 .. _`mdanalysis/MDAnalysisData`: https://github.com/MDAnalysis/MDAnalysisData
