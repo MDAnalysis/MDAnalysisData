@@ -35,4 +35,6 @@ functions in your code.
 
 .. autofunction:: _fetch_remote		  
 
+.. autofunction:: _read_description
+
 		  
