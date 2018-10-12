@@ -86,10 +86,33 @@ def remote_topology():
     # small-ish file
     return adk_equilibrium.ARCHIVE['topology']
 
+
 def test_fetch_remote(remote_topology, tmpdir):
     filename = base._fetch_remote(remote_topology, dirname=str(tmpdir))
     assert os.path.basename(filename) == remote_topology.filename
     assert os.path.dirname(filename) == str(tmpdir)
+
+
+def test_fetch_remote_sha_fail(remote_topology, mocker):
+    mocker.patch('MDAnalysisData.base.urlretrieve')
+    mock_sha = mocker.patch('MDAnalysisData.base._sha256',
+                            return_value='12345678')
+
+    with pytest.raises(IOError,
+                       message='.+? file may be corrupted'):
+        base._fetch_remote(remote_topology)
+
+
+def test_lazy_fetch(remote_topology, tmpdir, mocker):
+    mocker.patch('MDAnalysisData.adk_equilibrium.exists', return_value=True)
+    fr = mocker.patch('MDAnalysisData.adk_equilibrium._fetch_remote')
+    # check the laziness of grabbing a dataset
+    # - mock exists to always say true
+    # - grab the "dataset" then check no remote calls were done
+    stuff = adk_equilibrium.fetch_adk_equilibrium()
+
+    assert not fr.called
+
 
 def test_tqdm(remote_topology):
     # not sure how to test apart from not getting errors
@@ -98,4 +121,3 @@ def test_tqdm(remote_topology):
                        desc=remote.filename) as t:
         urlretrieve(remote.url, filename=os.devnull,
                     reporthook=t.update_to, data=None)
-
