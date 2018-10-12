@@ -14,16 +14,27 @@ logger = logging.getLogger(__name__)
 
 
 def fetch_adk_equilibrium(data_home=None, download_if_missing=True):
-    """AdK 1us equilibrium trajectory (without water)
+    """Load AdK 1us equilibrium trajectory (without water)
 
-    Attributes
+    Parameters
     ----------
-    topology : filename
-         Filename of the topology file
-    trajectory : filename
-         Filename of the trajectory file
-    DESCR : string
-         Description of the trajectory.
+    data_home : optional, default: None
+        Specify another download and cache folder for the datasets. By default
+        all MDAnalysisData data is stored in '~/MDAnalysis_data' subfolders.
+        This dataset is stored in ``<data_home>/adk_transitions_DIMS``.
+    download_if_missing : optional, default=True
+        If ``False``, raise a :exc:`IOError` if the data is not locally available
+        instead of trying to download the data from the source site.
+
+    Returns
+    -------
+    dataset : dict-like with following attributes:
+      topology : filename
+           Filename of the topology file
+      trajectory : filename
+           Filename of the trajectory file
+      DESCR : string
+           Description of the trajectory.
     """
     return fetch(AdK_Equilibrium.NAME, data_home=data_home,
                  download_if_missing=download_if_missing)
