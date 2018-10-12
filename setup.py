@@ -73,5 +73,6 @@ if __name__ == '__main__':
                             'setuptools',
                             'tqdm',
           ],
+          tests_requires=['pytest-mock', 'pytest'],
           zip_safe=True,
     )
