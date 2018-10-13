@@ -98,6 +98,7 @@ def test_fetch_remote(remote_topology, tmpdir):
 
 
 def test_fetch_remote_sha_fail(remote_topology, mocker):
+    # Mock a SHA fail and check error message
     mocker.patch('MDAnalysisData.base.urlretrieve')
     mock_sha = mocker.patch('MDAnalysisData.base._sha256',
                             return_value='12345678')
@@ -106,6 +107,16 @@ def test_fetch_remote_sha_fail(remote_topology, mocker):
                        message='.+? file may be corrupted'):
         base._fetch_remote(remote_topology)
 
+
+@pytest.mark.parametrize('dirname', ['', 'thisplace'])
+def test_fetch_remote_sha_success(remote_topology, mocker, dirname):
+    # Mocked offline successful remote
+    mocker.patch('MDAnalysisData.base.urlretrieve')
+    # Mock a SHA success
+    mocker.patch('MDAnalysisData.base._sha256',
+                 return_value=remote_topology.checksum)
+    exp = os.path.join(dirname, remote_topology.filename)
+    assert base._fetch_remote(remote_topology, dirname=dirname) == exp
 
 def test_lazy_fetch(remote_topology, tmpdir, mocker):
     mocker.patch('MDAnalysisData.adk_equilibrium.exists', return_value=True)
