@@ -87,6 +87,10 @@ def remote_topology():
     return adk_equilibrium.ARCHIVE['topology']
 
 
+# Run this test *always* (even though it is an 'online' test) so
+# that we run at least one real fetch. (The file is small so it
+# will not take long.)
+# @pytest.mark.online
 def test_fetch_remote(remote_topology, tmpdir):
     filename = base._fetch_remote(remote_topology, dirname=str(tmpdir))
     assert os.path.basename(filename) == remote_topology.filename
