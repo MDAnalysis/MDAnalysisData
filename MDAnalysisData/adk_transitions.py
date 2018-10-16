@@ -191,6 +191,6 @@ def _fetch_adk_transitions(metadata, data_home=None, download_if_missing=True):
                                trajectory_pattern, len(records.trajectories),
                                records.N_trajectories))
 
-    records.DESCR = _read_description(DESCRIPTION)
+    records.DESCR = _read_description(metadata['DESCRIPTION'])
 
     return records
