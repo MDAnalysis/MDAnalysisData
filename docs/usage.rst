@@ -1,3 +1,4 @@
+
 .. -*- coding: utf-8 -*-
    
 .. _usage: 
@@ -18,6 +19,7 @@ represent.  The currently included datasets are:
    adk_equilibrium
    adk_transitions
    ifabp_water
+   nhaa_equilibrium
    vesicles
 
 Accessing a dataset
