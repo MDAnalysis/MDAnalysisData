@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Fixes
+- fixed fetch_adk_transitions_DIMS() failed to fetch (#19)
 - added six to install requirements (#22)
 
 ### Changes
