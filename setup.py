@@ -69,6 +69,6 @@ if __name__ == '__main__':
           packages=find_packages(),
           package_dir={'MDAnalysisData': 'MDAnalysisData'},
           package_data={'MDAnalysisData': ['descr/*.rst']},
-          install_requires=[],
+          install_requires=['six'],
           zip_safe=True,
     )
