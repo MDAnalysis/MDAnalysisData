@@ -39,7 +39,7 @@ logger = logging.getLogger(__name__)
 
 
 def fetch_CG_fiber(data_home=None, download_if_missing=True):
-    """Load the CG fiber self-assembly trajectory"""
+    """Load the CG fiber self-assembly trajectory
 
     Parameters
     ----------
