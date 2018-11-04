@@ -13,6 +13,7 @@ from .adk_transitions import (fetch_adk_transitions_DIMS,
 from .nhaa_equilibrium import fetch_nhaa_equilibrium
 from .ifabp_water import fetch_ifabp_water
 from .vesicles import fetch_vesicle_lib
+from .CG_fiber import fetch_CG_fiber
 
 __all__ = [
     'get_data_home',
@@ -23,4 +24,5 @@ __all__ = [
     'fetch_ifabp_water',
     'fetch_vesicle_lib'
     'fetch_nhaa_equilibrium',
+    'fetch_CG_fiber',
 ]

@@ -83,6 +83,6 @@ def fetch_CG_fiber(data_home=None, download_if_missing=True):
                 file_type, meta.url, local_path))
             archive_path = _fetch_remote(meta, dirname=data_location)
 
-    records.DESCR = _read_description(DESCRIPTION)
+    #records.DESCR = _read_description(DESCRIPTION)
 
     return records
