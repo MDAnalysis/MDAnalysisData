@@ -24,6 +24,7 @@ from MDAnalysisData import ifabp_water
 # For filetype=trajectory the cached data are used.
 # This test is not thread/parallel safe.
 
+@pytest.mark.online
 @pytest.mark.parametrize('filetype', ('topology', 'trajectory'))
 def test_adk_equilibrium(filetype):
     data = datasets.fetch_adk_equilibrium()
@@ -36,6 +37,7 @@ def test_adk_equilibrium(filetype):
     assert os.path.basename(data[filetype]) == metadata[filetype].filename
     assert os.path.exists(data[filetype])
 
+@pytest.mark.online
 @pytest.mark.parametrize('filetype', ('topology', 'trajectory'))
 def test_ifabp_water(filetype):
     data = datasets.fetch_ifabp_water()
