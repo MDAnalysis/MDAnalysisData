@@ -62,7 +62,7 @@ def fetch_CG_fiber(data_home=None, download_if_missing=True):
         Description of the trajectory.
 
 
-    See :ref:`CG_fiber` for description.
+    See :ref:`CG_fiber-dataset` for description.
     """
     name = NAME
     data_location = join(get_data_home(data_home=data_home),
@@ -83,6 +83,6 @@ def fetch_CG_fiber(data_home=None, download_if_missing=True):
                 file_type, meta.url, local_path))
             archive_path = _fetch_remote(meta, dirname=data_location)
 
-    #records.DESCR = _read_description(DESCRIPTION)
+    records.DESCR = _read_description(DESCRIPTION)
 
     return records

@@ -89,3 +89,4 @@ of pull requests are very welcome.
    ifabp_water
    nhaa_equilibrium
    vesicles
+   CG_fiber

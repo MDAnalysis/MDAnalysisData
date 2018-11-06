@@ -1,9 +1,9 @@
 .. -*- coding: utf-8 -*-
 
-.. _`CG_fiber`:
+.. _`CG_fiber-dataset`:
 
-        CG  fiber dataset
-==================================
+CG fiber dataset
+================
 
 MD trajectory showing the self-assembly of an amphiphilic molecule.
 

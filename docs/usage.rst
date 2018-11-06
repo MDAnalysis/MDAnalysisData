@@ -21,6 +21,7 @@ represent.  The currently included datasets are:
    ifabp_water
    nhaa_equilibrium
    vesicles
+   CG_fiber
 
 Accessing a dataset
 ===================
