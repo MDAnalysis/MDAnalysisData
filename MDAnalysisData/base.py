@@ -36,6 +36,8 @@ from os.path import dirname, exists, expanduser, isdir, join, splitext
 import hashlib
 from pkg_resources import resource_string
 
+from tqdm import tqdm
+
 #: Default value for the cache directory. It can be changed by setting
 #: the environment variable :envvar:`MDANALYSIS_DATA`. The current
 #: value should be queried with :func:`get_data_home`.
@@ -177,7 +179,10 @@ def _fetch_remote(remote, dirname=None):
 
     file_path = (remote.filename if dirname is None
                  else join(dirname, remote.filename))
-    urlretrieve(remote.url, file_path)
+    with TqdmUpTo(unit='B', unit_scale=True, miniters=1,
+                  desc=remote.filename) as t:
+        urlretrieve(remote.url, filename=file_path,
+                    reporthook=t.update_to, data=None)
     checksum = _sha256(file_path)
     if remote.checksum != checksum:
         raise IOError("{} has an SHA256 checksum ({}) "
@@ -209,3 +214,23 @@ def _read_description(filename, description_dir='descr'):
                             '{}/{}'.format(description_dir, filename)
                            ).decode("utf-8")
     return DESCR
+
+
+class TqdmUpTo(tqdm):
+    """Provides `update_to(n)` which uses `tqdm.update(delta_n)`.
+
+    From https://pypi.org/project/tqdm/#hooks-and-callbacks
+    """
+
+    def update_to(self, b=1, bsize=1, tsize=None):
+        """
+        b  : int, optional
+            Number of blocks transferred so far [default: 1].
+        bsize  : int, optional
+            Size of each block (in tqdm units) [default: 1].
+        tsize  : int, optional
+            Total size (in tqdm units). If [default: None] remains unchanged.
+        """
+        if tsize is not None:
+            self.total = tsize
+        self.update(b * bsize - self.n)  # will also set self.n = b * bsize

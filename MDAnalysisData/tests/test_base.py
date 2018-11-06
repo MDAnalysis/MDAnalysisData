@@ -2,6 +2,9 @@
 
 from __future__ import absolute_import, division
 
+from six.moves.urllib.request import urlretrieve
+
+import os
 import os.path
 
 import pytest
@@ -87,3 +90,12 @@ def test_fetch_remote(remote_topology, tmpdir):
     filename = base._fetch_remote(remote_topology, dirname=str(tmpdir))
     assert os.path.basename(filename) == remote_topology.filename
     assert os.path.dirname(filename) == str(tmpdir)
+
+def test_tqdm(remote_topology):
+    # not sure how to test apart from not getting errors
+    remote = remote_topology
+    with base.TqdmUpTo(unit='B', unit_scale=True, miniters=1,
+                       desc=remote.filename) as t:
+        urlretrieve(remote.url, filename=os.devnull,
+                    reporthook=t.update_to, data=None)
+

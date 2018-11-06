@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 - new `fetch_CG_fiber()` to get CG_fiber dataset (PR #24)
+- progress bars for downloads (#29)
 
 ### Fixes
 - fixed fetch_adk_transitions_DIMS() failed to fetch (#19)
