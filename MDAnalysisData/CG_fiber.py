@@ -15,7 +15,7 @@ from .base import _fetch_remote, _read_description
 from .base import RemoteFileMetadata
 from .base import Bunch
 
-NAME = "126chains_dcd"
+NAME = "CG_fiber"
 DESCRIPTION = "CG_fiber.rst"
 # The original data can be found at the figshare URL.
 # The SHA256 checksum of the zip file changes with every download so we
