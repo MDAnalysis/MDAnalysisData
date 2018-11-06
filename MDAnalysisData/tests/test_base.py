@@ -118,14 +118,13 @@ def test_fetch_remote_sha_success(remote_topology, mocker, dirname):
     exp = os.path.join(dirname, remote_topology.filename)
     assert base._fetch_remote(remote_topology, dirname=dirname) == exp
 
-def test_lazy_fetch(remote_topology, tmpdir, mocker):
+def test_lazy_fetch(tmpdir, mocker):
     mocker.patch('MDAnalysisData.adk_equilibrium.exists', return_value=True)
     fr = mocker.patch('MDAnalysisData.adk_equilibrium._fetch_remote')
     # check the laziness of grabbing a dataset
     # - mock exists to always say true
     # - grab the "dataset" then check no remote calls were done
     stuff = adk_equilibrium.fetch_adk_equilibrium()
-
     assert not fr.called
 
 

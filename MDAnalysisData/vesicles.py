@@ -106,6 +106,6 @@ def fetch_vesicle_lib(data_home=None, download_if_missing=True):
                                len(records.structures),
                                records.N_structures))
 
-    records.DESCR = _read_description(DESCRIPTION)
+    records.DESCR = _read_description(metadata['DESCRIPTION'])
 
     return records
