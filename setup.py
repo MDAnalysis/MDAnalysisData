@@ -71,6 +71,7 @@ if __name__ == '__main__':
           package_data={'MDAnalysisData': ['descr/*.rst']},
           install_requires=['six',
                             'setuptools',
+                            'tqdm',
           ],
           zip_safe=True,
     )
