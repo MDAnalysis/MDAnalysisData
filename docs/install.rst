@@ -12,6 +12,22 @@ The package is pure Python and one can directly install the
 
    pip install --upgrade MDAnalysisData
 
+
+Alternatively, you can also install it with the `conda`_ package
+manager:
+
+.. code-block:: bash
+
+   conda config --add channels conda-forge
+   conda install mdanalysisdata
+
+and to upgrade later   
+
+.. code-block:: bash
+
+   conda update mdanalysis		
+
+
 .. note:: The package itself is small and initially does not install
           any datasets. However, the :ref:`data directory
           <managing-data>`, where datasets are cached, can grow to
@@ -19,7 +35,7 @@ The package is pure Python and one can directly install the
 
 .. _`MDAnalysisData package`:
    https://pypi.org/project/MDAnalysisData/
-
+.. _conda: https://conda.io/docs/
    
 Installing from source
 ======================
