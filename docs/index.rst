@@ -47,12 +47,12 @@ of pull requests are very welcome.
    :target: http://makeapullrequest.com
 
 .. |cov| image:: https://codecov.io/gh/MDAnalysis/MDAnalysisData/branch/master/graph/badge.svg
-   :alt: test coverage		 
+   :alt: test coverage
    :target: https://codecov.io/gh/MDAnalysis/MDAnalysisData
 
 .. |build| image:: https://travis-ci.com/MDAnalysis/MDAnalysisData.svg?branch=master
-   :alt: tests		   
-   :target: https://travis-ci.com/MDAnalysis/MDAnalysisData	    
+   :alt: tests
+   :target: https://travis-ci.com/MDAnalysis/MDAnalysisData
 
 .. _`MDAnalysis`: https://www.mdanalysis.org
 .. _`mdanalysis/MDAnalysisData`: https://github.com/MDAnalysis/MDAnalysisData
@@ -62,18 +62,18 @@ of pull requests are very welcome.
 .. _`open license`:
    http://opendefinition.org/licenses/#recommended-conformant-licenses
 .. _`Open Definition 2.1`: http://opendefinition.org/od/2.1/en/
-.. _`semantic versioning`: https://semver.org   
+.. _`semantic versioning`: https://semver.org
 .. _`Issue Tracker`:
    https://github.com/mdanalysis/MDAnalysisData/issues
 .. _`Contributions of data sets`:
    https://github.com/mdanalysis/MDAnalysisData/wiki/contributing
-   
+
 
 .. toctree::
    :maxdepth: 2
    :caption: Overview
    :hidden:
-	      
+
    install
    usage
    helpers
@@ -86,6 +86,7 @@ of pull requests are very welcome.
 
    adk_equilibrium
    adk_transitions
+   CG_fiber
    ifabp_water
    nhaa_equilibrium
    vesicles

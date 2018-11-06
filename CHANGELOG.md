@@ -9,8 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - fixed fetch_adk_transitions_DIMS() failed to fetch (#19)
 - added six to install requirements (#22)
 
-### Changes
+### Added
+- coarse-grained self-assembly dataset
 
+### Changes
 
 ## [0.3.0] - 2018-10-11
 ### Fixes
@@ -28,7 +30,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changes
 - Default location of the data_home is now stored as `base.DEFAULT_DATADIR`.
-  
+
 
 ## [0.2.2] - 2018-10-05
 ### Fixes
