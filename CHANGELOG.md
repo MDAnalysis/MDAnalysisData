@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [unreleased]
+
+### Added
+- PEG_1chain dataset 
+
 ## [0.5.0] - 2018-11-06
 ### Fixes
 - vesicles dataset: failed to get description
@@ -12,10 +17,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - progressbar for downloads (#29)
 
 ### Changes (internal)
-- tests with full downloads can be performed with 
+- tests with full downloads can be performed with
   `pytest -m online`; by default `pytest -m 'not online'` is run,
   which skips downloading gigabytes of data (PR #18)
-  
+
 
 ## [0.4.0] - 2018-10-05
 ### Added
@@ -43,7 +48,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changes
 - Default location of the data_home is now stored as `base.DEFAULT_DATADIR`.
-  
+
 
 ## [0.2.2] - 2018-10-05
 ### Fixes

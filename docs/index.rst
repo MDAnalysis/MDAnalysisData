@@ -86,6 +86,8 @@ of pull requests are very welcome.
 
    adk_equilibrium
    adk_transitions
+   CG_fiber
+   PEG_1chain
    ifabp_water
    nhaa_equilibrium
    vesicles
