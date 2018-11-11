@@ -39,7 +39,7 @@ logger = logging.getLogger(__name__)
 
 
 def fetch_PEG_1chain(data_home=None, download_if_missing=True):
-    """Load the PEG polymer trajectory"""
+    """Load the PEG polymer trajectory
 
     Parameters
     ----------
