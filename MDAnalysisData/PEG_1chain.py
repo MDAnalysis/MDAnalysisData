@@ -26,12 +26,12 @@ ARCHIVE = {
     'topology': RemoteFileMetadata(
         filename='PEG.prmtop',
         url='https://ndownloader.figshare.com/files/13532462',
-        checksum='3ddb654b68549ac2ad5107a4282899f41fad233d09ea572446031711af4e57da',
+        checksum='2d7955b9a8cb6e008171e0c5a1c31e3e458246ea3ee7302281eafefafa7cede9',
     ),
     'trajectory':  RemoteFileMetadata(
         filename='PEG_03_prod.nc',
         url='https://ndownloader.figshare.com/files/13532465',
-        checksum='e0b47d422f31ec209ea810edcf6cf3830da04bb2e1540f520477c27f4433d849',
+        checksum='b978714ec2f93d1cbe99564cb257959f0cb38872359aa745c8eba720a7d85225',
     ),
 }
 
@@ -39,7 +39,7 @@ logger = logging.getLogger(__name__)
 
 
 def fetch_PEG_1chain(data_home=None, download_if_missing=True):
-    """Load the PEG polymer trajectory
+    """Load the PEG polymer trajectory"""
 
     Parameters
     ----------
