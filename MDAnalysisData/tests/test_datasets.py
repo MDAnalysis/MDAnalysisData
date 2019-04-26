@@ -23,6 +23,7 @@ from MDAnalysisData import nhaa_equilibrium
 from MDAnalysisData import CG_fiber
 from MDAnalysisData import vesicles
 from MDAnalysisData import adk_transitions
+from MDAnalysisData import membrane_peptide
 
 # For filetype=topology, the data are downloaded and cached.
 # For filetype=trajectory the cached data are used.
@@ -130,3 +131,18 @@ def test_adk_transitions(method, descr_length, filetype):
     assert all(glob.fnmatch.fnmatch(path, pattern) for path in datafiles), \
         "not all datafiles {} match {}".format(datafiles, pattern)
     assert all(os.path.exists(path) for path in datafiles)
+
+
+@pytest.mark.online
+@pytest.mark.parametrize('filetype', ('topology', 'trajectory'))
+def test_membrane_peptide(filetype):
+    data = datasets.fetch_membrane_peptide()
+
+    metadata = membrane_peptide.ARCHIVE
+
+    assert len(data.DESCR) == 1657
+    assert data.DESCR.startswith(".. -*- coding: utf-8 -*-\n\n.. _`membrane-peptide-dataset`:")
+
+    assert os.path.basename(data[filetype]) == metadata[filetype].filename
+    assert os.path.exists(data[filetype])
+
