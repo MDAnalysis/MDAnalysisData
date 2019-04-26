@@ -104,7 +104,7 @@ def test_fetch_remote_sha_fail(remote_topology, mocker):
                             return_value='12345678')
 
     with pytest.raises(IOError,
-                       message='.+? file may be corrupted'):
+                       match='.+? file may be corrupted'):
         base._fetch_remote(remote_topology)
 
 
