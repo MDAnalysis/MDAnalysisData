@@ -4,10 +4,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.7.0] - 2019-04-26
+
+### Added
+- `fetch_membrane_peptide()` to get a membrane peptide dataset (#34)
+
+### Fixes
+- doc fixes (PEG 1 chain dataset)
+
+### Fixes (internal)
+- CI: pip upgrade all dependencies (#36)
+
+
 ## [0.6.0] - 2018-11-11
 
 ### Added
 - PEG_1chain dataset 
+
 
 ## [0.5.0] - 2018-11-06
 ### Fixes
