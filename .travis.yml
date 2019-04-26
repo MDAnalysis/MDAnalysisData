@@ -12,8 +12,8 @@ branches:
     
 install:
   - if [[ $TRAVIS_PYTHON_VERSION == "3.6" ]]; then pip install --upgrade sphinx sphinx-sitemap; fi
-  - pip install pytest pytest-pep8 pytest-cov pytest-mock codecov
-  - pip install -e .
+  - pip install --upgrade pytest pytest-pep8 pytest-cov pytest-mock codecov
+  - pip install .
 
 script:
   - pytest -v --cov MDAnalysisData MDAnalysisData 
