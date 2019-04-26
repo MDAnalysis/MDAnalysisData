@@ -15,6 +15,7 @@ from .ifabp_water import fetch_ifabp_water
 from .vesicles import fetch_vesicle_lib
 from .CG_fiber import fetch_CG_fiber
 from .PEG_1chain import fetch_PEG_1chain
+from .membrane_peptide import fetch_membrane_peptide
 
 __all__ = [
     'get_data_home',
@@ -27,4 +28,5 @@ __all__ = [
     'fetch_nhaa_equilibrium',
     'fetch_CG_fiber',
     'fetch_PEG_1chain',
+    'fetch_membrane_peptide',
 ]
