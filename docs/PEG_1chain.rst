@@ -1,10 +1,10 @@
 .. -*- coding: utf-8 -*-
 
-.. _PEG_1chain:
+.. _`PEG_1chain`:
 
-==========================
-    PEG polymer dataset
-==========================
+=====================
+ PEG polymer dataset
+=====================
 
 .. module:: MDAnalysisData.PEG_1chain
 

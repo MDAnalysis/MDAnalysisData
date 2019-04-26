@@ -1,9 +1,9 @@
 .. -*- coding: utf-8 -*-
 
-.. _`PEG_1chain`:
+.. _`PEG_1chain-dataset`:
 
-        PEG polymer dataset
-==================================
+PEG polymer dataset
+===================
 
 MD trajectory showing the self-assembly of an amphiphilic molecule.
 

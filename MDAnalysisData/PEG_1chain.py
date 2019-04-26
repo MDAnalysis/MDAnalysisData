@@ -62,7 +62,7 @@ def fetch_PEG_1chain(data_home=None, download_if_missing=True):
         Description of the trajectory.
 
 
-    See :ref:`PEG_1chain` for description.
+    See :ref:`PEG_1chain-dataset` for description.
     """
     name = NAME
     data_location = join(get_data_home(data_home=data_home),
