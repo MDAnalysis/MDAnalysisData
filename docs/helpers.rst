@@ -17,6 +17,8 @@ For users
 .. autoclass:: Bunch
    :members:
 
+.. autodata:: DEFAULT_DATADIR
+	  
 .. autofunction:: get_data_home
 
 .. autofunction:: clear_data_home
@@ -34,5 +36,7 @@ functions in your code.
 .. autofunction:: _sha256
 
 .. autofunction:: _fetch_remote		  
+
+.. autofunction:: _read_description
 
 		  

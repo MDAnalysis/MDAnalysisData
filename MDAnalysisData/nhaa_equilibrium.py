@@ -12,7 +12,7 @@ import codecs
 import logging
 
 from .base import get_data_home
-from .base import _fetch_remote
+from .base import _fetch_remote, _read_description
 from .base import RemoteFileMetadata
 from .base import Bunch
 
@@ -27,12 +27,12 @@ ARCHIVE = {
     'topology': RemoteFileMetadata(
         filename='NhaA_non_water.gro',
         url='https://ndownloader.figshare.com/files/13222709',
-        checksum='1aa947d58fb41b6805dc1e7be4dbe65c6a8f4690f0bd7fc2ae03e7bd437085f4',
+        checksum='ae42f4cfcfe312476f9e5121fe47764a11aff962197799671c0c5a8f83637420',
     ),
     'trajectory':  RemoteFileMetadata(
         filename='NhaA_non_water.xtc',
         url='https://ndownloader.figshare.com/files/13222712',
-        checksum='598fcbcfcc425f6eafbe9997238320fcacc6a4613ecce061e1521732bab734bf',
+        checksum='c9ab7ba8c9c271d535cfadebc33da1d90fbf00d9a01f48afedd0f7a703128eaf',
     ),
 }
 
@@ -40,14 +40,14 @@ logger = logging.getLogger(__name__)
 
 
 def fetch_nhaa_equilibrium(data_home=None, download_if_missing=True):
-    """Load the nhaa 500 ns equilibrium trajectory (without water)
+    """Load the NhaA 500 ns equilibrium trajectory (without water)
 
     Parameters
     ----------
     data_home : optional, default: None
         Specify another download and cache folder for the datasets. By default
         all MDAnalysisData data is stored in '~/MDAnalysis_data' subfolders.
-        This dataset is stored in ``<data_home>/adk_equilibrium``.
+        This dataset is stored in ``<data_home>/nhaa_equilibrium``.
     download_if_missing : optional, default=True
         If ``False``, raise a :exc:`IOError` if the data is not locally available
         instead of trying to download the data from the source site.
@@ -84,9 +84,6 @@ def fetch_nhaa_equilibrium(data_home=None, download_if_missing=True):
                 file_type, meta.url, local_path))
             archive_path = _fetch_remote(meta, dirname=data_location)
 
-    module_path = dirname(__file__)
-    with codecs.open(join(module_path, 'descr', DESCRIPTION),
-                     encoding="utf-8") as dfile:
-        records.DESCR = dfile.read()
+    records.DESCR = _read_description(DESCRIPTION)
 
     return records

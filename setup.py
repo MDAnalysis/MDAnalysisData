@@ -69,6 +69,10 @@ if __name__ == '__main__':
           packages=find_packages(),
           package_dir={'MDAnalysisData': 'MDAnalysisData'},
           package_data={'MDAnalysisData': ['descr/*.rst']},
-          install_requires=[],
+          install_requires=['six',
+                            'setuptools',
+                            'tqdm',
+          ],
+          tests_requires=['pytest-mock', 'pytest'],
           zip_safe=True,
     )

@@ -1,6 +1,7 @@
+
 .. -*- coding: utf-8 -*-
-   
-.. _usage: 
+
+.. _usage:
 
 =======
  Usage
@@ -17,8 +18,11 @@ represent.  The currently included datasets are:
 
    adk_equilibrium
    adk_transitions
+   PEG_1chain
    ifabp_water
+   nhaa_equilibrium
    vesicles
+   CG_fiber
 
 Accessing a dataset
 ===================
@@ -43,7 +47,7 @@ what this dataset includes.  In particular, it features a
 human-readable description of the dataset::
 
     >>> print(adk.DESCR)
-    
+
     AdK equilibrium trajectory dataset
     ==================================
 
@@ -76,7 +80,7 @@ human-readable description of the dataset::
 	       `10.6084/m9.figshare.5108170.v1
 	       <https://doi.org/10.6084/m9.figshare.5108170.v1>`_
 
-    
+
 The topology and trajectory files can be accessed::
 
     >>> print(adk.topology)
@@ -103,12 +107,12 @@ The location of the data directiory can be changed by setting the
 environment variable :envvar:`MDANALYSIS_DATA`, for instance
 
 .. code-block:: bash
-		
+
    export MDANALYSIS_DATA=/tmp/MDAnalysis_data
 
 All ``fetch_*`` functions also have a keyword argument `data_home` that
 can be used to set an alternative data directory.
-   
+
 The location of the data directory can be obtained with
 :func:`MDAnalysisData.base.get_data_home`.
 
@@ -123,5 +127,3 @@ directory can take up more than 2 GB of space. One may manually delete
 subdirectories (e.g. data sets that are currently not needed) and the
 whole data directory can we wiped (removed) with the function
 :func:`MDAnalysisData.base.clear_data_home`.
-
-      

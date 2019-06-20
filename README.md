@@ -1,7 +1,10 @@
 # MDAnalysisData
 
+[![Build Status](https://travis-ci.com/MDAnalysis/MDAnalysisData.svg?branch=master)](https://travis-ci.com/MDAnalysis/MDAnalysisData)
+[![codecov](https://codecov.io/gh/MDAnalysis/MDAnalysisData/branch/master/graph/badge.svg)](https://codecov.io/gh/MDAnalysis/MDAnalysisData)
 [![docs](https://img.shields.io/badge/docs-latest-brightgreen.svg)](https://www.mdanalysis.org/MDAnalysisData/)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![Anaconda-Server Badge](https://anaconda.org/conda-forge/mdanalysisdata/badges/version.svg)](https://anaconda.org/conda-forge/mdanalysisdata)
 [![DOI](https://zenodo.org/badge/147885122.svg)](https://zenodo.org/badge/latestdoi/147885122)
 
 Access to data for workshops and extended tests of MDAnalysis.
@@ -18,6 +21,10 @@ To use, install the package
 pip install --upgrade MDAnalysisData
 ```
 
+or install with `conda`
+```bash
+conda install --channel conda-forge mdanalysisdata
+```
 
 ## Accessing data sets 
 

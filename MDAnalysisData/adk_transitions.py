@@ -8,16 +8,16 @@ https://figshare.com/articles/Simulated_trajectory_ensembles_for_the_closed-to-o
 
 from os.path import dirname, exists, join
 from os import makedirs, remove
-import codecs
 import tarfile
 import glob
 
 import logging
 
 from .base import get_data_home
-from .base import _fetch_remote
+from .base import _fetch_remote, _read_description
 from .base import RemoteFileMetadata
 from .base import Bunch
+
 
 METADATA = {
     'DIMS': {
@@ -191,9 +191,6 @@ def _fetch_adk_transitions(metadata, data_home=None, download_if_missing=True):
                                trajectory_pattern, len(records.trajectories),
                                records.N_trajectories))
 
-    module_path = dirname(__file__)
-    with codecs.open(join(module_path, 'descr', metadata['DESCRIPTION']),
-                     encoding="utf-8") as dfile:
-        records.DESCR = dfile.read()
+    records.DESCR = _read_description(metadata['DESCRIPTION'])
 
     return records

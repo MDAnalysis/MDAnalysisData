@@ -8,13 +8,12 @@ https://figshare.com/articles/Large_System_Vesicle_Benchmark_Library/3406708
 
 from os.path import dirname, exists, join
 from os import makedirs, remove
-import codecs
 import tarfile
 
 import logging
 
 from .base import get_data_home
-from .base import _fetch_remote
+from .base import _fetch_remote, _read_description
 from .base import RemoteFileMetadata
 from .base import Bunch
 
@@ -107,9 +106,6 @@ def fetch_vesicle_lib(data_home=None, download_if_missing=True):
                                len(records.structures),
                                records.N_structures))
 
-    module_path = dirname(__file__)
-    with codecs.open(join(module_path, 'descr', metadata['DESCRIPTION']),
-                     encoding="utf-8") as dfile:
-        records.DESCR = dfile.read()
+    records.DESCR = _read_description(metadata['DESCRIPTION'])
 
     return records

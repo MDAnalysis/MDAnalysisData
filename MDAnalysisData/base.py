@@ -34,8 +34,16 @@ from collections import namedtuple
 from os import environ, listdir, makedirs
 from os.path import dirname, exists, expanduser, isdir, join, splitext
 import hashlib
+from pkg_resources import resource_string
 
+from tqdm import tqdm
 
+#: Default value for the cache directory. It can be changed by setting
+#: the environment variable :envvar:`MDANALYSIS_DATA`. The current
+#: value should be queried with :func:`get_data_home`.
+#:
+#: .. SeeAlso:: :ref:`managing-data`.
+DEFAULT_DATADIR = join('~', 'MDAnalysis_data')
 
 class Bunch(dict):
     """Container object for datasets
@@ -116,7 +124,7 @@ def get_data_home(data_home=None):
     """
     if data_home is None:
         data_home = environ.get('MDANALYSIS_DATA',
-                                join('~', 'MDAnalysis_data'))
+                                DEFAULT_DATADIR)
     data_home = expanduser(data_home)
     if not exists(data_home):
         makedirs(data_home)
@@ -171,7 +179,10 @@ def _fetch_remote(remote, dirname=None):
 
     file_path = (remote.filename if dirname is None
                  else join(dirname, remote.filename))
-    urlretrieve(remote.url, file_path)
+    with TqdmUpTo(unit='B', unit_scale=True, miniters=1,
+                  desc=remote.filename) as t:
+        urlretrieve(remote.url, filename=file_path,
+                    reporthook=t.update_to, data=None)
     checksum = _sha256(file_path)
     if remote.checksum != checksum:
         raise IOError("{} has an SHA256 checksum ({}) "
@@ -179,3 +190,47 @@ def _fetch_remote(remote, dirname=None):
                       "file may be corrupted.".format(file_path, checksum,
                                                       remote.checksum))
     return file_path
+
+
+def _read_description(filename, description_dir='descr'):
+    """Read the description from restructured text file.
+
+    Arguments
+    ---------
+    filename : str
+        name of the description file under the ``descr`` directory
+
+    Note
+    ----
+    All description files are supposed to be stored in the directory
+    `description_dir` ``="descr"`` that lives in the same directory as
+    the :mod:`MDAnalysisData.base` module file. All descriptions are
+    assumed to be in restructured text format and in UTF-8 encoding.
+
+    """
+    # The descr directory should be in the same directory as this file base.py.
+    # `resource_string` returns bytes, which we need to decode to UTF-8
+    DESCR = resource_string(__name__,
+                            '{}/{}'.format(description_dir, filename)
+                           ).decode("utf-8")
+    return DESCR
+
+
+class TqdmUpTo(tqdm):
+    """Provides `update_to(n)` which uses `tqdm.update(delta_n)`.
+
+    From https://pypi.org/project/tqdm/#hooks-and-callbacks
+    """
+
+    def update_to(self, b=1, bsize=1, tsize=None):
+        """
+        b  : int, optional
+            Number of blocks transferred so far [default: 1].
+        bsize  : int, optional
+            Size of each block (in tqdm units) [default: 1].
+        tsize  : int, optional
+            Total size (in tqdm units). If [default: None] remains unchanged.
+        """
+        if tsize is not None:
+            self.total = tsize
+        self.update(b * bsize - self.n)  # will also set self.n = b * bsize

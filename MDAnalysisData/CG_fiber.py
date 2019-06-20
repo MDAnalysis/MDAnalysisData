@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-"""MD simulation of I-FABP with water.
+"""Coarse-grained molecular dynamics of an amphiphilic fiber.
 
-https://figshare.com/articles/Molecular_dynamics_trajectory_of_I-FABP_for_testing_and_benchmarking_solvent_dynamics_analysis/7058030
+https://figshare.com/articles/126chains_dcd/7259915
 """
 
 from os.path import dirname, exists, join
@@ -15,8 +15,8 @@ from .base import _fetch_remote, _read_description
 from .base import RemoteFileMetadata
 from .base import Bunch
 
-NAME = "ifabp_water"
-DESCRIPTION = "ifabp_water.rst"
+NAME = "CG_fiber"
+DESCRIPTION = "CG_fiber.rst"
 # The original data can be found at the figshare URL.
 # The SHA256 checksum of the zip file changes with every download so we
 # cannot check its checksum. Instead we download individual files.
@@ -24,36 +24,29 @@ DESCRIPTION = "ifabp_water.rst"
 # Bunch that is returned.
 ARCHIVE = {
     'topology': RemoteFileMetadata(
-        filename='ifabp_water.psf',
-        url='https://ndownloader.figshare.com/files/12980639',
-        checksum='ba40714318aabec537015dc550fe5bd5ac1ac0b853f5abdd2f0ae63af9cfcafa',
-    ),
-    'structure': RemoteFileMetadata(
-        filename='ifabp_water_0.pdb',
-        url='https://ndownloader.figshare.com/files/12980636',
-        checksum='8ccf5f75fd85385921c0cb77f00281a93b933fc1261c42fc9492f43983448a72',
+        filename='126chains.psf',
+        url='https://ndownloader.figshare.com/files/13374146',
+        checksum='3ddb654b68549ac2ad5107a4282899f41fad233d09ea572446031711af4e57da',
     ),
     'trajectory':  RemoteFileMetadata(
-        filename='rmsfit_ifabp_water_1.dcd',
-        url='https://ndownloader.figshare.com/files/12980642',
-        checksum='cebb48e58015abc8ff2f5bb7ba3eb7a289047f256351a8252bf1f29f9aaacf0e',
+        filename='126chains.dcd',
+        url='https://ndownloader.figshare.com/files/13375838',
+        checksum='e0b47d422f31ec209ea810edcf6cf3830da04bb2e1540f520477c27f4433d849',
     ),
 }
-
-
 
 logger = logging.getLogger(__name__)
 
 
-def fetch_ifabp_water(data_home=None, download_if_missing=True):
-    """Load the I-FABP with water 0.5 ns equilibrium trajectory
+def fetch_CG_fiber(data_home=None, download_if_missing=True):
+    """Load the CG fiber self-assembly trajectory
 
     Parameters
     ----------
     data_home : optional, default: None
         Specify another download and cache folder for the datasets. By default
         all MDAnalysisData data is stored in '~/MDAnalysis_data' subfolders.
-        This dataset is stored in ``<data_home>/ifabp_water``.
+        This dataset is stored in ``<data_home>/CG_fiber``.
     download_if_missing : optional, default=True
         If ``False``, raise a :exc:`IOError` if the data is not locally available
         instead of trying to download the data from the source site.
@@ -65,13 +58,11 @@ def fetch_ifabp_water(data_home=None, download_if_missing=True):
         Filename of the topology file
     dataset.trajectory : filename
         Filename of the trajectory file
-    dataset.structure : filename
-        Filename of a structure file in PDB format
     dataset.DESCR : string
         Description of the trajectory.
 
 
-    See :ref:`ifabp-water-dataset` for description.
+    See :ref:`CG_fiber-dataset` for description.
     """
     name = NAME
     data_location = join(get_data_home(data_home=data_home),

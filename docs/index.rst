@@ -5,7 +5,7 @@
  MDAnalysisData: MD data for testing, learning, and benchmarking
 =================================================================
 
-|zenodo| |PRwelcome|
+|zenodo| |PRwelcome| |build| |cov|
 
 :Release: |release|
 :Date: |today|
@@ -46,6 +46,14 @@ of pull requests are very welcome.
    :alt: PRs welcome
    :target: http://makeapullrequest.com
 
+.. |cov| image:: https://codecov.io/gh/MDAnalysis/MDAnalysisData/branch/master/graph/badge.svg
+   :alt: test coverage		 
+   :target: https://codecov.io/gh/MDAnalysis/MDAnalysisData
+
+.. |build| image:: https://travis-ci.com/MDAnalysis/MDAnalysisData.svg?branch=master
+   :alt: tests		   
+   :target: https://travis-ci.com/MDAnalysis/MDAnalysisData	    
+
 .. _`MDAnalysis`: https://www.mdanalysis.org
 .. _`mdanalysis/MDAnalysisData`: https://github.com/MDAnalysis/MDAnalysisData
 .. _figshare: https://figshare.com/
@@ -78,5 +86,9 @@ of pull requests are very welcome.
 
    adk_equilibrium
    adk_transitions
+   PEG_1chain
    ifabp_water
+   nhaa_equilibrium
+   membrane_peptide
    vesicles
+   CG_fiber
