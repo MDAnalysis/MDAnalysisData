@@ -24,6 +24,7 @@ from MDAnalysisData import CG_fiber
 from MDAnalysisData import vesicles
 from MDAnalysisData import adk_transitions
 from MDAnalysisData import membrane_peptide
+from MDAnalysisData import yiip_equilibrium
 
 # For filetype=topology, the data are downloaded and cached.
 # For filetype=trajectory the cached data are used.
@@ -142,6 +143,26 @@ def test_membrane_peptide(filetype):
 
     assert len(data.DESCR) == 1657
     assert data.DESCR.startswith(".. -*- coding: utf-8 -*-\n\n.. _`membrane-peptide-dataset`:")
+
+    assert os.path.basename(data[filetype]) == metadata[filetype].filename
+    assert os.path.exists(data[filetype])
+
+
+@pytest.mark.online
+@pytest.mark.parametrize('traj_len', ('short', 'long'))
+@pytest.mark.parametrize('filetype', ('topology', 'trajectory'))
+def test_yiip_equilibrium(traj_len, filetype):
+    if traj_len == "short":
+        data = datasets.fetch_yiip_equilibrium_short()
+    elif traj_len == "long":
+        data = datasets.fetch_yiip_equilibrium_long()
+    else:
+        raise ValueError("Unknown yiip_equilibrium trajectory length'{}'".format(traj_len))
+
+    metadata = yiip_equilibrium.ARCHIVE[traj_len]
+
+    assert len(data.DESCR) == 1511
+    assert data.DESCR.startswith(".. -*- coding: utf-8 -*-\n\n.. _`yiip-equilibrium-dataset`:")
 
     assert os.path.basename(data[filetype]) == metadata[filetype].filename
     assert os.path.exists(data[filetype])
