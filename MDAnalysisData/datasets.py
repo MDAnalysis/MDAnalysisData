@@ -16,6 +16,8 @@ from .vesicles import fetch_vesicle_lib
 from .CG_fiber import fetch_CG_fiber
 from .PEG_1chain import fetch_PEG_1chain
 from .membrane_peptide import fetch_membrane_peptide
+from .yiip_equilibrium import (fetch_yiip_equilibrium_short,
+                               fetch_yiip_equilibrium_long)
 
 __all__ = [
     'get_data_home',
@@ -29,4 +31,6 @@ __all__ = [
     'fetch_CG_fiber',
     'fetch_PEG_1chain',
     'fetch_membrane_peptide',
+    'fetch_yiip_equilibrium_short',
+    'fetch_yiip_equilibrium_long',
 ]

@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.8.0] - 2019-**-**
+
+### Added
+- `fetch_yiip_equilibrium_short` to get a 9-ns YiiP trajectory and
+  `fetch_yiip_equilibrium_long` to get a 90-ns YiiP trajectory (#39)
+
 ## [0.7.0] - 2019-04-26
 
 ### Added
@@ -19,7 +25,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.6.0] - 2018-11-11
 
 ### Added
-- PEG_1chain dataset 
+- PEG_1chain dataset
 
 
 ## [0.5.0] - 2018-11-06
