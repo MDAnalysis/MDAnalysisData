@@ -4,10 +4,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.8.0] - 2019-**-**
+## [0.8.0] - 2019-08-13
 
 ### Added
-- `fetch_yiip_equilibrium_short` to get a 9-ns YiiP trajectory and
+- YiiP equilibrium dataset used for benchmarks in the PMDA paper:
+  `fetch_yiip_equilibrium_short` to get a 9-ns YiiP trajectory and
   `fetch_yiip_equilibrium_long` to get a 90-ns YiiP trajectory (#39)
 
 ## [0.7.0] - 2019-04-26
