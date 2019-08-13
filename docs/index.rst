@@ -89,6 +89,8 @@ of pull requests are very welcome.
    PEG_1chain
    ifabp_water
    nhaa_equilibrium
+   yiip_equilibrium
    membrane_peptide
    vesicles
    CG_fiber
+   
