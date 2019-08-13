@@ -21,6 +21,7 @@ represent.  The currently included datasets are:
    PEG_1chain
    ifabp_water
    nhaa_equilibrium
+   yiip_equilibrium   
    vesicles
    CG_fiber
 
