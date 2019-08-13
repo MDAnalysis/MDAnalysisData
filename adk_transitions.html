@@ -1,0 +1,354 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>AdK transitions datasets &#8212; MDAnalysisData 0.8.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within MDAnalysisData 0.8.0 documentation"
+          href="_static/opensearch.xml"/>
+    <link rel="shortcut icon" href="_static/mdanalysis-logo.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="PEG polymer dataset" href="PEG_1chain.html" />
+    <link rel="prev" title="AdK equilibrium dataset" href="adk_equilibrium.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-MDAnalysisData.adk_transitions">
+<span id="adk-transitions-datasets"></span><span id="adk-transitions"></span><h1>AdK transitions datasets<a class="headerlink" href="#module-MDAnalysisData.adk_transitions" title="Permalink to this headline">¶</a></h1>
+<p>The <a class="reference internal" href="#module-MDAnalysisData.adk_transitions" title="MDAnalysisData.adk_transitions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">MDAnalysisData.adk_transitions</span></code></a> module contains ensembles of
+trajectories during which the close-to-open transiton of the enzyme
+adenylate kinase <a class="reference internal" href="#seyler2014" id="id1"><span>[Seyler2014]</span></a> is sampled using different
+computational methods <a class="reference internal" href="#seyler2015" id="id2"><span>[Seyler2015]</span></a>.</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#MDAnalysisData.adk_transitions.fetch_adk_transitions_DIMS" title="MDAnalysisData.adk_transitions.fetch_adk_transitions_DIMS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fetch_adk_transitions_DIMS</span></code></a>([data_home, …])</p></td>
+<td><p>Load the AdK DIMS transititions dataset</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#MDAnalysisData.adk_transitions.fetch_adk_transitions_FRODA" title="MDAnalysisData.adk_transitions.fetch_adk_transitions_FRODA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fetch_adk_transitions_FRODA</span></code></a>([data_home, …])</p></td>
+<td><p>Load the AdK FRODA transititions dataset</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>This set of trajectories was used in the <a class="reference external" href="https://www.mdanalysis.org/SPIDAL-MDAnalysis-Midas-tutorial/">SPIDAL
+Tutorial: MDAnalysis with Midas/radical.pilot</a> where the ensemble
+of 400 DIMS+FRODA trajectories is analyzed with the <em>Path
+Similarity Analysis</em> method <a class="reference internal" href="#seyler2015" id="id3"><span>[Seyler2015]</span></a>. Computations on such a
+large(ish) dataset are sped up by parallelization at the task level
+with <a class="reference external" href="https://radical-cybertools.github.io/">RADICAL-Pilot</a>.</p>
+</div>
+<div class="section" id="adk-dims-transitions-ensemble-dataset">
+<span id="adk-transitions-dims-dataset"></span><h2>AdK DIMS transitions ensemble dataset<a class="headerlink" href="#adk-dims-transitions-ensemble-dataset" title="Permalink to this headline">¶</a></h2>
+<p>The macromolecular conformational transition between the closed
+conformation of apo-adenylate kinase from E. coli (EcAdK) to the open
+conformation was sampled with two methods: (1) dynamic importance
+sampling molecular dynamics (DIMS MD) <a class="reference internal" href="#perilla2009" id="id4"><span>[Perilla2009]</span></a>, and (2)
+Framework Rigidity Optimized Dynamics Algorithm (FRODA)
+<a class="reference internal" href="#farrell2010" id="id5"><span>[Farrell2010]</span></a>. Each ensemble of independently generated paths
+contains 200 trajectories in the CHARMM DCD format.</p>
+<p>This data set contains the <strong>DIMS</strong> ensemble.</p>
+<p>DIMS AdK (implicit solvent) with dynamic importance sampling MD from
+closed (1AKE) to open (4AKE). CHARMM 22 force field. Topology file:
+adk4ake.psf</p>
+<div class="section" id="notes">
+<h3>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h3>
+<p>Data set characteristics:</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">size</dt>
+<dd class="field-odd"><p>757 MB</p>
+</dd>
+<dt class="field-even">number of trajectories</dt>
+<dd class="field-even"><p>200</p>
+</dd>
+<dt class="field-odd">number of frames</dt>
+<dd class="field-odd"><p>varies</p>
+</dd>
+<dt class="field-even">number of atoms</dt>
+<dd class="field-even"><p>3341</p>
+</dd>
+<dt class="field-odd">creator</dt>
+<dd class="field-odd"><p>Sean L. Seyler</p>
+</dd>
+<dt class="field-even">URL</dt>
+<dd class="field-even"><p><a class="reference external" href="https://doi.org/10.6084/m9.figshare.7165306.v2">https://doi.org/10.6084/m9.figshare.7165306.v2</a></p>
+</dd>
+<dt class="field-odd">license</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://creativecommons.org/licenses/by/4.0/legalcode">CC-BY 4.0</a></p>
+</dd>
+<dt class="field-even">reference</dt>
+<dd class="field-even"><p><a class="reference internal" href="#seyler2015" id="id6"><span>[Seyler2015]</span></a></p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="simple">
+<dt>[Seyler2015] Seyler SL, Kumar A, Thorpe MF, Beckstein O (2015) Path</dt><dd><p>Similarity Analysis: A Method for Quantifying
+Macromolecular Pathways. PLoS Comput Biol 11(10):
+e1004568. <a class="reference external" href="https://doi.org/10.1371/journal.pcbi.1004568">https://doi.org/10.1371/journal.pcbi.1004568</a></p>
+</dd>
+</dl>
+<dl class="function">
+<dt id="MDAnalysisData.adk_transitions.fetch_adk_transitions_DIMS">
+<code class="sig-prename descclassname">MDAnalysisData.adk_transitions.</code><code class="sig-name descname">fetch_adk_transitions_DIMS</code><span class="sig-paren">(</span><em class="sig-param">data_home=None</em>, <em class="sig-param">download_if_missing=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MDAnalysisData/adk_transitions.html#fetch_adk_transitions_DIMS"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#MDAnalysisData.adk_transitions.fetch_adk_transitions_DIMS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load the AdK DIMS transititions dataset</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_home</strong> (<em>optional</em><em>, </em><em>default: None</em>) – Specify another download and cache folder for the datasets. By default
+all MDAnalysisData data is stored in ‘~/MDAnalysis_data’ subfolders.
+This dataset is stored in <code class="docutils literal notranslate"><span class="pre">&lt;data_home&gt;/adk_transitions_DIMS</span></code>.</p></li>
+<li><p><strong>download_if_missing</strong> (<em>optional</em><em>, </em><em>default=True</em>) – If <code class="docutils literal notranslate"><span class="pre">False</span></code>, raise a <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#IOError" title="(in Python v3.7)"><code class="xref py py-exc docutils literal notranslate"><span class="pre">IOError</span></code></a> if the data is not locally available
+instead of trying to download the data from the source site.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>dataset</strong> (<em>dict-like object with the following attributes:</em>)</p></li>
+<li><p><strong>dataset.topology</strong> (<em>filename</em>) – Filename of the topology file</p></li>
+<li><p><strong>dataset.trajectories</strong> (<em>list</em>) – list with filenames of the trajectory ensemble</p></li>
+<li><p><strong>dataset.N_trajectories</strong> (<em>int</em>) – number of trajectories in the ensemble</p></li>
+<li><p><strong>dataset.DESCR</strong> (<em>string</em>) – Description of the ensemble</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p>See <a class="reference internal" href="#adk-transitions-dims-dataset"><span class="std std-ref">AdK DIMS transitions ensemble dataset</span></a> for description.</p>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="adk-froda-transitions-ensemble-dataset">
+<span id="adk-transitions-froda-dataset"></span><h2>AdK FRODA transitions ensemble dataset<a class="headerlink" href="#adk-froda-transitions-ensemble-dataset" title="Permalink to this headline">¶</a></h2>
+<p>The macromolecular conformational transition between the closed
+conformation of apo-adenylate kinase from E. coli (EcAdK) to the open
+conformation was sampled with two methods: (1) dynamic importance
+sampling molecular dynamics (DIMS MD) <a class="reference internal" href="#perilla2009" id="id7"><span>[Perilla2009]</span></a>, and (2)
+Framework Rigidity Optimized Dynamics Algorithm (FRODA)
+<a class="reference internal" href="#farrell2010" id="id8"><span>[Farrell2010]</span></a>. Each ensemble of independently generated paths
+contains 200 trajectories in the CHARMM DCD format.</p>
+<p>This data set contains the <strong>FRODA</strong> ensemble.</p>
+<p>FRODA AdK with geometric targeting on a rigid decomposition (FRODA
+server); closed (1AKE) to open (4AKE). Topology file: 1ake.pdb
+(without hydrogens)</p>
+<div class="section" id="id9">
+<h3>Notes<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p>Data set characteristics:</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">size</dt>
+<dd class="field-odd"><p>539 MB</p>
+</dd>
+<dt class="field-even">number of trajectories</dt>
+<dd class="field-even"><p>200</p>
+</dd>
+<dt class="field-odd">number of frames</dt>
+<dd class="field-odd"><p>varies</p>
+</dd>
+<dt class="field-even">number of atoms</dt>
+<dd class="field-even"><p>1656</p>
+</dd>
+<dt class="field-odd">creator</dt>
+<dd class="field-odd"><p>Avishek Kumar</p>
+</dd>
+<dt class="field-even">URL</dt>
+<dd class="field-even"><p><a class="reference external" href="https://doi.org/10.6084/m9.figshare.7165306.v2">https://doi.org/10.6084/m9.figshare.7165306.v2</a></p>
+</dd>
+<dt class="field-odd">license</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://creativecommons.org/licenses/by/4.0/legalcode">CC-BY 4.0</a></p>
+</dd>
+<dt class="field-even">reference</dt>
+<dd class="field-even"><p><a class="reference internal" href="#seyler2015" id="id12"><span>[Seyler2015]</span></a></p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="simple">
+<dt>[Seyler2015] Seyler SL, Kumar A, Thorpe MF, Beckstein O (2015) Path</dt><dd><p>Similarity Analysis: A Method for Quantifying
+Macromolecular Pathways. PLoS Comput Biol 11(10):
+e1004568. <a class="reference external" href="https://doi.org/10.1371/journal.pcbi.1004568">https://doi.org/10.1371/journal.pcbi.1004568</a></p>
+</dd>
+</dl>
+<dl class="function">
+<dt id="MDAnalysisData.adk_transitions.fetch_adk_transitions_FRODA">
+<code class="sig-prename descclassname">MDAnalysisData.adk_transitions.</code><code class="sig-name descname">fetch_adk_transitions_FRODA</code><span class="sig-paren">(</span><em class="sig-param">data_home=None</em>, <em class="sig-param">download_if_missing=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MDAnalysisData/adk_transitions.html#fetch_adk_transitions_FRODA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#MDAnalysisData.adk_transitions.fetch_adk_transitions_FRODA" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load the AdK FRODA transititions dataset</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_home</strong> (<em>optional</em><em>, </em><em>default: None</em>) – Specify another download and cache folder for the datasets. By default
+all MDAnalysisData data is stored in ‘~/MDAnalysis_data’ subfolders.
+This dataset is stored in <code class="docutils literal notranslate"><span class="pre">&lt;data_home&gt;/adk_transitions_FRODA</span></code>.</p></li>
+<li><p><strong>download_if_missing</strong> (<em>optional</em><em>, </em><em>default=True</em>) – If <code class="docutils literal notranslate"><span class="pre">False</span></code>, raise a <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#IOError" title="(in Python v3.7)"><code class="xref py py-exc docutils literal notranslate"><span class="pre">IOError</span></code></a> if the data is not locally available
+instead of trying to download the data from the source site.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>dataset</strong> (<em>dict-like object with the following attributes:</em>)</p></li>
+<li><p><strong>dataset.topology</strong> (<em>filename</em>) – Filename of the topology file</p></li>
+<li><p><strong>dataset.trajectories</strong> (<em>list</em>) – list with filenames of the trajectory ensemble</p></li>
+<li><p><strong>dataset.N_trajectories</strong> (<em>int</em>) – number of trajectories in the ensemble</p></li>
+<li><p><strong>dataset.DESCR</strong> (<em>string</em>) – Description of the ensemble</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p>See <a class="reference internal" href="#adk-transitions-froda-dataset"><span class="std std-ref">AdK FRODA transitions ensemble dataset</span></a> for description.</p>
+</dd></dl>
+
+<p class="rubric">References</p>
+<dl class="citation">
+<dt class="label" id="perilla2009"><span class="brackets">Perilla2009</span><span class="fn-backref">(<a href="#id4">1</a>,<a href="#id7">2</a>)</span></dt>
+<dd><p>J. R. Perilla, O. Beckstein, E. J. Denning,
+and T. Woolf. Computing ensembles of transitions from stable
+states: Dynamic importance sampling. 32(2):186–209, 2011.</p>
+</dd>
+<dt class="label" id="farrell2010"><span class="brackets">Farrell2010</span><span class="fn-backref">(<a href="#id5">1</a>,<a href="#id8">2</a>)</span></dt>
+<dd><p>D. W. Farrell, K. Speranskiy,
+and M. F. Thorpe. Generating stereochemically acceptable protein
+pathways. Proteins, 78(14):2908–21, Nov 2010.</p>
+</dd>
+<dt class="label" id="seyler2014"><span class="brackets"><a class="fn-backref" href="#id1">Seyler2014</a></span></dt>
+<dd><p>S. L. Seyler and O. Beckstein. Sampling of large
+conformational transitions: Adenylate kinase as a testing
+ground. Molec. Simul., 40(10–11):855–877, 2014.</p>
+</dd>
+<dt class="label" id="seyler2015"><span class="brackets">Seyler2015</span><span class="fn-backref">(<a href="#id2">1</a>,<a href="#id3">2</a>,<a href="#id6">3</a>,<a href="#id12">4</a>)</span></dt>
+<dd><p>Seyler SL, Kumar A, Thorpe MF, Beckstein O (2015) Path
+Similarity Analysis: A Method for Quantifying Macromolecular
+Pathways. PLoS Comput Biol 11(10): e1004568. doi:
+<a class="reference external" href="https://doi.org/10.1371/journal.pcbi.1004568">10.1371/journal.pcbi.1004568</a></p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="index.html">
+    <img class="logo" src="_static/logos/MDAnalysisData-logo.png" alt="Logo"/>
+    
+    <h1 class="logo logo-name">MDAnalysisData</h1>
+    
+  </a>
+</p>
+
+
+
+<p class="blurb">Biomolecular simulation datasets</p>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="helpers.html">Helpers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Credits</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Datasets</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="adk_equilibrium.html">AdK equilibrium dataset</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">AdK transitions datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PEG_1chain.html">PEG polymer dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ifabp_water.html">I-FABP dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nhaa_equilibrium.html">NhaA equilibrium dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="yiip_equilibrium.html">YiiP equilibrium dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="membrane_peptide.html">Membrane peptide dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vesicles.html">Vesicles datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CG_fiber.html">CG  fiber dataset</a></li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="https://www.mdanalysis.org/">MDAnalysis</a></li>
+    
+    <li class="toctree-l1"><a href="https://alchemtest.readthedocs.io/">alchemtest</a></li>
+    
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="adk_equilibrium.html" title="previous chapter">AdK equilibrium dataset</a></li>
+      <li>Next: <a href="PEG_1chain.html" title="next chapter">PEG polymer dataset</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Oliver Beckstein, Shujie Fan, Micaela Matta, Richard J. Gowers.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/adk_transitions.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+    <a href="https://github.com/MDAnalysis/MDAnalysisData" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+    </a>
+    
+
+    
+  </body>
+</html>

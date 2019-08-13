@@ -1,0 +1,273 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Usage &#8212; MDAnalysisData 0.8.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within MDAnalysisData 0.8.0 documentation"
+          href="_static/opensearch.xml"/>
+    <link rel="shortcut icon" href="_static/mdanalysis-logo.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Helpers" href="helpers.html" />
+    <link rel="prev" title="Installing" href="install.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="usage">
+<span id="id1"></span><h1>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h1>
+<p>All datasets in <code class="xref py py-mod docutils literal notranslate"><span class="pre">MDAnalysisData</span></code> are accessible via <code class="docutils literal notranslate"><span class="pre">fetch_*</span></code>
+functions in the <code class="xref py py-mod docutils literal notranslate"><span class="pre">MDAnalysisData.datasets</span></code> module. Datasets are
+organized in submodules by the type of simulations that they
+represent.  The currently included datasets are:</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="adk_equilibrium.html#module-MDAnalysisData.adk_equilibrium" title="MDAnalysisData.adk_equilibrium"><code class="xref py py-obj docutils literal notranslate"><span class="pre">adk_equilibrium</span></code></a></p></td>
+<td><p>AdK equilibrium trajectory without water.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="adk_transitions.html#module-MDAnalysisData.adk_transitions" title="MDAnalysisData.adk_transitions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">adk_transitions</span></code></a></p></td>
+<td><p>Ensembles of AdK transitions.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="PEG_1chain.html#module-MDAnalysisData.PEG_1chain" title="MDAnalysisData.PEG_1chain"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PEG_1chain</span></code></a></p></td>
+<td><p>Molecular dynamics trajectory of a single PEG chain in TIP3P water.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ifabp_water.html#module-MDAnalysisData.ifabp_water" title="MDAnalysisData.ifabp_water"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ifabp_water</span></code></a></p></td>
+<td><p>MD simulation of I-FABP with water.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="nhaa_equilibrium.html#module-MDAnalysisData.nhaa_equilibrium" title="MDAnalysisData.nhaa_equilibrium"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nhaa_equilibrium</span></code></a></p></td>
+<td><p>NhaA equilibrium trajectory without water.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="yiip_equilibrium.html#module-MDAnalysisData.yiip_equilibrium" title="MDAnalysisData.yiip_equilibrium"><code class="xref py py-obj docutils literal notranslate"><span class="pre">yiip_equilibrium</span></code></a></p></td>
+<td><p>YiiP equilibrium trajectory with water.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="vesicles.html#module-MDAnalysisData.vesicles" title="MDAnalysisData.vesicles"><code class="xref py py-obj docutils literal notranslate"><span class="pre">vesicles</span></code></a></p></td>
+<td><p>Large vesicles library (coarse grained).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="CG_fiber.html#module-MDAnalysisData.CG_fiber" title="MDAnalysisData.CG_fiber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CG_fiber</span></code></a></p></td>
+<td><p>Coarse-grained molecular dynamics of an amphiphilic fiber.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="accessing-a-dataset">
+<h2>Accessing a dataset<a class="headerlink" href="#accessing-a-dataset" title="Permalink to this headline">¶</a></h2>
+<p>As an example, we can access the <a class="reference internal" href="adk_equilibrium.html#id1"><span class="std std-ref">AdK equilibrium dataset</span></a> with the
+<a class="reference internal" href="adk_equilibrium.html#MDAnalysisData.adk_equilibrium.fetch_adk_equilibrium" title="MDAnalysisData.adk_equilibrium.fetch_adk_equilibrium"><code class="xref py py-func docutils literal notranslate"><span class="pre">fetch_adk_equilibrium()</span></code></a>
+function:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">MDAnalysisData</span> <span class="k">import</span> <span class="n">datasets</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">adk</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">fetch_adk_equilibrium</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>This will download the dataset from figshare (doi:
+<a class="reference external" href="https://doi.org/10.6084/m9.figshare.5108170.v1">10.6084/m9.figshare.5108170.v1</a>) and unpack it into
+a cache directory. This means that only the first time executing
+<a class="reference internal" href="adk_equilibrium.html#MDAnalysisData.adk_equilibrium.fetch_adk_equilibrium" title="MDAnalysisData.adk_equilibrium.fetch_adk_equilibrium"><code class="xref py py-func docutils literal notranslate"><span class="pre">fetch_adk_equilibrium()</span></code></a> will be
+slow; at later times, the cached files will be used. The resulting
+<a class="reference internal" href="helpers.html#MDAnalysisData.base.Bunch" title="MDAnalysisData.base.Bunch"><code class="xref py py-class docutils literal notranslate"><span class="pre">Bunch</span></code></a> object can be introspected for
+what this dataset includes.  In particular, it features a
+<code class="xref py py-attr docutils literal notranslate"><span class="pre">DESCR</span></code> attribute with a
+human-readable description of the dataset:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">adk</span><span class="o">.</span><span class="n">DESCR</span><span class="p">)</span>
+
+<span class="go">AdK equilibrium trajectory dataset</span>
+<span class="go">==================================</span>
+
+<span class="go">MD trajectory of apo adenylate kinase with CHARMM27 force field and</span>
+<span class="go">simulated with explicit water and ions in NPT at 300 K and 1</span>
+<span class="go">bar. Saved every 240 ps for a total of 1.004 µs. Produced on PSC</span>
+<span class="go">Anton. The trajectory only contains the protein and all solvent</span>
+<span class="go">stripped. Superimposed on the CORE domain of AdK by RMSD fitting.</span>
+
+<span class="go">The topology is contained in the PSF file (CHARMM format). The</span>
+<span class="go">trajectory is contained in the DCD file (CHARMM/NAMD format).</span>
+
+<span class="go">Notes</span>
+<span class="go">-----</span>
+
+<span class="go">Data set characteristics:</span>
+
+<span class="go"> :size: 161 MB</span>
+<span class="go"> :number of frames:  4187</span>
+<span class="go"> :number of particles: 3341</span>
+<span class="go"> :creator: Sean Seyler</span>
+<span class="go"> :URL:  `10.6084/m9.figshare.5108170.v1 &lt;https://doi.org/10.6084/m9.figshare.5108170.v1&gt;`_</span>
+<span class="go"> :license: `CC-BY 4.0 &lt;https://creativecommons.org/licenses/by/4.0/legalcode&gt;`_</span>
+<span class="go"> :reference: [Seyler2017]_</span>
+
+
+<span class="go">.. [Seyler2017]  Seyler, Sean; Beckstein, Oliver (2017): Molecular dynamics</span>
+<span class="go">           trajectory for benchmarking</span>
+<span class="go">           MDAnalysis. figshare. Fileset. doi:</span>
+<span class="go">           `10.6084/m9.figshare.5108170.v1</span>
+<span class="go">           &lt;https://doi.org/10.6084/m9.figshare.5108170.v1&gt;`_</span>
+</pre></div>
+</div>
+<p>The topology and trajectory files can be accessed:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">adk</span><span class="o">.</span><span class="n">topology</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">adk</span><span class="o">.</span><span class="n">trajectory</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>and one can immediately load it into an <a class="reference external" href="https://www.mdanalysis.org/docs/documentation_pages/core/universe.html#MDAnalysis.core.universe.Universe" title="(in MDAnalysis v0.19)"><code class="xref py py-class docutils literal notranslate"><span class="pre">MDAnalysis.Universe</span></code></a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">MDAnalysis</span> <span class="k">as</span> <span class="nn">mda</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">u</span> <span class="o">=</span> <span class="n">mda</span><span class="o">.</span><span class="n">Universe</span><span class="p">(</span><span class="n">adk</span><span class="o">.</span><span class="n">topology</span><span class="p">,</span> <span class="n">adk</span><span class="o">.</span><span class="n">trajectory</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="managing-data">
+<span id="id2"></span><h2>Managing data<a class="headerlink" href="#managing-data" title="Permalink to this headline">¶</a></h2>
+<p>When data is downloaded from a remote location, it is copied to a
+local data directory and cached. Subsequently, the cached copy is
+used. By default, data are locally stored in the <strong>data directory</strong>
+<code class="docutils literal notranslate"><span class="pre">~/MDAnalysis_data</span></code> (i.e., under the user’s home directory).</p>
+<p>The location of the data directiory can be changed by setting the
+environment variable <span class="target" id="index-0"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">MDANALYSIS_DATA</span></code>, for instance</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">MDANALYSIS_DATA</span><span class="o">=</span>/tmp/MDAnalysis_data
+</pre></div>
+</div>
+<p>All <code class="docutils literal notranslate"><span class="pre">fetch_*</span></code> functions also have a keyword argument <cite>data_home</cite> that
+can be used to set an alternative data directory.</p>
+<p>The location of the data directory can be obtained with
+<a class="reference internal" href="helpers.html#MDAnalysisData.base.get_data_home" title="MDAnalysisData.base.get_data_home"><code class="xref py py-func docutils literal notranslate"><span class="pre">MDAnalysisData.base.get_data_home()</span></code></a>.</p>
+<p>If a dataset or the whole data directory is removed then the data are
+downloaded again when they are needed. If data are downloaded as
+archives (zip or tar files) then both the archive and the unpacked
+data are stored; removing the archive will trigger a re-download
+because only the archive itself is checked with the checksum.</p>
+<p>Only datasets that are needed are downloaded. However, the full data
+directory can take up more than 2 GB of space. One may manually delete
+subdirectories (e.g. data sets that are currently not needed) and the
+whole data directory can we wiped (removed) with the function
+<a class="reference internal" href="helpers.html#MDAnalysisData.base.clear_data_home" title="MDAnalysisData.base.clear_data_home"><code class="xref py py-func docutils literal notranslate"><span class="pre">MDAnalysisData.base.clear_data_home()</span></code></a>.</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="index.html">
+    <img class="logo" src="_static/logos/MDAnalysisData-logo.png" alt="Logo"/>
+    
+    <h1 class="logo logo-name">MDAnalysisData</h1>
+    
+  </a>
+</p>
+
+
+
+<p class="blurb">Biomolecular simulation datasets</p>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Overview</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installing</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#accessing-a-dataset">Accessing a dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#managing-data">Managing data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="helpers.html">Helpers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Credits</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Datasets</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="adk_equilibrium.html">AdK equilibrium dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adk_transitions.html">AdK transitions datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PEG_1chain.html">PEG polymer dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ifabp_water.html">I-FABP dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nhaa_equilibrium.html">NhaA equilibrium dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="yiip_equilibrium.html">YiiP equilibrium dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="membrane_peptide.html">Membrane peptide dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vesicles.html">Vesicles datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CG_fiber.html">CG  fiber dataset</a></li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="https://www.mdanalysis.org/">MDAnalysis</a></li>
+    
+    <li class="toctree-l1"><a href="https://alchemtest.readthedocs.io/">alchemtest</a></li>
+    
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="install.html" title="previous chapter">Installing</a></li>
+      <li>Next: <a href="helpers.html" title="next chapter">Helpers</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Oliver Beckstein, Shujie Fan, Micaela Matta, Richard J. Gowers.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/usage.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+    <a href="https://github.com/MDAnalysis/MDAnalysisData" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+    </a>
+    
+
+    
+  </body>
+</html>

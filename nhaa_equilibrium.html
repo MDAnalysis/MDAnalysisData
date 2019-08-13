@@ -1,0 +1,238 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>NhaA equilibrium dataset &#8212; MDAnalysisData 0.8.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within MDAnalysisData 0.8.0 documentation"
+          href="_static/opensearch.xml"/>
+    <link rel="shortcut icon" href="_static/mdanalysis-logo.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="YiiP equilibrium dataset" href="yiip_equilibrium.html" />
+    <link rel="prev" title="I-FABP dataset" href="ifabp_water.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-MDAnalysisData.nhaa_equilibrium">
+<span id="nhaa-equilibrium-dataset"></span><span id="nhaa-equilibrium"></span><h1>NhaA equilibrium dataset<a class="headerlink" href="#module-MDAnalysisData.nhaa_equilibrium" title="Permalink to this headline">¶</a></h1>
+<p>The <a class="reference internal" href="#module-MDAnalysisData.nhaa_equilibrium" title="MDAnalysisData.nhaa_equilibrium"><code class="xref py py-mod docutils literal notranslate"><span class="pre">MDAnalysisData.nhaa_equilibrium</span></code></a> module contains a
+500-ns equilibrium MD trajectory of a membrane-protein system
+with all solvent removed. It can be used to study membrane-
+protein dynamics.</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#MDAnalysisData.nhaa_equilibrium.fetch_nhaa_equilibrium" title="MDAnalysisData.nhaa_equilibrium.fetch_nhaa_equilibrium"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fetch_nhaa_equilibrium</span></code></a>([data_home, …])</p></td>
+<td><p>Load the NhaA 500 ns equilibrium trajectory (without water)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="nhaa-equilibrium-trajectory-dataset">
+<span id="id1"></span><h2>NhaA equilibrium trajectory dataset<a class="headerlink" href="#nhaa-equilibrium-trajectory-dataset" title="Permalink to this headline">¶</a></h2>
+<p>Molecular dynamics (MD) trajectory of the NhaA membrane protein in a
+POPE:POPG 4:1 model membrane. The equilibrium simulation was performed
+in the NPT ensemble at T=300K and P=1 bar. The system was simulated
+with Gromacs 5.1.4, using the CHARMM36 force field, the TIP3P explicit
+water model, and NaCl at approximately 100 mM concentration.</p>
+<p>Trajectory frames were saved every 100 ps for a total of 500 ns
+simulated time. The topology only contains the protein, membrane and
+ions (because the water molecules were stripped from the trajectory to
+save space).</p>
+<p>The topology is contained in the NhaA_non_water.gro file. The trajectory is contained in the NhaA_non_water.xtc file.</p>
+<div class="section" id="notes">
+<h3>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h3>
+<p>Data set characteristics:</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">size</dt>
+<dd class="field-odd"><p>1.07 GB</p>
+</dd>
+<dt class="field-even">number of trajectories</dt>
+<dd class="field-even"><p>1</p>
+</dd>
+<dt class="field-odd">number of frames</dt>
+<dd class="field-odd"><p>5000</p>
+</dd>
+<dt class="field-even">number of particles</dt>
+<dd class="field-even"><p>60702</p>
+</dd>
+<dt class="field-odd">creator</dt>
+<dd class="field-odd"><p>Ian Kenney, Shujie Fan</p>
+</dd>
+<dt class="field-even">URL</dt>
+<dd class="field-even"><p><a class="reference external" href="https://doi.org/10.6084/m9.figshare.7185203.v2">10.6084/m9.figshare.7185203.v2</a></p>
+</dd>
+<dt class="field-odd">license</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://creativecommons.org/licenses/by/4.0/legalcode">CC-BY 4.0</a></p>
+</dd>
+<dt class="field-even">reference</dt>
+<dd class="field-even"><p><a class="reference internal" href="#kenney2018" id="id2"><span>[Kenney2018]</span></a></p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="citation">
+<dt class="label" id="kenney2018"><span class="brackets"><a class="fn-backref" href="#id2">Kenney2018</a></span></dt>
+<dd><p>M. Kenney, Ian; Fan, Shujie; Beckstein, Oliver (2018): Molecular dynamics
+trajectory of membrane protein NhaA. figshare. Dataset.
+MDAnalysis. figshare. Fileset. doi:
+<a class="reference external" href="https://doi.org/10.6084/m9.figshare.7185203.v2">10.6084/m9.figshare.7185203.v2</a></p>
+</dd>
+</dl>
+<dl class="function">
+<dt id="MDAnalysisData.nhaa_equilibrium.fetch_nhaa_equilibrium">
+<code class="sig-prename descclassname">MDAnalysisData.nhaa_equilibrium.</code><code class="sig-name descname">fetch_nhaa_equilibrium</code><span class="sig-paren">(</span><em class="sig-param">data_home=None</em>, <em class="sig-param">download_if_missing=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MDAnalysisData/nhaa_equilibrium.html#fetch_nhaa_equilibrium"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#MDAnalysisData.nhaa_equilibrium.fetch_nhaa_equilibrium" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load the NhaA 500 ns equilibrium trajectory (without water)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_home</strong> (<em>optional</em><em>, </em><em>default: None</em>) – Specify another download and cache folder for the datasets. By default
+all MDAnalysisData data is stored in ‘~/MDAnalysis_data’ subfolders.
+This dataset is stored in <code class="docutils literal notranslate"><span class="pre">&lt;data_home&gt;/nhaa_equilibrium</span></code>.</p></li>
+<li><p><strong>download_if_missing</strong> (<em>optional</em><em>, </em><em>default=True</em>) – If <code class="docutils literal notranslate"><span class="pre">False</span></code>, raise a <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#IOError" title="(in Python v3.7)"><code class="xref py py-exc docutils literal notranslate"><span class="pre">IOError</span></code></a> if the data is not locally available
+instead of trying to download the data from the source site.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>dataset</strong> (<em>dict-like object with the following attributes:</em>)</p></li>
+<li><p><strong>dataset.topology</strong> (<em>filename</em>) – Filename of the topology file</p></li>
+<li><p><strong>dataset.trajectory</strong> (<em>filename</em>) – Filename of the trajectory file</p></li>
+<li><p><strong>dataset.DESCR</strong> (<em>string</em>) – Description of the trajectory.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p>See <a class="reference internal" href="#id1"><span class="std std-ref">NhaA equilibrium trajectory dataset</span></a> for description.</p>
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="index.html">
+    <img class="logo" src="_static/logos/MDAnalysisData-logo.png" alt="Logo"/>
+    
+    <h1 class="logo logo-name">MDAnalysisData</h1>
+    
+  </a>
+</p>
+
+
+
+<p class="blurb">Biomolecular simulation datasets</p>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="helpers.html">Helpers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Credits</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Datasets</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="adk_equilibrium.html">AdK equilibrium dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adk_transitions.html">AdK transitions datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PEG_1chain.html">PEG polymer dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ifabp_water.html">I-FABP dataset</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">NhaA equilibrium dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="yiip_equilibrium.html">YiiP equilibrium dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="membrane_peptide.html">Membrane peptide dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vesicles.html">Vesicles datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CG_fiber.html">CG  fiber dataset</a></li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="https://www.mdanalysis.org/">MDAnalysis</a></li>
+    
+    <li class="toctree-l1"><a href="https://alchemtest.readthedocs.io/">alchemtest</a></li>
+    
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="ifabp_water.html" title="previous chapter">I-FABP dataset</a></li>
+      <li>Next: <a href="yiip_equilibrium.html" title="next chapter">YiiP equilibrium dataset</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Oliver Beckstein, Shujie Fan, Micaela Matta, Richard J. Gowers.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/nhaa_equilibrium.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+    <a href="https://github.com/MDAnalysis/MDAnalysisData" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+    </a>
+    
+
+    
+  </body>
+</html>

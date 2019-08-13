@@ -1,0 +1,225 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>MDAnalysisData.nhaa_equilibrium &#8212; MDAnalysisData 0.8.0 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within MDAnalysisData 0.8.0 documentation"
+          href="../../_static/opensearch.xml"/>
+    <link rel="shortcut icon" href="../../_static/mdanalysis-logo.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Source code for MDAnalysisData.nhaa_equilibrium</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="sd">&quot;&quot;&quot;NhaA equilibrium trajectory without water.</span>
+
+<span class="sd">https://figshare.com/articles/Molecular_dynamics_trajectory_of_membrane_protein_NhaA/7185203/2</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">os.path</span> <span class="k">import</span> <span class="n">dirname</span><span class="p">,</span> <span class="n">exists</span><span class="p">,</span> <span class="n">join</span>
+<span class="kn">from</span> <span class="nn">os</span> <span class="k">import</span> <span class="n">makedirs</span><span class="p">,</span> <span class="n">remove</span>
+<span class="kn">import</span> <span class="nn">codecs</span>
+
+<span class="kn">import</span> <span class="nn">logging</span>
+
+<span class="kn">from</span> <span class="nn">.base</span> <span class="k">import</span> <span class="n">get_data_home</span>
+<span class="kn">from</span> <span class="nn">.base</span> <span class="k">import</span> <span class="n">_fetch_remote</span><span class="p">,</span> <span class="n">_read_description</span>
+<span class="kn">from</span> <span class="nn">.base</span> <span class="k">import</span> <span class="n">RemoteFileMetadata</span>
+<span class="kn">from</span> <span class="nn">.base</span> <span class="k">import</span> <span class="n">Bunch</span>
+
+<span class="n">NAME</span> <span class="o">=</span> <span class="s2">&quot;nhaa_equilibrium&quot;</span>
+<span class="n">DESCRIPTION</span> <span class="o">=</span> <span class="s2">&quot;nhaa_equilibrium.rst&quot;</span>
+<span class="c1"># The original data can be found at the figshare URL.</span>
+<span class="c1"># The SHA256 checksum of the zip file changes with every download so we</span>
+<span class="c1"># cannot check its checksum. Instead we download individual files.</span>
+<span class="c1"># separately. The keys of this dict are also going to be the keys in the</span>
+<span class="c1"># Bunch that is returned.</span>
+<span class="n">ARCHIVE</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;topology&#39;</span><span class="p">:</span> <span class="n">RemoteFileMetadata</span><span class="p">(</span>
+        <span class="n">filename</span><span class="o">=</span><span class="s1">&#39;NhaA_non_water.gro&#39;</span><span class="p">,</span>
+        <span class="n">url</span><span class="o">=</span><span class="s1">&#39;https://ndownloader.figshare.com/files/13222709&#39;</span><span class="p">,</span>
+        <span class="n">checksum</span><span class="o">=</span><span class="s1">&#39;ae42f4cfcfe312476f9e5121fe47764a11aff962197799671c0c5a8f83637420&#39;</span><span class="p">,</span>
+    <span class="p">),</span>
+    <span class="s1">&#39;trajectory&#39;</span><span class="p">:</span>  <span class="n">RemoteFileMetadata</span><span class="p">(</span>
+        <span class="n">filename</span><span class="o">=</span><span class="s1">&#39;NhaA_non_water.xtc&#39;</span><span class="p">,</span>
+        <span class="n">url</span><span class="o">=</span><span class="s1">&#39;https://ndownloader.figshare.com/files/13222712&#39;</span><span class="p">,</span>
+        <span class="n">checksum</span><span class="o">=</span><span class="s1">&#39;c9ab7ba8c9c271d535cfadebc33da1d90fbf00d9a01f48afedd0f7a703128eaf&#39;</span><span class="p">,</span>
+    <span class="p">),</span>
+<span class="p">}</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="fetch_nhaa_equilibrium"><a class="viewcode-back" href="../../nhaa_equilibrium.html#MDAnalysisData.nhaa_equilibrium.fetch_nhaa_equilibrium">[docs]</a><span class="k">def</span> <span class="nf">fetch_nhaa_equilibrium</span><span class="p">(</span><span class="n">data_home</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">download_if_missing</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Load the NhaA 500 ns equilibrium trajectory (without water)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data_home : optional, default: None</span>
+<span class="sd">        Specify another download and cache folder for the datasets. By default</span>
+<span class="sd">        all MDAnalysisData data is stored in &#39;~/MDAnalysis_data&#39; subfolders.</span>
+<span class="sd">        This dataset is stored in ``&lt;data_home&gt;/nhaa_equilibrium``.</span>
+<span class="sd">    download_if_missing : optional, default=True</span>
+<span class="sd">        If ``False``, raise a :exc:`IOError` if the data is not locally available</span>
+<span class="sd">        instead of trying to download the data from the source site.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    dataset : dict-like object with the following attributes:</span>
+<span class="sd">    dataset.topology : filename</span>
+<span class="sd">        Filename of the topology file</span>
+<span class="sd">    dataset.trajectory : filename</span>
+<span class="sd">        Filename of the trajectory file</span>
+<span class="sd">    dataset.DESCR : string</span>
+<span class="sd">        Description of the trajectory.</span>
+
+
+<span class="sd">    See :ref:`nhaa-equilibrium-dataset` for description.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">NAME</span>
+    <span class="n">data_location</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="n">get_data_home</span><span class="p">(</span><span class="n">data_home</span><span class="o">=</span><span class="n">data_home</span><span class="p">),</span>
+                         <span class="n">name</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">exists</span><span class="p">(</span><span class="n">data_location</span><span class="p">):</span>
+        <span class="n">makedirs</span><span class="p">(</span><span class="n">data_location</span><span class="p">)</span>
+
+    <span class="n">records</span> <span class="o">=</span> <span class="n">Bunch</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">file_type</span><span class="p">,</span> <span class="n">meta</span> <span class="ow">in</span> <span class="n">ARCHIVE</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">local_path</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="n">data_location</span><span class="p">,</span> <span class="n">meta</span><span class="o">.</span><span class="n">filename</span><span class="p">)</span>
+        <span class="n">records</span><span class="p">[</span><span class="n">file_type</span><span class="p">]</span> <span class="o">=</span> <span class="n">local_path</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">exists</span><span class="p">(</span><span class="n">local_path</span><span class="p">):</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">download_if_missing</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="s2">&quot;Data </span><span class="si">{0}</span><span class="s2">=</span><span class="si">{1}</span><span class="s2"> not found and `download_if_missing` is &quot;</span>
+                              <span class="s2">&quot;False&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">file_type</span><span class="p">,</span> <span class="n">local_path</span><span class="p">))</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Downloading </span><span class="si">{0}</span><span class="s2">: </span><span class="si">{1}</span><span class="s2"> -&gt; </span><span class="si">{2}</span><span class="s2">...&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="n">file_type</span><span class="p">,</span> <span class="n">meta</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="n">local_path</span><span class="p">))</span>
+            <span class="n">archive_path</span> <span class="o">=</span> <span class="n">_fetch_remote</span><span class="p">(</span><span class="n">meta</span><span class="p">,</span> <span class="n">dirname</span><span class="o">=</span><span class="n">data_location</span><span class="p">)</span>
+
+    <span class="n">records</span><span class="o">.</span><span class="n">DESCR</span> <span class="o">=</span> <span class="n">_read_description</span><span class="p">(</span><span class="n">DESCRIPTION</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">records</span></div>
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logos/MDAnalysisData-logo.png" alt="Logo"/>
+    
+    <h1 class="logo logo-name">MDAnalysisData</h1>
+    
+  </a>
+</p>
+
+
+
+<p class="blurb">Biomolecular simulation datasets</p>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../helpers.html">Helpers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../credits.html">Credits</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Datasets</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../adk_equilibrium.html">AdK equilibrium dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../adk_transitions.html">AdK transitions datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../PEG_1chain.html">PEG polymer dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ifabp_water.html">I-FABP dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../nhaa_equilibrium.html">NhaA equilibrium dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../yiip_equilibrium.html">YiiP equilibrium dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../membrane_peptide.html">Membrane peptide dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vesicles.html">Vesicles datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CG_fiber.html">CG  fiber dataset</a></li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="https://www.mdanalysis.org/">MDAnalysis</a></li>
+    
+    <li class="toctree-l1"><a href="https://alchemtest.readthedocs.io/">alchemtest</a></li>
+    
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Oliver Beckstein, Shujie Fan, Micaela Matta, Richard J. Gowers.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+    <a href="https://github.com/MDAnalysis/MDAnalysisData" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+    </a>
+    
+
+    
+  </body>
+</html>

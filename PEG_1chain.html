@@ -1,0 +1,212 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>PEG polymer dataset &#8212; MDAnalysisData 0.8.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within MDAnalysisData 0.8.0 documentation"
+          href="_static/opensearch.xml"/>
+    <link rel="shortcut icon" href="_static/mdanalysis-logo.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="I-FABP dataset" href="ifabp_water.html" />
+    <link rel="prev" title="AdK transitions datasets" href="adk_transitions.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-MDAnalysisData.PEG_1chain">
+<span id="peg-polymer-dataset"></span><span id="peg-1chain"></span><h1>PEG polymer dataset<a class="headerlink" href="#module-MDAnalysisData.PEG_1chain" title="Permalink to this headline">¶</a></h1>
+<p>The <a class="reference internal" href="#module-MDAnalysisData.PEG_1chain" title="MDAnalysisData.PEG_1chain"><code class="xref py py-mod docutils literal notranslate"><span class="pre">MDAnalysisData.PEG_1chain</span></code></a> module contains a coarse-grained
+MD trajectory showing the self-assembly of an amphiphilic molecule.</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#MDAnalysisData.PEG_1chain.fetch_PEG_1chain" title="MDAnalysisData.PEG_1chain.fetch_PEG_1chain"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fetch_PEG_1chain</span></code></a>([data_home, …])</p></td>
+<td><p>Load the PEG polymer trajectory</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="peg-1chain-dataset">
+<span id="id1"></span><h2>PEG polymer dataset<a class="headerlink" href="#peg-1chain-dataset" title="Permalink to this headline">¶</a></h2>
+<p>MD trajectory showing the self-assembly of an amphiphilic molecule.</p>
+<p>The topology is contained in the PRMTOP file (AMBER format). The
+trajectory is contained in the NETCDF (.nc) file (AMBER format).</p>
+<div class="section" id="notes">
+<h3>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h3>
+<p>Data set characteristics:</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">size</dt>
+<dd class="field-odd"><p>10 MB</p>
+</dd>
+<dt class="field-even">number of trajectories</dt>
+<dd class="field-even"><p>1</p>
+</dd>
+<dt class="field-odd">creator</dt>
+<dd class="field-odd"><p>Micaela Matta</p>
+</dd>
+<dt class="field-even">URL</dt>
+<dd class="field-even"><p><a class="reference external" href="https://figshare.com/articles/PEG_single_chain/7325774">https://figshare.com/articles/PEG_single_chain/7325774</a></p>
+</dd>
+<dt class="field-odd">license</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://creativecommons.org/licenses/by/4.0/legalcode">CC-BY 4.0</a></p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="function">
+<dt id="MDAnalysisData.PEG_1chain.fetch_PEG_1chain">
+<code class="sig-prename descclassname">MDAnalysisData.PEG_1chain.</code><code class="sig-name descname">fetch_PEG_1chain</code><span class="sig-paren">(</span><em class="sig-param">data_home=None</em>, <em class="sig-param">download_if_missing=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MDAnalysisData/PEG_1chain.html#fetch_PEG_1chain"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#MDAnalysisData.PEG_1chain.fetch_PEG_1chain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load the PEG polymer trajectory</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_home</strong> (<em>optional</em><em>, </em><em>default: None</em>) – Specify another download and cache folder for the datasets. By default
+all MDAnalysisData data is stored in ‘~/MDAnalysis_data’ subfolders.
+This dataset is stored in <code class="docutils literal notranslate"><span class="pre">&lt;data_home&gt;/CG_fiber</span></code>.</p></li>
+<li><p><strong>download_if_missing</strong> (<em>optional</em><em>, </em><em>default=True</em>) – If <code class="docutils literal notranslate"><span class="pre">False</span></code>, raise a <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#IOError" title="(in Python v3.7)"><code class="xref py py-exc docutils literal notranslate"><span class="pre">IOError</span></code></a> if the data is not locally available
+instead of trying to download the data from the source site.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>dataset</strong> (<em>dict-like object with the following attributes:</em>)</p></li>
+<li><p><strong>dataset.topology</strong> (<em>filename</em>) – Filename of the topology file</p></li>
+<li><p><strong>dataset.trajectory</strong> (<em>filename</em>) – Filename of the trajectory file</p></li>
+<li><p><strong>dataset.DESCR</strong> (<em>string</em>) – Description of the trajectory.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p>See <a class="reference internal" href="#peg-1chain-dataset"><span class="std std-ref">PEG polymer dataset</span></a> for description.</p>
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="index.html">
+    <img class="logo" src="_static/logos/MDAnalysisData-logo.png" alt="Logo"/>
+    
+    <h1 class="logo logo-name">MDAnalysisData</h1>
+    
+  </a>
+</p>
+
+
+
+<p class="blurb">Biomolecular simulation datasets</p>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="helpers.html">Helpers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Credits</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Datasets</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="adk_equilibrium.html">AdK equilibrium dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adk_transitions.html">AdK transitions datasets</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">PEG polymer dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ifabp_water.html">I-FABP dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nhaa_equilibrium.html">NhaA equilibrium dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="yiip_equilibrium.html">YiiP equilibrium dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="membrane_peptide.html">Membrane peptide dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vesicles.html">Vesicles datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CG_fiber.html">CG  fiber dataset</a></li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="https://www.mdanalysis.org/">MDAnalysis</a></li>
+    
+    <li class="toctree-l1"><a href="https://alchemtest.readthedocs.io/">alchemtest</a></li>
+    
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="adk_transitions.html" title="previous chapter">AdK transitions datasets</a></li>
+      <li>Next: <a href="ifabp_water.html" title="next chapter">I-FABP dataset</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Oliver Beckstein, Shujie Fan, Micaela Matta, Richard J. Gowers.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/PEG_1chain.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+    <a href="https://github.com/MDAnalysis/MDAnalysisData" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+    </a>
+    
+
+    
+  </body>
+</html>
