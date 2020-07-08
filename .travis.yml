@@ -29,11 +29,14 @@ after_success:
 deploy:
   # stuff related to deploying to gh-pages
   # GITHUB_TOKEN is set in Travis-CI settings (@orbeckst)
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
+  provider: pages:git
+  strategy: git
+  cleanup: false
+  token: $GITHUB_TOKEN
   on:
     branch: master
     python: "3.8"
   local_dir: build/sphinx/html
   project_name: MDAnalysisData
+  # use dpl v2 https://docs.travis-ci.com/user/deployment-v2:
+  edge: True
