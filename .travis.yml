@@ -29,7 +29,7 @@ after_success:
 deploy:
   # stuff related to deploying to gh-pages
   # GITHUB_TOKEN is set in Travis-CI settings (@orbeckst)
-  provider: pages:git
+  provider: pages
   strategy: git
   cleanup: false
   token: $GITHUB_TOKEN
