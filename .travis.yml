@@ -1,8 +1,10 @@
+version: ~> 1.0
 language: python
 cache: pip
-sudo: false
 
 python:
+  - "3.8"
+  - "3.7"
   - "3.6"
   - "2.7"
 
@@ -11,7 +13,7 @@ branches:
     - master
     
 install:
-  - if [[ $TRAVIS_PYTHON_VERSION == "3.6" ]]; then pip install --upgrade sphinx sphinx-sitemap; fi
+  - if [[ $TRAVIS_PYTHON_VERSION == "3.8" ]]; then pip install --upgrade sphinx sphinx-sitemap sphinx-rtd-theme; fi
   - pip install --upgrade pytest pytest-pep8 pytest-cov pytest-mock codecov
   - pip install -e .
 
@@ -19,19 +21,22 @@ script:
   - pytest -v --cov MDAnalysisData MDAnalysisData 
 
 after_success:
-  # only need to build docs on 3.6 version
+  # only need to build docs on latest version
   # touch .nojekyll else github-pages messes up theme
-  - if [[ $TRAVIS_PYTHON_VERSION == "3.6" ]]; then python setup.py build_sphinx && touch ./build/sphinx/html/.nojekyll; fi
+  - if [[ $TRAVIS_PYTHON_VERSION == "3.8" ]]; then python setup.py build_sphinx && touch ./build/sphinx/html/.nojekyll; fi
   - codecov
 
 deploy:
   # stuff related to deploying to gh-pages
   # GITHUB_TOKEN is set in Travis-CI settings (@orbeckst)
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
+  provider: pages:git
+  strategy: git
+  cleanup: false
+  token: $GITHUB_TOKEN
   on:
     branch: master
-    python: "3.6"
+    python: "3.8"
   local_dir: build/sphinx/html
   project_name: MDAnalysisData
+  # use dpl v2 https://docs.travis-ci.com/user/deployment-v2:
+  edge: True
