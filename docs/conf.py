@@ -12,16 +12,19 @@
 # serve to show the default.
 
 import sys, os
+import datetime
+
+import sphinx_rtd_theme
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
-#sys.path.insert(0, os.path.abspath('.'))
-
+#
 # make sure sphinx always uses the current branch
 sys.path.insert(0, os.path.abspath('..'))
 
-import sphinx_rtd_theme
+# to get authors and version
+import MDAnalysisData
 
 # -- General configuration -----------------------------------------------------
 
@@ -63,10 +66,11 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
+author_list = MDAnalysisData.__authors__
+authors = u', '.join(author_list[:-1]) + u', and ' + author_list[-1]
 project = u'MDAnalysisData'
-author = (u'Oliver Beckstein, Shujie Fan, Micaela Matta, '
-          u'Richard J. Gowers, Lily Wang')
-copyright = u'2018-2020, ' + author
+now = datetime.datetime.now()
+copyright = u'2018-{}, '.format(now.year) + authors
 
 
 # The version info for the project you're documenting, acts as replacement for
@@ -74,7 +78,7 @@ copyright = u'2018-2020, ' + author
 # built documents.
 #
 # The full version, including alpha/beta/rc tags.
-release = __import__('MDAnalysisData').__version__
+release = MDAnalysisData.__version__
 # The short X.Y version.
 version = ".".join(release.split('.')[:2])
 
@@ -240,7 +244,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'MDAnalysisData.tex', u'MDAnalysisData Documentation',
-     author, 'manual'),
+     authors, 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -270,7 +274,7 @@ latex_documents = [
 # (source start file, name, description, authors, manual section).
 man_pages = [
     (master_doc, 'MDAnalysisData', u'MDAnalysisData Documentation',
-     author.split(), 1)
+     authors.split(), 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -284,7 +288,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
     (master_doc, 'MDAnalysisData', u'MDAnalysisData Documentation',
-     author, 'MDAnalysisData', 'Datasets for MDAnalysis',
+     authors, 'MDAnalysisData', 'Datasets for MDAnalysis',
      'Miscellaneous'),
 ]
 
@@ -301,5 +305,5 @@ texinfo_documents = [
 # Configuration for intersphinx: refer to the Python standard library
 # and other packages used by MDAnalysis
 intersphinx_mapping = {'https://docs.python.org/': None,
-                       'https://www.mdanalysis.org/docs/': None,
+                       'https://docs.mdanalysis.org/stable': None,
                        }
