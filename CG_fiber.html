@@ -3,23 +3,28 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>CG fiber dataset &mdash; MDAnalysisData 0.8.0+5.g56f9ae0 documentation</title>
+  <title>CG fiber dataset &mdash; MDAnalysisData 0.8.0+9.g2de91ab documentation</title>
   
 
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
 
   
   
     <link rel="shortcut icon" href="_static/mdanalysis-logo.ico"/>
   
+
   
+  
+
   
 
   
@@ -29,16 +34,16 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within MDAnalysisData 0.8.0+5.g56f9ae0 documentation"
+          title="Search within MDAnalysisData 0.8.0+9.g2de91ab documentation"
           href="_static/opensearch.xml"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -94,14 +99,15 @@
               
             
             
-              <p class="caption"><span class="caption-text">Overview</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing new datasets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="helpers.html">Helpers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="credits.html">Credits</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Datasets</span></p>
+<p class="caption" role="heading"><span class="caption-text">Datasets</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="adk_equilibrium.html">AdK equilibrium dataset</a></li>
 <li class="toctree-l1"><a class="reference internal" href="adk_transitions.html">AdK transitions datasets</a></li>
@@ -158,6 +164,8 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -169,7 +177,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="_sources/CG_fiber.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -226,8 +234,8 @@ trajectory is contained in the DCD file (CHARMM/NAMD format).</p>
 </dl>
 </div></blockquote>
 <dl class="py function">
-<dt id="MDAnalysisData.CG_fiber.fetch_CG_fiber">
-<code class="sig-prename descclassname">MDAnalysisData.CG_fiber.</code><code class="sig-name descname">fetch_CG_fiber</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data_home</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">download_if_missing</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MDAnalysisData/CG_fiber.html#fetch_CG_fiber"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#MDAnalysisData.CG_fiber.fetch_CG_fiber" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="MDAnalysisData.CG_fiber.fetch_CG_fiber">
+<span class="sig-prename descclassname"><span class="pre">MDAnalysisData.CG_fiber.</span></span><span class="sig-name descname"><span class="pre">fetch_CG_fiber</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_home</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">download_if_missing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MDAnalysisData/CG_fiber.html#fetch_CG_fiber"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#MDAnalysisData.CG_fiber.fetch_CG_fiber" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load the CG fiber self-assembly trajectory</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -235,7 +243,7 @@ trajectory is contained in the DCD file (CHARMM/NAMD format).</p>
 <li><p><strong>data_home</strong> (<em>optional</em><em>, </em><em>default: None</em>) – Specify another download and cache folder for the datasets. By default
 all MDAnalysisData data is stored in ‘~/MDAnalysis_data’ subfolders.
 This dataset is stored in <code class="docutils literal notranslate"><span class="pre">&lt;data_home&gt;/CG_fiber</span></code>.</p></li>
-<li><p><strong>download_if_missing</strong> (<em>optional</em><em>, </em><em>default=True</em>) – If <code class="docutils literal notranslate"><span class="pre">False</span></code>, raise a <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#IOError" title="(in Python v3.8)"><code class="xref py py-exc docutils literal notranslate"><span class="pre">IOError</span></code></a> if the data is not locally available
+<li><p><strong>download_if_missing</strong> (<em>optional</em><em>, </em><em>default=True</em>) – If <code class="docutils literal notranslate"><span class="pre">False</span></code>, raise a <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#IOError" title="(in Python v3.9)"><code class="xref py py-exc docutils literal notranslate"><span class="pre">IOError</span></code></a> if the data is not locally available
 instead of trying to download the data from the source site.</p></li>
 </ul>
 </dd>
@@ -261,30 +269,24 @@ instead of trying to download the data from the source site.</p></li>
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-      
-        <a href="vesicles.html" class="btn btn-neutral float-left" title="Vesicles datasets" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="vesicles.html" class="btn btn-neutral float-left" title="Vesicles datasets" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2018-2020, Oliver Beckstein, Shujie Fan, Micaela Matta, Richard J. Gowers, Lily Wang
+        &#169; Copyright 2018-2021, Oliver Beckstein, Shujie Fan, Richard J. Gowers, Micaela Matta, and Lily Wang.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>.
  
@@ -297,7 +299,6 @@ instead of trying to download the data from the source site.</p></li>
 
 
 </footer>
-
         </div>
       </div>
 

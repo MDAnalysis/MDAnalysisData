@@ -3,23 +3,28 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>MDAnalysisData: MD data for testing, learning, and benchmarking &mdash; MDAnalysisData 0.8.0+5.g56f9ae0 documentation</title>
+  <title>MDAnalysisData: MD data for testing, learning, and benchmarking &mdash; MDAnalysisData 0.8.0+9.g2de91ab documentation</title>
   
 
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
 
   
   
     <link rel="shortcut icon" href="_static/mdanalysis-logo.ico"/>
   
+
   
+  
+
   
 
   
@@ -29,16 +34,16 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within MDAnalysisData 0.8.0+5.g56f9ae0 documentation"
+          title="Search within MDAnalysisData 0.8.0+9.g2de91ab documentation"
           href="_static/opensearch.xml"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -94,14 +99,15 @@
               
             
             
-              <p class="caption"><span class="caption-text">Overview</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing new datasets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="helpers.html">Helpers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="credits.html">Credits</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Datasets</span></p>
+<p class="caption" role="heading"><span class="caption-text">Datasets</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="adk_equilibrium.html">AdK equilibrium dataset</a></li>
 <li class="toctree-l1"><a class="reference internal" href="adk_transitions.html">AdK transitions datasets</a></li>
@@ -152,6 +158,8 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -163,7 +171,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -182,10 +190,10 @@
 <p><a class="reference external" href="https://zenodo.org/badge/latestdoi/147885122"><img alt="Zenodo DOI" src="https://zenodo.org/badge/147885122.svg" /></a> <a class="reference external" href="http://makeapullrequest.com"><img alt="PRs welcome" src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" /></a> <a class="reference external" href="https://travis-ci.com/MDAnalysis/MDAnalysisData"><img alt="tests" src="https://travis-ci.com/MDAnalysis/MDAnalysisData.svg?branch=master" /></a> <a class="reference external" href="https://codecov.io/gh/MDAnalysis/MDAnalysisData"><img alt="test coverage" src="https://codecov.io/gh/MDAnalysis/MDAnalysisData/branch/master/graph/badge.svg" /></a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Release</dt>
-<dd class="field-odd"><p>0.8.0+5.g56f9ae0</p>
+<dd class="field-odd"><p>0.8.0+9.g2de91ab</p>
 </dd>
 <dt class="field-even">Date</dt>
-<dd class="field-even"><p>Jul 08, 2020</p>
+<dd class="field-even"><p>Jul 20, 2021</p>
 </dd>
 </dl>
 <p><strong>MDAnalysisData</strong> is a collection of datasets from the field of
@@ -207,9 +215,9 @@ separation, for any purpose and without a charge. All  code
 can be found in the public GitHub repository <a class="reference external" href="https://github.com/MDAnalysis/MDAnalysisData">mdanalysis/MDAnalysisData</a>.</p>
 <p>This library is <em>under active development</em>. We use <a class="reference external" href="https://semver.org">semantic
 versioning</a> to indicate clearly what kind of changes you may expect
-between releases. Please raise any issues or questions in the
-<a class="reference external" href="https://github.com/mdanalysis/MDAnalysisData/issues">Issue Tracker</a>. <a class="reference external" href="https://github.com/mdanalysis/MDAnalysisData/wiki/contributing">Contributions of data sets</a> and code in the form
-of pull requests are very welcome.</p>
+between releases. Please raise any issues or questions in the <a class="reference external" href="https://github.com/mdanalysis/MDAnalysisData/issues">Issue
+Tracker</a>. <a class="reference internal" href="contributing.html#contributing"><span class="std std-ref">Contributions of data sets</span></a> and code
+in the form of pull requests are very welcome.</p>
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
@@ -221,30 +229,24 @@ of pull requests are very welcome.</p>
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="install.html" class="btn btn-neutral float-right" title="Installing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
+        <a href="install.html" class="btn btn-neutral float-right" title="Installing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2018-2020, Oliver Beckstein, Shujie Fan, Micaela Matta, Richard J. Gowers, Lily Wang
+        &#169; Copyright 2018-2021, Oliver Beckstein, Shujie Fan, Richard J. Gowers, Micaela Matta, and Lily Wang.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>.
  
@@ -257,7 +259,6 @@ of pull requests are very welcome.</p>
 
 
 </footer>
-
         </div>
       </div>
 

@@ -1,0 +1,403 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Contributing new datasets &mdash; MDAnalysisData 0.8.0+9.g2de91ab documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/mdanalysis-logo.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within MDAnalysisData 0.8.0+9.g2de91ab documentation"
+          href="_static/opensearch.xml"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Helpers" href="helpers.html" />
+    <link rel="prev" title="Usage" href="usage.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: white" >
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/MDAnalysisData-logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Contributing new datasets</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#outline">Outline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-by-step-instructions">Step-by-step instructions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#step-1-archival-deposition">STEP 1: Archival deposition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-2-add-code-and-docs-to-mdanalysisdata">STEP 2: Add code and docs to MDAnalysisData</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#remotefilemetadata-and-sha256-checksum">RemoteFileMetadata and SHA256 checksum</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="helpers.html">Helpers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Credits</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Datasets</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="adk_equilibrium.html">AdK equilibrium dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adk_transitions.html">AdK transitions datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PEG_1chain.html">PEG polymer dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ifabp_water.html">I-FABP dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nhaa_equilibrium.html">NhaA equilibrium dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="yiip_equilibrium.html">YiiP equilibrium dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="membrane_peptide.html">Membrane peptide dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vesicles.html">Vesicles datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CG_fiber.html">CG  fiber dataset</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MDAnalysisData</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Contributing new datasets</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/contributing.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="contributing-new-datasets">
+<span id="contributing"></span><h1>Contributing new datasets<a class="headerlink" href="#contributing-new-datasets" title="Permalink to this headline">¶</a></h1>
+<p>New datasets are very welcome and everybody is encouraged to make their
+datasets accessible via <code class="xref py py-mod docutils literal notranslate"><span class="pre">MDAnalysisData</span></code>, regardless of the simulation
+package or analysis code that they use. Users are encouraged to cite the
+authors of the datasets.</p>
+<p><code class="xref py py-mod docutils literal notranslate"><span class="pre">MDAnalysisData</span></code> does <em>not</em> store files and trajectories. Instead, it
+provides accessor code to seamlessly download (and cache) files from archives.</p>
+<div class="section" id="outline">
+<h2>Outline<a class="headerlink" href="#outline" title="Permalink to this headline">¶</a></h2>
+<p>When you contribute data then you have to do two things</p>
+<ol class="arabic">
+<li><p><strong>deposit data in an archive</strong> under an <a class="reference external" href="https://opendatacommons.org/">Open Data</a> compatible license
+(<a class="reference external" href="https://creativecommons.org/share-your-work/public-domain/cc0">CC0</a> or <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">CC-BY</a> preferred)</p></li>
+<li><p><strong>write accessor code</strong> in <code class="xref py py-mod docutils literal notranslate"><span class="pre">MDAnalysisData</span></code></p>
+<p>The accessor code needs the stable archive URL(s) for your files and SHA256
+checksums to check the integrity for any downloaded files. You will also add
+a description of your dataset.</p>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We currently have code to work with the <a class="reference external" href="(https://figshare.com/">figshare</a> archive so choosing
+<em>figshare</em> will be easiest. But it should be straightforward to add code to
+work with other archive-grade repositories such as <a class="reference external" href="https://zenodo.org/">zenodo</a> or
+<a class="reference external" href="https://www.datadryad.org/">DataDryad</a>. Some universities also provide digital repositories that are
+suitable. Open an issue in the <a class="reference external" href="https://github.com/MDAnalysis/MDAnalysisData/issues">Issue Tracker</a> for supporting other
+archives.</p>
+</div>
+</div>
+<div class="section" id="step-by-step-instructions">
+<h2>Step-by-step instructions<a class="headerlink" href="#step-by-step-instructions" title="Permalink to this headline">¶</a></h2>
+<p>To add a new dataset deposit your data in a repository. Then open a <em>pull
+request</em> for the <a class="reference external" href="https://github.com/MDAnalysis/MDAnalysisData">https://github.com/MDAnalysis/MDAnalysisData</a>
+repository. Follow these steps:</p>
+<div class="section" id="step-1-archival-deposition">
+<h3>STEP 1: Archival deposition<a class="headerlink" href="#step-1-archival-deposition" title="Permalink to this headline">¶</a></h3>
+<p>Deposit <em>all</em> required files in an archive-grade repository such as
+<a class="reference external" href="(https://figshare.com/">figshare</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The site must <em>provide stable download links</em> and <em>may not change the
+content during download</em> because we store a SHA256 <a class="reference internal" href="#checksum"><span class="std std-ref">checksum</span></a>
+to check file integrity.</p>
+</div>
+<p>Make sure to <strong>choose an</strong> <a class="reference external" href="https://opendatacommons.org/">Open Data</a> <strong>compatible license</strong> such as <a class="reference external" href="https://creativecommons.org/share-your-work/public-domain/cc0">CC0</a> or
+<a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">CC-BY</a>.</p>
+<p>Take note of the <strong>direct download URL</strong> for each of your files. It should be
+possible to obtain the file directly from a stable URL with <strong class="program">curl</strong> or
+<strong class="program">wget</strong>. As an example look at the dataset for
+<a class="reference internal" href="adk_equilibrium.html#module-MDAnalysisData.adk_equilibrium" title="MDAnalysisData.adk_equilibrium"><code class="xref py py-mod docutils literal notranslate"><span class="pre">MDAnalysisData.adk_equilibrium</span></code></a> at DOI <a class="reference external" href="https://doi.org/10.6084/m9.figshare.5108170">10.6084/m9.figshare.5108170</a> (as
+shown in the <a class="reference internal" href="#fig-figshare-adk"><span class="std std-ref">figure below</span></a>). Especially note the
+<em>download</em> links of the DCD trajectory
+(<a class="reference external" href="https://ndownloader.figshare.com/files/8672074">https://ndownloader.figshare.com/files/8672074</a>) and PSF topology files
+(<a class="reference external" href="https://ndownloader.figshare.com/files/8672230">https://ndownloader.figshare.com/files/8672230</a>) as these links will be needed
+in the accessor code in <code class="xref py py-mod docutils literal notranslate"><span class="pre">MDAnalysisData</span></code> in the next step.</p>
+<div class="figure align-default" id="id1">
+<span id="fig-figshare-adk"></span><img alt="_images/figshare_adk_equilibrium.png" src="_images/figshare_adk_equilibrium.png" />
+<p class="caption"><span class="caption-text">The AdK Equilbrium dataset on figshare DOI <a class="reference external" href="https://doi.org/10.6084/m9.figshare.5108170">10.6084/m9.figshare.5108170</a>,
+highlighting the deposited trajectory and topology files. The <em>download</em>
+URLs are visible when hovering over a file’s image.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="step-2-add-code-and-docs-to-mdanalysisdata">
+<h3>STEP 2: Add code and docs to MDAnalysisData<a class="headerlink" href="#step-2-add-code-and-docs-to-mdanalysisdata" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p>Add a Python module <code class="docutils literal notranslate"><span class="pre">{MODULE_NAME}.py</span></code> with the name of your dataset
+(where <code class="docutils literal notranslate"><span class="pre">{MODULE_NAME}</span></code> is just a placeholder). As an example see
+<a class="reference external" href="https://github.com/MDAnalysis/MDAnalysisData/blob/master/MDAnalysisData/adk_equilibrium.py">MDAnalysisData/adk_equilibrium.py</a>, which becomes
+<a class="reference internal" href="adk_equilibrium.html#module-MDAnalysisData.adk_equilibrium" title="MDAnalysisData.adk_equilibrium"><code class="xref py py-mod docutils literal notranslate"><span class="pre">MDAnalysisData.adk_equilibrium</span></code></a>). In many cases you can copy an
+existing module and adapt:</p>
+<ul class="simple">
+<li><p>text: describe your dataset</p></li>
+<li><p><code class="xref py py-data docutils literal notranslate"><span class="pre">NAME</span></code>: name of the data set; will be used as a file name so do not use spaces etc</p></li>
+<li><p><code class="xref py py-data docutils literal notranslate"><span class="pre">DESCRIPTION</span></code>: filename of the description file (which contains
+restructured text format, so needs to have suffix <code class="docutils literal notranslate"><span class="pre">.rst</span></code>)</p></li>
+<li><p><code class="xref py py-data docutils literal notranslate"><span class="pre">ARCHIVE</span></code>: dictionary containing
+<a class="reference internal" href="helpers.html#MDAnalysisData.base.RemoteFileMetadata" title="MDAnalysisData.base.RemoteFileMetadata"><code class="xref py py-class docutils literal notranslate"><span class="pre">RemoteFileMetadata</span></code></a> instances. Keys should
+describe the file type. Typically</p>
+<ul>
+<li><p><em>topology</em>: topology file (PSF, TPR, …)</p></li>
+<li><p><em>trajectory</em>: trajectory coordinate file (DCD, XTC, …)</p></li>
+<li><p><em>structure</em> (optional): system with single frame of coordinates
+(typically PDB, GRO, CRD, …)</p></li>
+</ul>
+</li>
+<li><p>name of the <code class="xref py py-func docutils literal notranslate"><span class="pre">fetch_{NAME}()</span></code> function (where <code class="docutils literal notranslate"><span class="pre">{NAME}</span></code> is a suitable
+name to access your dataset)</p></li>
+<li><p>docs of the <code class="xref py py-func docutils literal notranslate"><span class="pre">fetch_{NAME}()</span></code> function</p></li>
+<li><p>calculate and store the reference <a class="reference internal" href="#checksum"><span class="std std-ref">SHA256 checksum</span></a> as
+described below</p></li>
+</ul>
+</li>
+<li><p>Add a description file (example:
+<a class="reference external" href="https://github.com/MDAnalysis/MDAnalysisData/blob/master/MDAnalysisData/descr/adk_equilibrium.rst">MDAnalysisData/descr/adk_equilibrium.rst</a>); copy an existing file and
+adapt. <strong>Make sure to add license information.</strong></p></li>
+<li><p>Import your <code class="xref py py-func docutils literal notranslate"><span class="pre">fetch_{NAME}()</span></code> function in
+<a class="reference external" href="https://github.com/MDAnalysis/MDAnalysisData/blob/master/MDAnalysisData/datasets.py">MDAnalysisData/datasets.py</a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">.</span><span class="p">{</span><span class="n">MODULE_NAME</span><span class="p">}</span> <span class="kn">import</span> <span class="nn">fetch_</span><span class="p">{</span><span class="n">NAME</span><span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>Add documentation <code class="docutils literal notranslate"><span class="pre">{NAME}.rst</span></code> in restructured text format under <a class="reference external" href="https://github.com/MDAnalysis/MDAnalysisData/blob/master/docs/">docs/</a>
+(take existing files as examples) and append <code class="docutils literal notranslate"><span class="pre">{NAME}</span></code> to the second
+<code class="docutils literal notranslate"><span class="pre">toctree</span></code> section of the <a class="reference external" href="https://github.com/MDAnalysis/MDAnalysisData/blob/master/docs/index.rst">docs/index.rst</a> file.</p>
+<div class="highlight-reST notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">toctree</span><span class="p">::</span>
+   <span class="nc">:maxdepth:</span> 1
+   <span class="nc">:caption:</span> Datasets
+   <span class="nc">:hidden:</span>
+
+   adk_equilibrium
+   adk_transitions
+<span class="cp">   ...</span>
+<span class="cp">   CG_fiber</span>
+<span class="cp">   {NAME}</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>If your data set does not follow the same pattern as the example above (where
+each file is downloaded separately) then you have to write your own
+<code class="xref py py-func docutils literal notranslate"><span class="pre">fetch_{NAME}()</span></code> function. E.g., you might download a tar file and then
+unpack the file yourself. Use scikit-learn’s <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/tree/master/sklearn/datasets">sklearn/datasets</a> as examples,
+make sure that your function sets appropriate attributes in the returned
+<a class="reference internal" href="helpers.html#MDAnalysisData.base.Bunch" title="MDAnalysisData.base.Bunch"><code class="xref py py-class docutils literal notranslate"><span class="pre">Bunch</span></code></a> of records, and fully document what is
+returned.</p>
+</div>
+</div>
+<div class="section" id="remotefilemetadata-and-sha256-checksum">
+<span id="checksum"></span><h2>RemoteFileMetadata and SHA256 checksum<a class="headerlink" href="#remotefilemetadata-and-sha256-checksum" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference internal" href="helpers.html#MDAnalysisData.base.RemoteFileMetadata" title="MDAnalysisData.base.RemoteFileMetadata"><code class="xref py py-class docutils literal notranslate"><span class="pre">RemoteFileMetadata</span></code></a> is used by
+<a class="reference internal" href="helpers.html#MDAnalysisData.base._fetch_remote" title="MDAnalysisData.base._fetch_remote"><code class="xref py py-func docutils literal notranslate"><span class="pre">_fetch_remote()</span></code></a> and it will check file integrity by
+computing a SHA256 checksum over each downloaded file with a stored reference
+checksum. <strong>You must compute the reference checksum and store it in your</strong>
+<a class="reference internal" href="helpers.html#MDAnalysisData.base.RemoteFileMetadata" title="MDAnalysisData.base.RemoteFileMetadata"><code class="xref py py-class docutils literal notranslate"><span class="pre">RemoteFileMetadata</span></code></a> data structure for each file.</p>
+<p>Typically you will have a local copy of the files during testing. You can
+compute the SHA256 for a file <code class="docutils literal notranslate"><span class="pre">FILENAME</span></code> with the following code:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="kn">import</span> <span class="nn">MDAnalysisData.base</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">MDAnalysisData</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">_sha256</span><span class="p">(</span><span class="n">FILENAME</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>or from the commandline</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python -c <span class="s1">&#39;import MDAnalysisData; print(MDAnalysisData.base._sha256(&quot;FILENAME&quot;))&#39;</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">FILENAME</span></code> is the file that is stored in the archive.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="helpers.html" class="btn btn-neutral float-right" title="Helpers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="usage.html" class="btn btn-neutral float-left" title="Usage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2018-2021, Oliver Beckstein, Shujie Fan, Richard J. Gowers, Micaela Matta, and Lily Wang.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+ 
+<div class="footer"><p>Please see
+    our <a href="https://www.mdanalysis.org/pages/privacy/">Privacy Policy</a>
+    to learn how <a href="https://www.mdanalysis.org">MDAnalysis</a> collects data.</p>
+    <script data-goatcounter="https://mdanalysis.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</div>
+
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

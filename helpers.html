@@ -3,23 +3,28 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Helpers &mdash; MDAnalysisData 0.8.0+5.g56f9ae0 documentation</title>
+  <title>Helpers &mdash; MDAnalysisData 0.8.0+9.g2de91ab documentation</title>
   
 
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
 
   
   
     <link rel="shortcut icon" href="_static/mdanalysis-logo.ico"/>
   
+
   
+  
+
   
 
   
@@ -29,21 +34,21 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within MDAnalysisData 0.8.0+5.g56f9ae0 documentation"
+          title="Search within MDAnalysisData 0.8.0+9.g2de91ab documentation"
           href="_static/opensearch.xml"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Credits" href="credits.html" />
-    <link rel="prev" title="Usage" href="usage.html" /> 
+    <link rel="prev" title="Contributing new datasets" href="contributing.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -95,10 +100,11 @@
               
             
             
-              <p class="caption"><span class="caption-text">Overview</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing new datasets</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Helpers</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#for-users">For users</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#for-developers">For developers</a></li>
@@ -106,7 +112,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="credits.html">Credits</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Datasets</span></p>
+<p class="caption" role="heading"><span class="caption-text">Datasets</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="adk_equilibrium.html">AdK equilibrium dataset</a></li>
 <li class="toctree-l1"><a class="reference internal" href="adk_transitions.html">AdK transitions datasets</a></li>
@@ -157,6 +163,8 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -168,7 +176,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="_sources/helpers.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -189,8 +197,8 @@ the data.</p>
 <div class="section" id="for-users">
 <h2>For users<a class="headerlink" href="#for-users" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
-<dt id="MDAnalysisData.base.Bunch">
-<em class="property">class </em><code class="sig-prename descclassname">MDAnalysisData.base.</code><code class="sig-name descname">Bunch</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MDAnalysisData/base.html#Bunch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#MDAnalysisData.base.Bunch" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="MDAnalysisData.base.Bunch">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">MDAnalysisData.base.</span></span><span class="sig-name descname"><span class="pre">Bunch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MDAnalysisData/base.html#Bunch"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#MDAnalysisData.base.Bunch" title="Permalink to this definition">¶</a></dt>
 <dd><p>Container object for datasets</p>
 <p>Dictionary-like object that exposes its keys as attributes.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">Bunch</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
@@ -209,8 +217,8 @@ the data.</p>
 </dd></dl>
 
 <dl class="py data">
-<dt id="MDAnalysisData.base.DEFAULT_DATADIR">
-<code class="sig-prename descclassname">MDAnalysisData.base.</code><code class="sig-name descname">DEFAULT_DATADIR</code><em class="property"> = '~/MDAnalysis_data'</em><a class="headerlink" href="#MDAnalysisData.base.DEFAULT_DATADIR" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="MDAnalysisData.base.DEFAULT_DATADIR">
+<span class="sig-prename descclassname"><span class="pre">MDAnalysisData.base.</span></span><span class="sig-name descname"><span class="pre">DEFAULT_DATADIR</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'~/MDAnalysis_data'</span></em><a class="headerlink" href="#MDAnalysisData.base.DEFAULT_DATADIR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Default value for the cache directory. It can be changed by setting
 the environment variable <span class="target" id="index-0"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">MDANALYSIS_DATA</span></code>. The current
 value should be queried with <a class="reference internal" href="#MDAnalysisData.base.get_data_home" title="MDAnalysisData.base.get_data_home"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_data_home()</span></code></a>.</p>
@@ -221,8 +229,8 @@ value should be queried with <a class="reference internal" href="#MDAnalysisData
 </dd></dl>
 
 <dl class="py function">
-<dt id="MDAnalysisData.base.get_data_home">
-<code class="sig-prename descclassname">MDAnalysisData.base.</code><code class="sig-name descname">get_data_home</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data_home</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MDAnalysisData/base.html#get_data_home"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#MDAnalysisData.base.get_data_home" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="MDAnalysisData.base.get_data_home">
+<span class="sig-prename descclassname"><span class="pre">MDAnalysisData.base.</span></span><span class="sig-name descname"><span class="pre">get_data_home</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_home</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MDAnalysisData/base.html#get_data_home"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#MDAnalysisData.base.get_data_home" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the path of the MDAnalysisData data dir.</p>
 <p>This folder is used by some large dataset loaders to avoid
 downloading the data several times.  By default the data dir is
@@ -233,18 +241,18 @@ symbol is expanded to the user home folder.</p>
 <p>If the folder does not already exist, it is automatically created.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>data_home</strong> (<em>str | None</em>) – The path to MDAnalysisData data dir.</p>
+<dd class="field-odd"><p><strong>data_home</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><em>None</em></a>) – The path to MDAnalysisData data dir.</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
-<dt id="MDAnalysisData.base.clear_data_home">
-<code class="sig-prename descclassname">MDAnalysisData.base.</code><code class="sig-name descname">clear_data_home</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data_home</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MDAnalysisData/base.html#clear_data_home"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#MDAnalysisData.base.clear_data_home" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="MDAnalysisData.base.clear_data_home">
+<span class="sig-prename descclassname"><span class="pre">MDAnalysisData.base.</span></span><span class="sig-name descname"><span class="pre">clear_data_home</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_home</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MDAnalysisData/base.html#clear_data_home"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#MDAnalysisData.base.clear_data_home" title="Permalink to this definition">¶</a></dt>
 <dd><p>Delete all the content of the data home cache.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>data_home</strong> (<em>str | None</em>) – The path to MDAnalysisData data dir.</p>
+<dd class="field-odd"><p><strong>data_home</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><em>None</em></a>) – The path to MDAnalysisData data dir.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -255,10 +263,10 @@ symbol is expanded to the user home folder.</p>
 <p>If you want to add your own dataset then you will likely use these
 functions in your code.</p>
 <dl class="py data">
-<dt id="MDAnalysisData.base.RemoteFileMetadata">
-<code class="sig-prename descclassname">MDAnalysisData.base.</code><code class="sig-name descname">RemoteFileMetadata</code><em class="property"> = &lt;class 'MDAnalysisData.base.RemoteFileMetadata'&gt;</em><a class="headerlink" href="#MDAnalysisData.base.RemoteFileMetadata" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="MDAnalysisData.base.RemoteFileMetadata">
+<span class="sig-prename descclassname"><span class="pre">MDAnalysisData.base.</span></span><span class="sig-name descname"><span class="pre">RemoteFileMetadata</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;class</span> <span class="pre">'MDAnalysisData.base.RemoteFileMetadata'&gt;</span></em><a class="headerlink" href="#MDAnalysisData.base.RemoteFileMetadata" title="Permalink to this definition">¶</a></dt>
 <dd><p>Each remote resource is described by a <a class="reference internal" href="#MDAnalysisData.base.RemoteFileMetadata" title="MDAnalysisData.base.RemoteFileMetadata"><code class="xref py py-class docutils literal notranslate"><span class="pre">RemoteFileMetadata</span></code></a>,
-which is a <a class="reference external" href="https://docs.python.org/3/library/collections.html#collections.namedtuple" title="(in Python v3.8)"><code class="xref py py-func docutils literal notranslate"><span class="pre">namedtuple()</span></code></a> with fields</p>
+which is a <a class="reference external" href="https://docs.python.org/3/library/collections.html#collections.namedtuple" title="(in Python v3.9)"><code class="xref py py-func docutils literal notranslate"><span class="pre">namedtuple()</span></code></a> with fields</p>
 <ul class="simple">
 <li><p><em>filename</em>: name of the file in the local file system</p></li>
 <li><p><em>url</em>: full URL for downloading</p></li>
@@ -269,14 +277,14 @@ required SHA256 then)</p></li>
 </dd></dl>
 
 <dl class="py function">
-<dt id="MDAnalysisData.base._sha256">
-<code class="sig-prename descclassname">MDAnalysisData.base.</code><code class="sig-name descname">_sha256</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MDAnalysisData/base.html#_sha256"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#MDAnalysisData.base._sha256" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="MDAnalysisData.base._sha256">
+<span class="sig-prename descclassname"><span class="pre">MDAnalysisData.base.</span></span><span class="sig-name descname"><span class="pre">_sha256</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MDAnalysisData/base.html#_sha256"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#MDAnalysisData.base._sha256" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate the sha256 hash of the file at path.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="MDAnalysisData.base._fetch_remote">
-<code class="sig-prename descclassname">MDAnalysisData.base.</code><code class="sig-name descname">_fetch_remote</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">remote</span></em>, <em class="sig-param"><span class="n">dirname</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MDAnalysisData/base.html#_fetch_remote"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#MDAnalysisData.base._fetch_remote" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="MDAnalysisData.base._fetch_remote">
+<span class="sig-prename descclassname"><span class="pre">MDAnalysisData.base.</span></span><span class="sig-name descname"><span class="pre">_fetch_remote</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">remote</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dirname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MDAnalysisData/base.html#_fetch_remote"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#MDAnalysisData.base._fetch_remote" title="Permalink to this definition">¶</a></dt>
 <dd><p>Helper function to download a remote dataset into path</p>
 <p>Fetch a dataset pointed by remote’s url, save into path using remote’s
 filename and ensure its integrity based on the SHA256 Checksum of the
@@ -299,12 +307,12 @@ and checksum</p></li>
 </dd></dl>
 
 <dl class="py function">
-<dt id="MDAnalysisData.base._read_description">
-<code class="sig-prename descclassname">MDAnalysisData.base.</code><code class="sig-name descname">_read_description</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em>, <em class="sig-param"><span class="n">description_dir</span><span class="o">=</span><span class="default_value">'descr'</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MDAnalysisData/base.html#_read_description"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#MDAnalysisData.base._read_description" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="MDAnalysisData.base._read_description">
+<span class="sig-prename descclassname"><span class="pre">MDAnalysisData.base.</span></span><span class="sig-name descname"><span class="pre">_read_description</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'descr'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MDAnalysisData/base.html#_read_description"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#MDAnalysisData.base._read_description" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read the description from restructured text file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>filename</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – name of the description file under the <code class="docutils literal notranslate"><span class="pre">descr</span></code> directory</p>
+<dd class="field-odd"><p><strong>filename</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – name of the description file under the <code class="docutils literal notranslate"><span class="pre">descr</span></code> directory</p>
 </dd>
 </dl>
 <div class="admonition note">
@@ -324,32 +332,25 @@ assumed to be in restructured text format and in UTF-8 encoding.</p>
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="credits.html" class="btn btn-neutral float-right" title="Credits" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="usage.html" class="btn btn-neutral float-left" title="Usage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="credits.html" class="btn btn-neutral float-right" title="Credits" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="contributing.html" class="btn btn-neutral float-left" title="Contributing new datasets" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2018-2020, Oliver Beckstein, Shujie Fan, Micaela Matta, Richard J. Gowers, Lily Wang
+        &#169; Copyright 2018-2021, Oliver Beckstein, Shujie Fan, Richard J. Gowers, Micaela Matta, and Lily Wang.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>.
  
@@ -362,7 +363,6 @@ assumed to be in restructured text format and in UTF-8 encoding.</p>
 
 
 </footer>
-
         </div>
       </div>
 
