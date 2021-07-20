@@ -33,13 +33,12 @@ can be found in the public GitHub repository `mdanalysis/MDAnalysisData`_.
 
 This library is *under active development*. We use `semantic
 versioning`_ to indicate clearly what kind of changes you may expect
-between releases. Please raise any issues or questions in the
-`Issue Tracker`_. `Contributions of data sets`_ and code in the form
-of pull requests are very welcome.
+between releases. Please raise any issues or questions in the `Issue
+Tracker`_. :ref:`Contributions of data sets <contributing>` and code
+in the form of pull requests are very welcome.
 
 .. |zenodo| image:: https://zenodo.org/badge/147885122.svg
     :alt: Zenodo DOI
-    :scale: 100%
     :target: https://zenodo.org/badge/latestdoi/147885122
 
 .. |PRwelcome| image:: https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square
@@ -65,8 +64,6 @@ of pull requests are very welcome.
 .. _`semantic versioning`: https://semver.org   
 .. _`Issue Tracker`:
    https://github.com/mdanalysis/MDAnalysisData/issues
-.. _`Contributions of data sets`:
-   https://github.com/mdanalysis/MDAnalysisData/wiki/contributing
    
 
 .. toctree::
@@ -76,6 +73,7 @@ of pull requests are very welcome.
 	      
    install
    usage
+   contributing
    helpers
    credits
 

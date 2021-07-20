@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.8.1] - YYYY-MM-DD
 
+### Added
+- docs for how to contribute a new dataset (#46)
+- new `MDAnalysis.__authors__` attribute with the list of AUTHORS
+
 ### Changes
 - update online docs theme (#43)
 
