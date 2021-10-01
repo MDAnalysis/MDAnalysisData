@@ -4,6 +4,12 @@ from __future__ import absolute_import, division
 
 from six.moves.urllib.request import urlretrieve
 
+try:
+    import pathlib
+except ImportError:
+    # Python 2.7
+    import pathlib2 as pathlib
+
 import os
 import os.path
 
@@ -60,11 +66,11 @@ def test_sha256(tmpdir, some_text):
     assert checksum == "4446bfb2ec5dedfbd981d059d6005f5144b067b392a00e3bcf98f8302ec8f765"
 
 @pytest.mark.parametrize('data_home,location', [
-    (None, os.path.expanduser("~/MDAnalysis_data")),
-    ("/tmp/MDAnalysisData", "/tmp/MDAnalysisData"),
+    (None, pathlib.Path("~/MDAnalysis_data").expanduser()),
+    (str(pathlib.Path("/tmp/MDAnalysisData")), pathlib.Path("/tmp/MDAnalysisData")),
     ])
 def test_get_data_home(data_home, location):
-    assert base.get_data_home(data_home=data_home) == location
+    assert base.get_data_home(data_home=data_home) == str(location)
 
 def test_clear_data_home(tmpdir, some_text):
     data_home_path = tmpdir.join("MDAnalysis_data_test")

@@ -20,6 +20,7 @@ from setuptools import setup, find_packages
 import versioneer
 
 import os
+import sys
 import warnings
 import codecs
 
@@ -129,6 +130,11 @@ if __name__ == '__main__':
         'Topic :: Software Development :: Libraries :: Python Modules',
     ]
 
+    # Python 2.7 compatibility
+    test_requirements = ['pytest', 'pytest-mock']
+    if sys.version_info.major < 3:
+        test_requirements.append("pathlib2")
+
     setup(name='MDAnalysisData',
           version=versioneer.get_version(),
           cmdclass=versioneer.get_cmdclass(),
@@ -155,6 +161,6 @@ if __name__ == '__main__':
                             'setuptools',
                             'tqdm',
           ],
-          tests_require=['pytest', 'pytest-mock'],
+          tests_require=test_requirements,
           zip_safe=True,
     )
