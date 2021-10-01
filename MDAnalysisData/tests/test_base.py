@@ -54,20 +54,29 @@ class TestBunch(object):
 
 def test_read_description():
     descr = base._read_description("adk_equilibrium.rst")
-    assert len(descr) == 1252
-    assert descr.startswith(".. -*- coding: utf-8 -*-\n\n.. _`adk-equilibrium-dataset`:")
+    assert (descr.startswith(   # UNIX
+        ".. -*- coding: utf-8 -*-\n\n.. _`adk-equilibrium-dataset`:") or
+            descr.startswith(   # Windows
+        ".. -*- coding: utf-8 -*-\r\n\r\n.. _`adk-equilibrium-dataset`:"))
+    # descr is read with automatic line ending conversion so by splitting into
+    # words we don't need to care about that (len(descr) differs between UNIX
+    # and Windows)
+    n_words = len(descr.split())
+    assert n_words == 153
 
 def test_sha256(tmpdir, some_text):
     filename = "address.txt"
     with tmpdir.as_cwd():
-        with open(filename, "w") as txt:
-            txt.write(some_text)
+        with open(filename, "wb") as txt:
+            txt.write(some_text.encode("utf-8"))
         checksum = base._sha256(filename)
     assert checksum == "4446bfb2ec5dedfbd981d059d6005f5144b067b392a00e3bcf98f8302ec8f765"
 
 @pytest.mark.parametrize('data_home,location', [
-    (None, pathlib.Path("~/MDAnalysis_data").expanduser()),
-    (str(pathlib.Path("/tmp/MDAnalysisData")), pathlib.Path("/tmp/MDAnalysisData")),
+    (None,
+     pathlib.Path("~/MDAnalysis_data").expanduser()),
+    (str(pathlib.Path("/tmp/MDAnalysisData")),
+     pathlib.Path("/tmp/MDAnalysisData")),
     ])
 def test_get_data_home(data_home, location):
     assert base.get_data_home(data_home=data_home) == str(location)
