@@ -1,6 +1,6 @@
 # MDAnalysisData
 
-[![Build Status](https://travis-ci.com/MDAnalysis/MDAnalysisData.svg?branch=master)](https://travis-ci.com/MDAnalysis/MDAnalysisData)
+[![Build Status](https://github.com/MDAnalysis/MDAnalysisData/actions/workflows/gh-ci.yaml/badge.svg)](https://github.com/MDAnalysis/GridDataFormats/actions/workflows/ci.yaml)
 [![codecov](https://codecov.io/gh/MDAnalysis/MDAnalysisData/branch/master/graph/badge.svg)](https://codecov.io/gh/MDAnalysis/MDAnalysisData)
 [![docs](https://img.shields.io/badge/docs-latest-brightgreen.svg)](https://www.mdanalysis.org/MDAnalysisData/)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
@@ -72,6 +72,20 @@ The data directory can we wiped with the function
 MDAnalysisData.base.clear_data_home()
 ```
 
+## Contributing new datasets
+
+Please add new datasets to MDAnalysisData. See [Contributing new
+datasets](https://www.mdanalysis.org/MDAnalysisData/contributing.html)
+for details, but in short:
+
+1. raise an issue in the [issue
+   tracker](https://github.com/MDAnalysis/MDAnalysisData/issues) describing
+   what you want to add; this issue will become the focal point for discussions
+   where the developers can easily give advice
+2. deposit data in an archive under an [Open
+   Data](https://opendatacommons.org/) compatible license (CC0 or
+   CC-BY preferred)
+3. write accessor code in MDAnalysisData
 
 
 ## Credits
