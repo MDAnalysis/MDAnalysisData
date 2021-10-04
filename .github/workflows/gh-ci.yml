@@ -61,11 +61,11 @@ jobs:
 
     - name: Install package
       run: |
-        python -m pip install .
+        python -m pip install -e .
 
     - name: Run tests
       run: |
-        pytest -v --cov=MDAnalysisData --cov-report=xml --color=yes MDAnalysisData 
+        pytest -v --cov=MDAnalysisData --cov-report=xml --color=yes MDAnalysisData/tests
 
     - name: Codecov
       uses: codecov/codecov-action@v2
