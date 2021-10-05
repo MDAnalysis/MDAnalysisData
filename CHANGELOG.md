@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changes
 - update online docs theme (#43)
+- tested for Python 2.7, 3.6 - 3.9 on Linux, macOS, Windows (#48)
 
 ## [0.8.0] - 2019-08-13
 
