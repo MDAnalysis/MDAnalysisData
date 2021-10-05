@@ -1,6 +1,6 @@
 # MDAnalysisData
 
-[![Build Status](https://github.com/MDAnalysis/MDAnalysisData/actions/workflows/gh-ci.yaml/badge.svg)](https://github.com/MDAnalysis/GridDataFormats/actions/workflows/ci.yaml)
+[![Build Status](https://github.com/MDAnalysis/MDAnalysisData/actions/workflows/gh-ci.yml/badge.svg)](https://github.com/MDAnalysis/MDAnalysisData/actions/workflows/gh-ci.yml)
 [![codecov](https://codecov.io/gh/MDAnalysis/MDAnalysisData/branch/master/graph/badge.svg)](https://codecov.io/gh/MDAnalysis/MDAnalysisData)
 [![docs](https://img.shields.io/badge/docs-latest-brightgreen.svg)](https://www.mdanalysis.org/MDAnalysisData/)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)

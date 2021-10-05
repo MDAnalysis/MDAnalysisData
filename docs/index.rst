@@ -49,9 +49,9 @@ in the form of pull requests are very welcome.
    :alt: test coverage		 
    :target: https://codecov.io/gh/MDAnalysis/MDAnalysisData
 
-.. |build| image:: https://travis-ci.com/MDAnalysis/MDAnalysisData.svg?branch=master
-   :alt: tests		   
-   :target: https://travis-ci.com/MDAnalysis/MDAnalysisData	    
+.. |build| image:: https://github.com/MDAnalysis/MDAnalysisData/actions/workflows/gh-ci.yml/badge.svg
+   :alt: tests
+   :target: https://github.com/MDAnalysis/MDAnalysisData/actions/workflows/gh-ci.yml
 
 .. _`MDAnalysis`: https://www.mdanalysis.org
 .. _`mdanalysis/MDAnalysisData`: https://github.com/MDAnalysis/MDAnalysisData
