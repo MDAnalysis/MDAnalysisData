@@ -40,12 +40,13 @@ extensions = ['sphinx.ext.autodoc', 'sphinx.ext.intersphinx',
               'sphinx.ext.napoleon', 'sphinx.ext.todo',
               'sphinx.ext.autosummary',
               'sphinx_sitemap',
-             ]
+              'sphinx_rtd_theme']
 
 mathjax_path = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
 
 # for sitemap with https://github.com/jdillard/sphinx-sitemap
 site_url = "https://www.mdanalysis.org/MDAnalysisData/"
+sitemap_url_scheme = "{link}"
 
 # https://stackoverflow.com/questions/5599254/how-to-use-sphinxs-autodoc-to-document-a-classs-init-self-method
 autoclass_content = 'both'
