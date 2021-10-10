@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contributing new datasets &mdash; MDAnalysisData 0.8.1 documentation</title>
+  <title>Contributing new datasets &mdash; MDAnalysisData 0.8.1+1.g98c6b34 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -19,7 +19,7 @@
         <script src="_static/doctools.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within MDAnalysisData 0.8.1 documentation"
+          title="Search within MDAnalysisData 0.8.1+1.g98c6b34 documentation"
           href="_static/opensearch.xml"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -101,7 +101,7 @@
            <div itemprop="articleBody">
              
   <section id="contributing-new-datasets">
-<span id="contributing"></span><h1>Contributing new datasets<a class="headerlink" href="#contributing-new-datasets" title="Permalink to this headline">¶</a></h1>
+<span id="contributing"></span><h1>Contributing new datasets<a class="headerlink" href="#contributing-new-datasets" title="Permalink to this headline"></a></h1>
 <p>New datasets are very welcome and everybody is encouraged to make their
 datasets accessible via <code class="xref py py-mod docutils literal notranslate"><span class="pre">MDAnalysisData</span></code>, regardless of the simulation
 package or analysis code that they use. Users are encouraged to cite the
@@ -109,7 +109,7 @@ authors of the datasets.</p>
 <p><code class="xref py py-mod docutils literal notranslate"><span class="pre">MDAnalysisData</span></code> does <em>not</em> store files and trajectories. Instead, it
 provides accessor code to seamlessly download (and cache) files from archives.</p>
 <section id="outline">
-<h2>Outline<a class="headerlink" href="#outline" title="Permalink to this headline">¶</a></h2>
+<h2>Outline<a class="headerlink" href="#outline" title="Permalink to this headline"></a></h2>
 <p>When you contribute data then you have to do two things</p>
 <ol class="arabic">
 <li><p><strong>deposit data in an archive</strong> under an <a class="reference external" href="https://opendatacommons.org/">Open Data</a> compatible license
@@ -131,12 +131,12 @@ archives.</p>
 </div>
 </section>
 <section id="step-by-step-instructions">
-<h2>Step-by-step instructions<a class="headerlink" href="#step-by-step-instructions" title="Permalink to this headline">¶</a></h2>
+<h2>Step-by-step instructions<a class="headerlink" href="#step-by-step-instructions" title="Permalink to this headline"></a></h2>
 <p>To add a new dataset deposit your data in a repository. Then open a <em>pull
 request</em> for the <a class="reference external" href="https://github.com/MDAnalysis/MDAnalysisData">https://github.com/MDAnalysis/MDAnalysisData</a>
 repository. Follow these steps:</p>
 <section id="step-1-archival-deposition">
-<h3>STEP 1: Archival deposition<a class="headerlink" href="#step-1-archival-deposition" title="Permalink to this headline">¶</a></h3>
+<h3>STEP 1: Archival deposition<a class="headerlink" href="#step-1-archival-deposition" title="Permalink to this headline"></a></h3>
 <p>Deposit <em>all</em> required files in an archive-grade repository such as
 <a class="reference external" href="(https://figshare.com/">figshare</a>.</p>
 <div class="admonition note">
@@ -161,12 +161,12 @@ in the accessor code in <code class="xref py py-mod docutils literal notranslate
 <figcaption>
 <p><span class="caption-text">The AdK Equilbrium dataset on figshare DOI <a class="reference external" href="https://doi.org/10.6084/m9.figshare.5108170">10.6084/m9.figshare.5108170</a>,
 highlighting the deposited trajectory and topology files. The <em>download</em>
-URLs are visible when hovering over a file’s image.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+URLs are visible when hovering over a file’s image.</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 </section>
 <section id="step-2-add-code-and-docs-to-mdanalysisdata">
-<h3>STEP 2: Add code and docs to MDAnalysisData<a class="headerlink" href="#step-2-add-code-and-docs-to-mdanalysisdata" title="Permalink to this headline">¶</a></h3>
+<h3>STEP 2: Add code and docs to MDAnalysisData<a class="headerlink" href="#step-2-add-code-and-docs-to-mdanalysisdata" title="Permalink to this headline"></a></h3>
 <ol class="arabic">
 <li><p>Add a Python module <code class="docutils literal notranslate"><span class="pre">{MODULE_NAME}.py</span></code> with the name of your dataset
 (where <code class="docutils literal notranslate"><span class="pre">{MODULE_NAME}</span></code> is just a placeholder). As an example see
@@ -231,7 +231,7 @@ returned.</p>
 </section>
 </section>
 <section id="remotefilemetadata-and-sha256-checksum">
-<span id="checksum"></span><h2>RemoteFileMetadata and SHA256 checksum<a class="headerlink" href="#remotefilemetadata-and-sha256-checksum" title="Permalink to this headline">¶</a></h2>
+<span id="checksum"></span><h2>RemoteFileMetadata and SHA256 checksum<a class="headerlink" href="#remotefilemetadata-and-sha256-checksum" title="Permalink to this headline"></a></h2>
 <p>The <a class="reference internal" href="helpers.html#MDAnalysisData.base.RemoteFileMetadata" title="MDAnalysisData.base.RemoteFileMetadata"><code class="xref py py-class docutils literal notranslate"><span class="pre">RemoteFileMetadata</span></code></a> is used by
 <a class="reference internal" href="helpers.html#MDAnalysisData.base._fetch_remote" title="MDAnalysisData.base._fetch_remote"><code class="xref py py-func docutils literal notranslate"><span class="pre">_fetch_remote()</span></code></a> and it will check file integrity by
 computing a SHA256 checksum over each downloaded file with a stored reference
