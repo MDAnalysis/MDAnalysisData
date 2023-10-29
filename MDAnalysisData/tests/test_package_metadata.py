@@ -9,7 +9,7 @@ import MDAnalysisData
 
 def test_authors():
     authors = MDAnalysisData.__authors__
-    assert authors[:5] == ["Irfan Alibay", "Oliver Beckstein", "Shujie Fan",
+    assert authors[:6] == ["Irfan Alibay", "Oliver Beckstein", "Shujie Fan",
                            "Richard J. Gowers", "Micaela Matta",
                            "Lily Wang"]
 
