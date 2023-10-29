@@ -15,7 +15,6 @@ The MDAnalysisData package unifies access to test and example
 trajectories that can be used for workshops and extended tests.
 """
 
-from __future__ import print_function
 from setuptools import setup, find_packages
 import versioneer
 
@@ -117,23 +116,16 @@ if __name__ == '__main__':
         'Operating System :: MacOS :: MacOS X',
         'Operating System :: Microsoft :: Windows ',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.6',
-        'Programming Language :: Python :: 3.7',
-        'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
+        'Programming Language :: Python :: 3.12',
         'Topic :: Scientific/Engineering',
         'Topic :: Scientific/Engineering :: Bio-Informatics',
         'Topic :: Scientific/Engineering :: Chemistry',
         'Topic :: Software Development :: Libraries :: Python Modules',
     ]
-
-    # Python 2.7 compatibility
-    test_requirements = ['pytest', 'pytest-mock']
-    if sys.version_info.major < 3:
-        test_requirements.append("pathlib2")
 
     setup(name='MDAnalysisData',
           version=versioneer.get_version(),
@@ -157,10 +149,8 @@ if __name__ == '__main__':
           packages=find_packages(),
           package_dir={'MDAnalysisData': 'MDAnalysisData'},
           package_data={'MDAnalysisData': ['descr/*.rst']},
-          install_requires=['six',
-                            'setuptools',
-                            'tqdm',
-          ],
-          tests_require=test_requirements,
+          setup_requires=['setuptools'],
+          install_requires=['tqdm'],
+          tests_require=['pytest', 'pytest-mock'],
           zip_safe=True,
     )

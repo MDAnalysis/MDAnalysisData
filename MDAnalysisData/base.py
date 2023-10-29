@@ -24,10 +24,7 @@ downloads and the checksum check in :func:`_fetch_remote` will fail:
 # Code taken from sklearn/utils/ and sklearn/datasets under the 'New BSD license'
 # https://github.com/scikit-learn/scikit-learn/blob/master/COPYING and adapted
 
-
-from __future__ import print_function
-
-from six.moves.urllib.request import urlretrieve
+from urllib.request import urlretrieve
 
 import shutil
 from collections import namedtuple

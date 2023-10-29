@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import sys
-import six
-from six.moves import reload_module
+from importlib import reload
 import pytest
 
 import MDAnalysisData
@@ -21,7 +20,7 @@ def test_default_authors(monkeypatch):
     with pytest.warns(UserWarning,
                       match="Could not find authors.py, __authors__ will "
                             "be the generic MDAnalysis team."):
-        reload_module(MDAnalysisData)
+        reload(MDAnalysisData)
     authors = MDAnalysisData.__authors__
     assert authors == ["The MDAnalysis Development Team"]
 
@@ -29,4 +28,4 @@ def test_default_authors(monkeypatch):
 def test_version():
     # very generic because versioneer will provide different strings depending
     # on the repository status
-    assert isinstance(MDAnalysisData.__version__, six.string_types)
+    assert isinstance(MDAnalysisData.__version__, str)
