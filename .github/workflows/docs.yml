@@ -48,6 +48,6 @@ jobs:
       if: success() && github.event_name == 'push'
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./build/sphinx/html
+        publish_dir: ./docs/_build/html
         user_name: 'github-actions'
         user_email: 'github-action@users.noreply.github.com'
