@@ -9,9 +9,8 @@ __all__ = ['datasets']
 
 from . import datasets
 
-from ._version import get_versions
-__version__ = get_versions()['version']
-del get_versions
+from . import _version
+__version__ = _version.get_versions()['version']
 
 try:
     from .authors import __authors__
