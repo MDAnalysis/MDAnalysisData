@@ -37,7 +37,7 @@ extensions = ['sphinx.ext.autodoc', 'sphinx.ext.intersphinx',
               'sphinx.ext.mathjax', 'sphinx.ext.viewcode',
               'sphinx.ext.napoleon', 'sphinx.ext.todo',
               'sphinx.ext.autosummary',
-              'sphinx_sitemap',]
+              'sphinx_sitemap']
 
 mathjax_path = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
 
