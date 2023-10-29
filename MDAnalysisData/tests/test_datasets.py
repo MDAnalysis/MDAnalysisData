@@ -8,8 +8,6 @@
 # that are quick to install but slow to download do not benefit from caching,
 # as they take as long to download from the cache as from the original source."
 
-from __future__ import absolute_import, division
-
 import os.path
 import glob
 

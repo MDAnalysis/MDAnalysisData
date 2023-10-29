@@ -1,15 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from __future__ import absolute_import, division
-
-from six.moves.urllib.request import urlretrieve
-
-try:
-    import pathlib
-except ImportError:
-    # Python 2.7
-    import pathlib2 as pathlib
-
+from urllib.request import urlretrieve
+import pathlib
 import os
 import os.path
 
