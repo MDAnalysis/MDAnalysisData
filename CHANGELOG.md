@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changes
 - Update package to only support NEP29 range (Python 3.9 - 3.12 as of writing)
 
+### Changes (internal)
+- automated deployment (#57)
+
 ## [0.8.1] - 2021-10-04
 
 ### Added
