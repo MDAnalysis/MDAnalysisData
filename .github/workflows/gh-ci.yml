@@ -67,6 +67,7 @@ jobs:
       uses: codecov/codecov-action@v2
       with:
         name: codecov-${{ matrix.os }}-py${{ matrix.python-version }}
+        token: ${{ secrets.CODECOV_TOKEN }}
         file: ./coverage.xml
         fail_ci_if_error: True
         verbose: True
