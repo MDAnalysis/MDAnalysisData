@@ -14,8 +14,6 @@
 import sys, os
 import datetime
 
-import sphinx_rtd_theme
-
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
@@ -39,8 +37,7 @@ extensions = ['sphinx.ext.autodoc', 'sphinx.ext.intersphinx',
               'sphinx.ext.mathjax', 'sphinx.ext.viewcode',
               'sphinx.ext.napoleon', 'sphinx.ext.todo',
               'sphinx.ext.autosummary',
-              'sphinx_sitemap',
-              'sphinx_rtd_theme']
+              'sphinx_sitemap']
 
 mathjax_path = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
 
@@ -123,11 +120,9 @@ pygments_style = 'default'
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 
-html_theme = 'sphinx_rtd_theme'
+html_theme = 'mdanalysis_sphinx_theme'
 
-html_theme_path = [
-    sphinx_rtd_theme.get_html_theme_path()
-]
+# html_theme_path = []
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -141,20 +136,7 @@ html_theme_path = [
 # /* MDAnalysis white: #FFFFFF */
 # /* MDAnalysis black: #000000 */
 
-html_theme_options = {
-    'canonical_url': '',
-    'logo_only': True,
-    'display_version': True,
-    'prev_next_buttons_location': 'bottom',
-    'style_external_links': False,
-    'style_nav_header_background': 'white',
-    # Toc options
-    'collapse_navigation': True,
-    'sticky_navigation': True,
-    'navigation_depth': 4,
-    'includehidden': True,
-    'titles_only': False,
-}
+html_theme_options = {"mda_official": True}
 
 
 # options common to RTD and MDAnalysis theme
@@ -164,7 +146,7 @@ html_theme_options = {
 # so a file named "default.css" will overwrite the builtin "default.css".
 # For RTD theme: custom.css to override theme defaults.
 html_static_path = ['_static']
-html_css_files = ['custom.css']
+# html_css_files = []
 
 
 # The name of an image file (relative to this directory) to place at the top
@@ -174,7 +156,7 @@ html_logo = "_static/logos/MDAnalysisData-logo.png"
 # The name of an image file (within the static path) to use as favicon of the
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
 # pixels large.
-html_favicon = "_static/logos/mdanalysis-logo.ico"
+# html_favicon = "_static/logos/mdanalysis-logo.ico"
 
 
 # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
@@ -305,6 +287,7 @@ texinfo_documents = [
 
 # Configuration for intersphinx: refer to the Python standard library
 # and other packages used by MDAnalysis
-intersphinx_mapping = {'https://docs.python.org/': None,
-                       'https://docs.mdanalysis.org/stable': None,
-                       }
+intersphinx_mapping = {
+    "python": ('https://docs.python.org/3/', None),
+    "mdanalysis": ('https://docs.mdanalysis.org/stable', None),
+}

@@ -1,0 +1,10 @@
+name: mdanalysisdata
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - tqdm
+  - pip
+  - mdanalysis-sphinx-theme >=1.0.1
+  - pip:
+      - sphinx-sitemap
