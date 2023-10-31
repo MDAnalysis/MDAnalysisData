@@ -31,6 +31,7 @@ jobs:
           test_submission: true
           package_name: MDAnalysisData
           module_name: 'MDAnalysisData'
+          test_deps: 'pytest pytest-mock'
 
   pypi_push:
     environment:
@@ -53,3 +54,4 @@ jobs:
         with:
           package_name: MDAnalysisData
           module_name: 'MDAnalysisData'
+          test_deps: 'pytest pytest-mock'
