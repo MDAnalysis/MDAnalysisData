@@ -207,7 +207,7 @@ def _read_description(filename, description_dir='descr'):
     """
     # The descr directory should be in the same directory as this file base.py.
     # `resource_string` returns bytes, which we need to decode to UTF-8
-    path = importlib.resources.files(__name__) / description_dir / filename
+    path = importlib.resources.files('MDAnalysisData') / description_dir / filename
     DESCR = path.read_bytes().decode("utf-8")
     return DESCR
 
