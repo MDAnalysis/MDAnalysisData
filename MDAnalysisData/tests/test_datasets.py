@@ -27,6 +27,18 @@ from MDAnalysisData import yiip_equilibrium
 # For filetype=topology, the data are downloaded and cached.
 # For filetype=trajectory the cached data are used.
 # This test is not thread/parallel safe.
+#
+# These tests are not enabled by default and are only executed with
+# `pytest -m online` or `pytest --pyargs MDAnalysisData` because they
+# require downloading datasets.
+
+# CURRENT LIMITATIONS:
+#
+# Assertions related to DESCR will currently only pass on UNIX (and
+# not Windows) because of different line ending conventions (UNIX: \n,
+# Windows:\r\n); the tests could be rewritten (e.g., use
+# `DESCR.split()` to compare words) and using regex for matching the
+# first lines.
 
 @pytest.mark.online
 @pytest.mark.parametrize('filetype', ('topology', 'trajectory'))
@@ -159,7 +171,7 @@ def test_yiip_equilibrium(traj_len, filetype):
 
     metadata = yiip_equilibrium.ARCHIVE[traj_len]
 
-    assert len(data.DESCR) == 1511
+    assert len(data.DESCR) == 1536
     assert data.DESCR.startswith(".. -*- coding: utf-8 -*-\n\n.. _`yiip-equilibrium-dataset`:")
 
     assert os.path.basename(data[filetype]) == metadata[filetype].filename
