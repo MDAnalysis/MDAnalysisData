@@ -31,7 +31,7 @@ from collections import namedtuple
 from os import environ, listdir, makedirs
 from os.path import dirname, exists, expanduser, isdir, join, splitext
 import hashlib
-from pkg_resources import resource_string
+import importlib.resources
 
 from tqdm import tqdm
 
@@ -207,9 +207,8 @@ def _read_description(filename, description_dir='descr'):
     """
     # The descr directory should be in the same directory as this file base.py.
     # `resource_string` returns bytes, which we need to decode to UTF-8
-    DESCR = resource_string(__name__,
-                            '{}/{}'.format(description_dir, filename)
-                           ).decode("utf-8")
+    path = importlib.resources.files(__name__) / description_dir / filename
+    DESCR = path.read_bytes().decode("utf-8")
     return DESCR
 
 
