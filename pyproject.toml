@@ -87,5 +87,6 @@ distance-dirty = "{base_version}+{distance}.{vcs}{rev}.dirty"
 
 [tool.pytest.ini_options]
 addopts = "-m 'not online'"
-markers =
-  online: will fetch remote files%   
+markers = [
+  "online: will fetch remote files",
+]
