@@ -18,7 +18,7 @@ build:
 # install the repo
 python:
   install:
-  - method: setuptools
+  - method: pip
     path: .
 
 # Optionally set the version of Python and requirements required to build your docs

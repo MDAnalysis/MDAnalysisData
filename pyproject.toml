@@ -1,0 +1,91 @@
+[build-system]
+requires = [
+  "setuptools >= 40.9.0",
+  "versioningit",
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "MDAnalysisData"
+description = "MDAnalysis example data"
+license = {file = "LICENSE" }
+authors = [
+    {name = "Oliver Beckstein", email = "orbeckst@gmail.com"},
+]
+maintainers = [
+    {name = "MDAnalysis", email = "mdanalysis@numfocus.org"},
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: BSD License",
+    "Operating System :: POSIX",
+    "Operating System :: MacOS :: MacOS X",
+    "Operating System :: Microsoft :: Windows ",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+    "Topic :: Scientific/Engineering :: Chemistry",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+readme = {file = "README.md", content-type = "text/markdown"}
+requires-python = ">=3.9"
+dependencies = [
+    "tqdm",
+]
+keywords = [
+    "science",
+    "data",
+]
+dynamic = [
+    "version",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest",
+    "pytest-mock",
+]
+
+[project.urls]
+source = "https://github.com/MDAnalysis/MDAnalysisData"
+documentation = "https://www.mdanalysis.org/MDAnalysisData"
+
+[tool.setuptools]
+zip-safe = true
+include-package-data = true
+
+[tool.setuptools.packages.find]
+namespaces = false
+include=["MDAnalysisData"]
+exclude=["docs"]
+
+[tool.setuptools.package-data]
+MDAnalysisData = [
+    "descr/*.rst",
+]
+
+[tool.versioningit]
+default-version = "1+unknown"
+
+[tool.versioningit.vcs]
+method = "git"
+# the below line expects tags to look like '1.0.2'.
+# if prefixing with a v, e.g. 'v1.0.2', change it to ["v*"]
+match = ["*"]
+
+[tool.versioningit.format]
+distance = "{base_version}+{distance}.{vcs}{rev}"
+dirty = "{base_version}+{distance}.{vcs}{rev}.dirty"
+distance-dirty = "{base_version}+{distance}.{vcs}{rev}.dirty"
+
+[tool.pytest.ini_options]
+addopts = "-m 'not online'"
+markers =
+  online: will fetch remote files%   
