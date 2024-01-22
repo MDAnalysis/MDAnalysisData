@@ -7,8 +7,10 @@ __all__ = ['datasets']
 
 from . import datasets
 
-from . import _version
-__version__ = _version.get_versions()['version']
+
+from importlib.metadata import version
+__version__ = version("MDAnalysisData")
+
 
 try:
     from .authors import __authors__
