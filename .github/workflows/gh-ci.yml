@@ -24,24 +24,24 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest]
-        python-version: ["3.9", "3.10", "3.11", "3.12"]
+        python-version: ["3.11", "3.12", "3.13", "3.14"]
         include:
           - os: macOS-latest
-            python-version: "3.9"
+            python-version: "3.11"
           - os: macOS-latest
-            python-version: "3.12"
+            python-version: "3.14"
           - os: windows-latest
-            python-version: "3.9"
+            python-version: "3.11"
           - os: windows-latest
-            python-version: "3.12"
+            python-version: "3.14"
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
       with:
         fetch-depth: 0
 
     - name: Setup python
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@v6
       with:
         python-version: ${{ matrix.python-version }}
 
@@ -55,7 +55,7 @@ jobs:
 
     - name: Install package dependencies
       run: |
-        python -m pip install six setuptools tqdm
+        python -m pip install setuptools tqdm
 
     - name: Install package
       run: |
@@ -67,7 +67,7 @@ jobs:
 
     - name: Codecov
       if: github.event_name != 'schedule'
-      uses: codecov/codecov-action@v4
+      uses: codecov/codecov-action@v6
       with:
         name: codecov-${{ matrix.os }}-py${{ matrix.python-version }}
         token: ${{ secrets.CODECOV_TOKEN }}

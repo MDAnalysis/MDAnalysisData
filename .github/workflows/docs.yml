@@ -14,14 +14,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
       with:
         fetch-depth: 0
 
     - name: Setup python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v6
       with:
-        python-version: 3.9
+        python-version: 3.14
 
     - name: Display Python version
       run: python -c "import sys; print(sys.version)"
@@ -44,7 +44,7 @@ jobs:
         make html
 
     - name: deploy docs
-      uses: peaceiris/actions-gh-pages@v3
+      uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./docs/_build/html
