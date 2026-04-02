@@ -1,7 +1,6 @@
 """
 Barebones setup.py for dynamic authors list generation.
 """
-import codecs
 import os
 import warnings
 
@@ -33,7 +32,7 @@ def dynamic_author_list():
     # MDAnalysisData.
 
     authors = []
-    with codecs.open(abspath('AUTHORS'), encoding='utf-8') as infile:
+    with open(abspath('AUTHORS'), encoding='utf-8') as infile:
         # An author is a bullet point under the title "Chronological list of
         # authors". We first want move the cursor down to the title of
         # interest.
@@ -64,7 +63,7 @@ def dynamic_author_list():
 
     # Write the authors.py file.
     out_path = abspath('MDAnalysisData/authors.py')
-    with codecs.open(out_path, 'w', encoding='utf-8') as outfile:
+    with open(out_path, 'w', encoding='utf-8') as outfile:
         # Write the header
         header = '''\
 #-*- coding:utf-8 -*-
