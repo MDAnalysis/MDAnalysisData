@@ -1,6 +1,6 @@
 [build-system]
 requires = [
-  "setuptools >= 40.9.0",
+  "setuptools >= 77.0.0",
   "versioningit",
 ]
 build-backend = "setuptools.build_meta"
@@ -8,7 +8,8 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "MDAnalysisData"
 description = "MDAnalysis example data"
-license = {file = "LICENSE" }
+license = "BSD-3-Clause"
+license-files = ["LICENSE", "AUTHORS"]
 authors = [
     {name = "Oliver Beckstein", email = "orbeckst@gmail.com"},
 ]
@@ -19,10 +20,9 @@ classifiers = [
     "Development Status :: 4 - Beta",
     "Environment :: Console",
     "Intended Audience :: Science/Research",
-    "License :: OSI Approved :: BSD License",
     "Operating System :: POSIX",
     "Operating System :: MacOS :: MacOS X",
-    "Operating System :: Microsoft :: Windows ",
+    "Operating System :: Microsoft :: Windows",
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.11",
@@ -59,17 +59,14 @@ documentation = "https://www.mdanalysis.org/MDAnalysisData"
 
 [tool.setuptools]
 zip-safe = true
-include-package-data = true
 
 [tool.setuptools.packages.find]
-namespaces = false
-include=["MDAnalysisData"]
+namespaces = true
+where = ["."]
 exclude=["docs"]
 
 [tool.setuptools.package-data]
-MDAnalysisData = [
-    "descr/*.rst",
-]
+"MDAnalysisData.descr" = ["*.rst"]
 
 [tool.versioningit]
 default-version = "1+unknown"
