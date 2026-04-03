@@ -4,14 +4,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## Unreleased
+## [0.9.1] - 2026-04-02
 
 ### Changes
 - Update package to only support NEP29 range (Python 3.11 - 3.14 as of writing)
 - Update packaging to be PEP518 compliant.
 
+### Changes (Internal)
+- fixed and improved automated deployment workflow (PR #82)
+
 ### Fixes
 - removed deprecated pkg_resources use (#75)
+- fixed package metadata (#83)
 
 ## [0.9.0] - 2023-10-30
 
