@@ -14,30 +14,28 @@
   <link rel="shortcut icon" href="_static/logo/mda_favicon.ico">
 </head>
 
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="./">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Helpers &mdash; MDAnalysisData 0.9.0+9.g2972714 documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+  <title>Helpers &mdash; MDAnalysisData 0.9.1rc2+1.ga91b314 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/site.css" />
 
   
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="_static/jquery.js?v=5d32c60e"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="_static/documentation_options.js?v=6227f01f"></script>
-        <script src="_static/doctools.js?v=9a2dae69"></script>
-        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="_static/js/versions.js"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=f0a58580"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="_static/js/versions.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within MDAnalysisData 0.9.0+9.g2972714 documentation"
+          title="Search within MDAnalysisData 0.9.1rc2+1.ga91b314 documentation"
           href="_static/opensearch.xml"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -156,7 +154,7 @@ the data.</p>
 <h2>For users<a class="headerlink" href="#for-users" title="Link to this heading"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="MDAnalysisData.base.Bunch">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">MDAnalysisData.base.</span></span><span class="sig-name descname"><span class="pre">Bunch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MDAnalysisData/base.html#Bunch"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#MDAnalysisData.base.Bunch" title="Link to this definition"></a></dt>
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">MDAnalysisData.base.</span></span><span class="sig-name descname"><span class="pre">Bunch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MDAnalysisData/base.html#Bunch"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#MDAnalysisData.base.Bunch" title="Link to this definition"></a></dt>
 <dd><p>Container object for datasets</p>
 <p>Dictionary-like object that exposes its keys as attributes.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">Bunch</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
@@ -176,7 +174,7 @@ the data.</p>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="MDAnalysisData.base.DEFAULT_DATADIR">
-<span class="sig-prename descclassname"><span class="pre">MDAnalysisData.base.</span></span><span class="sig-name descname"><span class="pre">DEFAULT_DATADIR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'~/MDAnalysis_data'</span></em><a class="headerlink" href="#MDAnalysisData.base.DEFAULT_DATADIR" title="Link to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">MDAnalysisData.base.</span></span><span class="sig-name descname"><span class="pre">DEFAULT_DATADIR</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'~/MDAnalysis_data'</span></span><a class="headerlink" href="#MDAnalysisData.base.DEFAULT_DATADIR" title="Link to this definition"></a></dt>
 <dd><p>Default value for the cache directory. It can be changed by setting
 the environment variable <span class="target" id="index-0"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">MDANALYSIS_DATA</span></code>. The current
 value should be queried with <a class="reference internal" href="#MDAnalysisData.base.get_data_home" title="MDAnalysisData.base.get_data_home"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_data_home()</span></code></a>.</p>
@@ -199,7 +197,7 @@ symbol is expanded to the user home folder.</p>
 <p>If the folder does not already exist, it is automatically created.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>data_home</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em> | </em><em>None</em>) – The path to MDAnalysisData data dir.</p>
+<dd class="field-odd"><p><strong>data_home</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> | </em><em>None</em>) – The path to MDAnalysisData data dir.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -210,7 +208,7 @@ symbol is expanded to the user home folder.</p>
 <dd><p>Delete all the content of the data home cache.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>data_home</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a><em> | </em><em>None</em>) – The path to MDAnalysisData data dir.</p>
+<dd class="field-odd"><p><strong>data_home</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> | </em><em>None</em>) – The path to MDAnalysisData data dir.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -222,9 +220,9 @@ symbol is expanded to the user home folder.</p>
 functions in your code.</p>
 <dl class="py data">
 <dt class="sig sig-object py" id="MDAnalysisData.base.RemoteFileMetadata">
-<span class="sig-prename descclassname"><span class="pre">MDAnalysisData.base.</span></span><span class="sig-name descname"><span class="pre">RemoteFileMetadata</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;class</span> <span class="pre">'MDAnalysisData.base.RemoteFileMetadata'&gt;</span></em><a class="headerlink" href="#MDAnalysisData.base.RemoteFileMetadata" title="Link to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">MDAnalysisData.base.</span></span><span class="sig-name descname"><span class="pre">RemoteFileMetadata</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;class</span> <span class="pre">'MDAnalysisData.base.RemoteFileMetadata'&gt;</span></span><a class="headerlink" href="#MDAnalysisData.base.RemoteFileMetadata" title="Link to this definition"></a></dt>
 <dd><p>Each remote resource is described by a <a class="reference internal" href="#MDAnalysisData.base.RemoteFileMetadata" title="MDAnalysisData.base.RemoteFileMetadata"><code class="xref py py-class docutils literal notranslate"><span class="pre">RemoteFileMetadata</span></code></a>,
-which is a <a class="reference external" href="https://docs.python.org/3/library/collections.html#collections.namedtuple" title="(in Python v3.12)"><code class="xref py py-func docutils literal notranslate"><span class="pre">namedtuple()</span></code></a> with fields</p>
+which is a <a class="reference external" href="https://docs.python.org/3/library/collections.html#collections.namedtuple" title="(in Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">namedtuple()</span></code></a> with fields</p>
 <ul class="simple">
 <li><p><em>filename</em>: name of the file in the local file system</p></li>
 <li><p><em>url</em>: full URL for downloading</p></li>
@@ -250,7 +248,7 @@ downloaded file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>remote</strong> (<em>RemoteFileMetadata</em>) – Named tuple containing remote dataset meta information: url, filename
+<li><p><strong>remote</strong> (<a class="reference internal" href="#MDAnalysisData.base.RemoteFileMetadata" title="MDAnalysisData.base.RemoteFileMetadata"><em>RemoteFileMetadata</em></a>) – Named tuple containing remote dataset meta information: url, filename
 and checksum</p></li>
 <li><p><strong>dirname</strong> (<em>string</em>) – Directory to save the file to.</p></li>
 </ul>
@@ -270,7 +268,7 @@ and checksum</p></li>
 <dd><p>Read the description from restructured text file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>filename</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – name of the description file under the <code class="docutils literal notranslate"><span class="pre">descr</span></code> directory</p>
+<dd class="field-odd"><p><strong>filename</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – name of the description file under the <code class="docutils literal notranslate"><span class="pre">descr</span></code> directory</p>
 </dd>
 </dl>
 <div class="admonition note">
@@ -296,7 +294,7 @@ assumed to be in restructured text format and in UTF-8 encoding.</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2018-2024, Irfan Alibay, Oliver Beckstein, Shujie Fan, Richard J. Gowers, Micaela Matta, and Lily Wang.</p>
+    <p>&#169; Copyright 2018-2026, Irfan Alibay, Oliver Beckstein, Shujie Fan, Richard J. Gowers, Micaela Matta, and Lily Wang.</p>
   </div>
 
   
@@ -323,7 +321,7 @@ assumed to be in restructured text format and in UTF-8 encoding.</p>
      aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       <span class="fa fa-book"></span>
-        0.9.0+9.g2972714
+        0.9.1rc2+1.ga91b314
       <span class="fa fa-caret-down"></span>
     </span>
 

@@ -14,30 +14,28 @@
   <link rel="shortcut icon" href="_static/logo/mda_favicon.ico">
 </head>
 
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="./">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contributing new datasets &mdash; MDAnalysisData 0.9.0+9.g2972714 documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+  <title>Contributing new datasets &mdash; MDAnalysisData 0.9.1rc2+1.ga91b314 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/site.css" />
 
   
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="_static/jquery.js?v=5d32c60e"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="_static/documentation_options.js?v=6227f01f"></script>
-        <script src="_static/doctools.js?v=9a2dae69"></script>
-        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="_static/js/versions.js"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=f0a58580"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="_static/js/versions.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within MDAnalysisData 0.9.0+9.g2972714 documentation"
+          title="Search within MDAnalysisData 0.9.1rc2+1.ga91b314 documentation"
           href="_static/opensearch.xml"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -241,7 +239,7 @@ described below</p></li>
 adapt. <strong>Make sure to add license information.</strong></p></li>
 <li><p>Import your <code class="xref py py-func docutils literal notranslate"><span class="pre">fetch_{NAME}()</span></code> function in
 <a class="reference external" href="https://github.com/MDAnalysis/MDAnalysisData/blob/master/MDAnalysisData/datasets.py">MDAnalysisData/datasets.py</a>.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">.</span><span class="p">{</span><span class="n">MODULE_NAME</span><span class="p">}</span> <span class="kn">import</span> <span class="nn">fetch_</span><span class="p">{</span><span class="n">NAME</span><span class="p">}</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">.</span><span class="p">{</span><span class="n">MODULE_NAME</span><span class="p">}</span> <span class="kn">import</span><span class="w"> </span><span class="nn">fetch_</span><span class="p">{</span><span class="n">NAME</span><span class="p">}</span>
 </pre></div>
 </div>
 </li>
@@ -280,7 +278,7 @@ checksum. <strong>You must compute the reference checksum and store it in your</
 <a class="reference internal" href="helpers.html#MDAnalysisData.base.RemoteFileMetadata" title="MDAnalysisData.base.RemoteFileMetadata"><code class="xref py py-class docutils literal notranslate"><span class="pre">RemoteFileMetadata</span></code></a> data structure for each file.</p>
 <p>Typically you will have a local copy of the files during testing. You can
 compute the SHA256 for a file <code class="docutils literal notranslate"><span class="pre">FILENAME</span></code> with the following code:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="kn">import</span> <span class="nn">MDAnalysisData.base</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="kn">import</span><span class="w"> </span><span class="nn">MDAnalysisData.base</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">MDAnalysisData</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">_sha256</span><span class="p">(</span><span class="n">FILENAME</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -303,7 +301,7 @@ compute the SHA256 for a file <code class="docutils literal notranslate"><span c
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2018-2024, Irfan Alibay, Oliver Beckstein, Shujie Fan, Richard J. Gowers, Micaela Matta, and Lily Wang.</p>
+    <p>&#169; Copyright 2018-2026, Irfan Alibay, Oliver Beckstein, Shujie Fan, Richard J. Gowers, Micaela Matta, and Lily Wang.</p>
   </div>
 
   
@@ -330,7 +328,7 @@ compute the SHA256 for a file <code class="docutils literal notranslate"><span c
      aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       <span class="fa fa-book"></span>
-        0.9.0+9.g2972714
+        0.9.1rc2+1.ga91b314
       <span class="fa fa-caret-down"></span>
     </span>
 
