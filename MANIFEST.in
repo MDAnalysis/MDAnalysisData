@@ -1,1 +1,3 @@
-include README.md AUTHORS LICENSE CHANGELOG.md
+include README.md CHANGELOG.md
+graft MDAnalysisData
+global-exclude __pycache__ *.pyc *~
